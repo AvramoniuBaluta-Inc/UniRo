@@ -14,9 +14,10 @@ const passportLocalMongoose = require("passport-local-mongoose");
 ///////////////////////////
 
 var homeRoutes = require("./routers/home.js");
-const uniSchema = require("./database_models/universitate.js");
-const facultateSchema = require("./database_models/facultate.js");
-const userSchema = require("./database_models/user.js");
+var addUniRoutes = require("./routers/add-university") ;
+
+const { University , User , Facultate} = require("./database_models/models") ;
+
 
 ///////////////////////////
 
@@ -53,32 +54,14 @@ mongoose
   )
   .catch((error) => console.log(error.message));
 
-const University = new mongoose.model("universitate", uniSchema);
-const User = new mongoose.model("user", userSchema);
-const facultate = new mongoose.model("facultate", facultateSchema);
 
 ////////// main routes
 
 app.use("/", homeRoutes);
+app.use("/add-university" , addUniRoutes) ;
 
-/////
 
 //trebuie mutata in alt file dar nu mergea sa fac legatura cu universitate.js
 //facem asta maine
 
-app.post("/add-university", function (req, res) {
-  const Universitate = mongoose.model("Universitate", uniSchema);
-  const universitate = new Universitate({
-    _id: req.body._id,
-    name: req.body.name,
-    descriere: req.body.descriere,
-    oras: req.body.oras,
-    email: req.body.email,
-    link: req.body.link,
-  });
-  universitate.save();
 
-  res.redirect("/add-university");
-});
-
-////
