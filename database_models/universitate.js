@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const express = require("express");
 
-const facultateSchema = new mongoose.Schema({
+const uniSchema = new mongoose.Schema({
   _id: Number,
   nume: String,
-  oras: String,
   descriere: String,
+  oras: String,
   email: String,
   link: String,
   img: {
@@ -13,7 +13,8 @@ const facultateSchema = new mongoose.Schema({
     contentType: String,
   },
   rating: Number,
-  tags: [],
+  tags: [], //info, biologie, filozofie, etc
+  facultati: [], //id ul facultatii
 });
 
-module.exports = facultateSchema;
+module.exports = uniSchema;
