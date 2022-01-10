@@ -20,9 +20,9 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()) ;
+const PORT = process.env.PORT || 3000;
 
-
-////////// mongoose connection
+////////// session settings 
 
 app.use(session({
   secret: "cheiedecriptare.a",
@@ -33,12 +33,18 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const CONNECTION_URL = 'mongodb+srv://admin-calin:admincalin123@cluster0.shfk0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' ;
-const PORT = process.env.PORT || 3000 ;
 
+////////// mongoose connection
 
-mongoose.connect(CONNECTION_URL , { useNewUrlParser : true , useUnifiedTopology : true })
+const CONNECTION_URL = "mongodb+srv://admin:admin-uniro-supermax2004@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
+
+mongoose.connect(CONNECTION_URL , { useNewUrlParser: true, useUnifiedTopology: true })
     .then( () => app.listen(PORT , () => console.log(`Server running on port ${PORT}`)))
     .catch( (error) => console.log(error.message)) ;
 
-app.use('/home' , homeRoutes) ;
+
+////////// main routes
+
+app.use('/' , homeRoutes) ;
+
+
