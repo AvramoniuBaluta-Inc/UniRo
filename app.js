@@ -10,7 +10,12 @@ var path = require("path") ;
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+
+///////////////////////////
+
 var homeRoutes = require('./routers/home.js')  ;
+const uniSchema = require('./database_models/facultate.js');
+const userSchema = require('./database_models/user.js');
 
 ///////////////////////////
 
@@ -42,6 +47,9 @@ mongoose.connect(CONNECTION_URL , { useNewUrlParser: true, useUnifiedTopology: t
     .then( () => app.listen(PORT , () => console.log(`Server running on port ${PORT}`)))
     .catch( (error) => console.log(error.message)) ;
 
+
+const University = new mongoose.model("university" , uniSchema) ;
+const User = new mongoose.model("user" , userSchema) ;
 
 ////////// main routes
 
