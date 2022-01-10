@@ -53,10 +53,32 @@ mongoose
   )
   .catch((error) => console.log(error.message));
 
-const University = new mongoose.model("university", uniSchema);
+const University = new mongoose.model("universitate", uniSchema);
 const User = new mongoose.model("user", userSchema);
 const facultate = new mongoose.model("facultate", facultateSchema);
 
 ////////// main routes
 
 app.use("/", homeRoutes);
+
+/////
+
+//trebuie mutata in alt file dar nu mergea sa fac legatura cu universitate.js
+//facem asta maine
+
+app.post("/add-university", function (req, res) {
+  const Universitate = mongoose.model("Universitate", uniSchema);
+  const universitate = new Universitate({
+    _id: req.body._id,
+    name: req.body.name,
+    descriere: req.body.descriere,
+    oras: req.body.oras,
+    email: req.body.email,
+    link: req.body.link,
+  });
+  universitate.save();
+
+  res.redirect("/add-university");
+});
+
+////
