@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   session({
-    secret: "cheiedecriptare.a",
+    secret: process.env.KEY ,
     resave: false,
     saveUninitialized: false,
   })
@@ -45,7 +45,7 @@ app.use(passport.session());
 ////////// mongoose connection
 
 const CONNECTION_URL =
-  "mongodb+srv://admin:admin-uniro-supermax2004@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://" + process.env.MONGO_ADMIN + ":" + process.env.MONGO_PASSWORD + "@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
 
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
