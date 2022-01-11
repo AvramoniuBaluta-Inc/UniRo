@@ -24,9 +24,11 @@ const { University , User , Facultate} = require("./database_models/models") ;
 const app = express();
 
 app.use(express.static("public"));
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 const PORT = process.env.PORT || 3000;
 
 ////////// session settings
@@ -61,7 +63,5 @@ app.use("/", homeRoutes);
 app.use("/add-university" , addUniRoutes) ;
 
 
-//trebuie mutata in alt file dar nu mergea sa fac legatura cu universitate.js
-//facem asta maine
 
 

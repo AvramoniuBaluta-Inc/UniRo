@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../images/uni1.jpg") ;
+    background-color: rgba(0, 0, 0, 0.45);
+    background-blend-mode: multiply;
+
+    background-position: top;
+    background-size: cover;
+    position: relative;
+}
