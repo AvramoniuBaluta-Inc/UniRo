@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
+
     <form action="/add-university" method="POST">
         _ID
         <input type="text" name="_id" id="">
@@ -27,14 +29,30 @@
         LINK
         <input type="text" name="link" id="">
         <br>
+
+        <div id="tags">
+            Tag 1
+            <input type="text" name="tag1" id="">
+            <br>
+        </div>
+
+        <input type="button" id="1" value="Adauga tag-uri" onclick="createInputBox_tags();" />
+
+        <div id="facultati">
+            <input type="text" name="facultate1" id="">
+            <br>
+        </div>
+
+        <input type="button" id="1" value="Adauga facultati" onclick="createInputBox_tags();" />
+
         <button type="submit" name="" value="">Submit</button>
+
+
+
     </form>
 
-    <!--
-    Ma mai gandesc cum fac cu tag urile 
-ca gen trebuie citite intr un fel de loop
-vin eu cu o idee
--->
+    <script src="scripts/tags.js"></script>
 </body>
+
 
 </html>

@@ -14,10 +14,9 @@ const passportLocalMongoose = require("passport-local-mongoose");
 ///////////////////////////
 
 var homeRoutes = require("./routers/home.js");
-var addUniRoutes = require("./routers/add-university") ;
+var addUniRoutes = require("./routers/add-university");
 
-const { University , User , Facultate} = require("./database_models/models") ;
-
+const { University, User, Facultate } = require("./database_models/models");
 
 ///////////////////////////
 
@@ -33,7 +32,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   session({
-    secret: process.env.KEY ,
+    secret: process.env.KEY,
     resave: false,
     saveUninitialized: false,
   })
@@ -45,8 +44,11 @@ app.use(passport.session());
 ////////// mongoose connection
 
 const CONNECTION_URL =
-  "mongodb+srv://" + process.env.MONGO_ADMIN + ":" + process.env.MONGO_PASSWORD + "@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
-
+  "mongodb+srv://" +
+  process.env.MONGO_ADMIN +
+  ":" +
+  process.env.MONGO_PASSWORD +
+  "@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
@@ -54,14 +56,7 @@ mongoose
   )
   .catch((error) => console.log(error.message));
 
-
 ////////// main routes
 
 app.use("/", homeRoutes);
-app.use("/add-university" , addUniRoutes) ;
-
-
-//trebuie mutata in alt file dar nu mergea sa fac legatura cu universitate.js
-//facem asta maine
-
-
+app.use("/add-university", addUniRoutes);
