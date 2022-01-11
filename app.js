@@ -23,9 +23,11 @@ const { University, User, Facultate } = require("./database_models/models");
 const app = express();
 
 app.use(express.static("public"));
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 const PORT = process.env.PORT || 3000;
 
 ////////// session settings
@@ -59,4 +61,6 @@ mongoose
 ////////// main routes
 
 app.use("/", homeRoutes);
-app.use("/add-university", addUniRoutes);
+app.use("/add-university" , addUniRoutes) ;
+
+
