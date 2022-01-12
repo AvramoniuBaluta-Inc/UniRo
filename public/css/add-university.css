@@ -1,0 +1,54 @@
+.container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 50%;
+  text-align: center;
+  position: relative;
+  margin: 0 auto 1vh auto;
+  background: #79c2d0;
+  border-radius: 10px;
+}
+p {
+  margin: 3px;
+}
+.big_form {
+  width: 80%;
+  background: #bbe4e9;
+  position: relative;
+  margin: 0 auto 0 auto;
+  min-height: 100%;
+  padding: 1vh 15px 0 15px;
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 50%;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  padding: 0 0 0 0;
+  height: 99vh;
+  min-height: 99vh;
+  width: 100%;
+  background-image: url("../images/uni1.jpg");
+  background-color: rgba(0, 0, 0, 0.45);
+  background-blend-mode: multiply;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.ok {
+  padding: 10% 0 10% 0;
+  vertical-align: middle;
+  margin: auto auto;
+  width: 100%;
+}
+
+.buton {
+  width: 40%;
+}
