@@ -4,51 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/add-university.css">
     <title>Document</title>
 
 </head>
 
 <body>
 
-    <form action="/add-university" method="POST">
-        _ID
-        <input type="text" name="_id" id="">
-        <br>
-        NUME
-        <input type="text" name="nume" id="">
-        <br>
-        DESCRIERE
-        <input type="text" name="descriere" id="">
-        <br>
-        ORAS
-        <input type="text" name="oras" id="">
-        <br>
-        EMAIL
-        <input type="text" name="email" id="">
-        <br>
-        LINK
-        <input type="text" name="link" id="">
-        <br>
+    <form action="/add-university" class="big_form" method="POST">
 
-        <div id="tags">
-            Tag 1
-            <input type="text" name="tag1" id="">
-            <br>
+        <div class="ok">
+            <div class="container">
+                <p>_ID</p>
+                <input type="text" name="_id" id="">
+                <br>
+            </div>
+
+            <div class="container">
+                <p>NUME</p>
+                <input type="text" name="nume" id="">
+                <br>
+            </div>
+
+            <div class="container">
+                <p>DESCRIERE</p>
+                <input type="text" name="descriere" id="">
+                <br>
+            </div>
+            <div class="container">
+                <p>ORAS</p>
+                <input type="text" name="oras" id="">
+                <br>
+            </div>
+            <div class="container">
+                <p>EMAIL</p>
+                <input type="text" name="email" id="">
+                <br>
+            </div>
+            <div class="container">
+                <p>LINK</p>
+                <input type="text" name="link" id="">
+                <br>
+            </div>
+            <div id="tags">
+                <div class="container">
+                    <p>Tag 1</p>
+                    <input type="text" name="tag1" id="">
+                    <br>
+                </div>
+            </div>
+
+            <div class="container">
+                <input type="button" id="1" class="buton" value="Adauga tag-uri" onclick="createInputBox_tags();" />
+
+                <button type="submit" class="buton" name="" value="">Submit</button>
+            </div>
         </div>
-
-        <input type="button" id="1" value="Adauga tag-uri" onclick="createInputBox_tags();" />
-
-        <div id="facultati">
-            <input type="text" name="facultate1" id="">
-            <br>
-        </div>
-
-        <input type="button" id="1" value="Adauga facultati" onclick="createInputBox_tags();" />
-
-        <button type="submit" name="" value="">Submit</button>
-
-
-
     </form>
 
     <script src="scripts/tags.js"></script>
