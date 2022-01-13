@@ -4,7 +4,7 @@ var add = require("../public/scripts/addTags.js");
 const { University } = require("../database_models/models");
 
 router.get("/", (req, res) => {
-  res.render("add-university");
+  res.render("contact");
 });
 
 router.post("/", (req, res) => {
