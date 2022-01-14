@@ -19,7 +19,13 @@ router.post("/", (req, res) => {
     link: req.body.link,
     tags: add.taguri,
   });
-  universitate.save();
+
+  if(universitate._id === "" || universitate.nume === "" || universitate.descriere === "" || universitate.oras === "" || universitate.email === "" || universitate.link === "") {
+    console.log("Error : No input");
+  } else {
+    universitate.save();
+  }
+  
 
   res.redirect("/add-university");
 });
