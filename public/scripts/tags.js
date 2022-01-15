@@ -6,10 +6,10 @@ function createInputBox_tags() {
     .getElementById("tags")
     .insertAdjacentHTML(
       "beforeend",
-      ' <div ><p>Tag ' +
+      ' <div ><span>Tag ' +
         nr +
-        ' </p><input type="text" name="tag' +
+        ' </span><input class="form-control" type="text" name="tag' +
         nr +
-        '" id=""><br></div>'
+        '" id=""></div>'
     );
 }
