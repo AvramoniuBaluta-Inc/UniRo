@@ -142,6 +142,21 @@ nav .fa {
   }
 }
 
+@media (max-width: 1024px) {
+  .text-box h1 {
+    padding-top: 40px;
+    font-size: 40px;
+  }
+
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+  }
+
+}
+
+
 /* top universities section */
 
 .second {
