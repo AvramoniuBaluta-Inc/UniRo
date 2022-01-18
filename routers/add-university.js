@@ -24,9 +24,9 @@ router.post("/", (req, res) => {
     console.log("Error : No input");
   } else {
     universitate.save();
+    tags = [] ;
   }
   
-
   res.redirect("/add-university");
 });
 
