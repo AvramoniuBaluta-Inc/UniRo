@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
-const { User } = require("../database_models/models") ;
+const { Admin } = require("../database_models/models") ;
 
 router.get("/", function (req, res) {
-  res.render("login_user");
+  res.render("login_admin");
 });
 
 router.post("/", function (req, res) {

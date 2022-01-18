@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const express = require("express");
 
-const userSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
   username: String,
   email: String,
   parola: String,
 });
 
-module.exports = userSchema;
+module.exports = adminSchema;
