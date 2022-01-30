@@ -10,6 +10,7 @@ var path = require("path");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const LocalStrategy = require('passport-local').Strategy;
 
 ///////////////////////////
 
@@ -46,6 +47,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(new LocalStrategy(Admin.authenticate()));
+
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 ////////// mongoose connection
 
 const CONNECTION_URL =

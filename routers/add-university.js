@@ -3,8 +3,9 @@ var router = express.Router();
 var add = require("../public/scripts/addTags.js");
 const { University } = require("../database_models/models.js");
 var idGenerate = require("../backend_scripts/addId.js");
+const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
 
-router.get("/", (req, res) => {
+router.get("/", isLoggedIn, (req, res) => {
   res.render("add-university");
 });
 
