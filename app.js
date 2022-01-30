@@ -13,9 +13,10 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 ///////////////////////////
 
-var homeRoutes = require("./routers/home.js");
-var addUniRoutes = require("./routers/add-university.js");
+var homeRoutes = require("./routers/home.js") ;
+var addUniRoutes = require("./routers/add-university.js") ;
 var adminRoutes = require("./routers/login_admin.js") ;
+var exploreRoutes = require("./routers/explore") ;
 
 const { University, Admin, Facultate } = require("./database_models/models");
 
@@ -65,5 +66,6 @@ mongoose
 app.use("/", homeRoutes);
 app.use("/add-university" , addUniRoutes) ;
 app.use("/login-admin" , adminRoutes) ;
+app.use("/explore" , exploreRoutes) ;
 
 
