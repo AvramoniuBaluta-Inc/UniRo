@@ -178,7 +178,8 @@ nav .fa {
   width: 80%;
   margin: auto;
   text-align: center;
-  padding-top: 100px ;
+  padding-top: 10% ;
+  padding-bottom: 5%;
   color: #000;
 }
 
@@ -238,6 +239,8 @@ nav .fa {
   border-radius: 10px;
   text-align: center;
   padding: 130px 0;
+  margin-bottom: 8%;
+  
 }
 
 .contact-box h1 {
