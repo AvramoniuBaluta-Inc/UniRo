@@ -32,6 +32,7 @@
     border: 1px solid #f44336;
     background: #f44336;
     transition: 0.7s;
+    color: #fff;
 }
 
 nav .fa {
@@ -85,32 +86,9 @@ nav img {
    
 
     .nav-links ul li {
-        display: block;
+        visibility: hidden;
     }
 
-    .nav-links {
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 0.7s;
-    }
-
-    nav .fa {
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-
-    .nav-links ul {
-        padding: 30px;
-    }
 }
 
 
@@ -150,7 +128,10 @@ svg * {
 
 /* content */
 
-.display {
-    height: 100%;
-    width: 100%;
+.container1 {
+    margin: 0 4% ;
+}
+
+.uni {
+    border-radius: 0;
 }

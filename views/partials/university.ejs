@@ -1,7 +1,23 @@
-<div>
-    <p>
-        <%= uni.nume %>
-    </p>
-</div>
-
 <!-- aici iti faci tu talentu -->
+<div class="card mb-3 uni">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/public/images/test.png" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title"><%= uni.nume %></h4>
+        <p class="card-text"><%= uni.descriere %></p>
+        <p class="card-text">
+          <small class="text-muted"><%= uni.oras %></small>
+        </p>
+        <a
+          href="https://<%= uni.link %>"
+          target="_blank"
+          class="btn btn-primary buton-link"
+          >Viziteaza website</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
