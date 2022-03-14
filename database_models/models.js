@@ -2,11 +2,10 @@ var express = require("express");
 const mongoose = require("mongoose");
 const facultateSchema = require("./facultate");
 const uniSchema = require("./universitate");
-const userSchema = require("./user");
-
+const adminSchema = require("./admin");
 
 const University = new mongoose.model("universitate", uniSchema);
-const User = new mongoose.model("user", userSchema);
+const Admin = new mongoose.model("admin", adminSchema);
 const Facultate = new mongoose.model("facultate", facultateSchema);
 
-module.exports = { University , User , Facultate } ;
+module.exports = { University, Admin, Facultate };

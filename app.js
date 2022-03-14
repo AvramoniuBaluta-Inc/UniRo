@@ -10,13 +10,15 @@ var path = require("path");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const LocalStrategy = require('passport-local').Strategy;
 
 ///////////////////////////
 
-var homeRoutes = require("./routers/home.js");
-var addUniRoutes = require("./routers/add-university.js");
-var adminRoutes = require("./routers/login_admin.js");
 var universitiesRouters = require("./routers/universities.js");
+var homeRoutes = require("./routers/home.js") ;
+var addUniRoutes = require("./routers/add-university.js") ;
+var adminRoutes = require("./routers/login_admin.js") ;
+var exploreRoutes = require("./routers/explore") ;
 
 const { University, Admin, Facultate } = require("./database_models/models");
 
@@ -46,6 +48,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(new LocalStrategy(Admin.authenticate()));
+
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 ////////// mongoose connection
 
 const CONNECTION_URL =
@@ -64,6 +70,7 @@ mongoose
 ////////// main routes
 
 app.use("/", homeRoutes);
-app.use("/add-university", addUniRoutes);
 app.use("/login-admin", adminRoutes);
 app.use("/universitati", universitiesRouters);
+app.use("/add-university" , addUniRoutes) ;
+app.use("/explore" , exploreRoutes) ;

@@ -1,48 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/styles-homepage.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniRo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="css/styles-homepage.css" />
     <script src="https://use.fontawesome.com/894924603a.js"></script>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <section class="header">
-        <nav>
-
-            <a href="/"><img src="images/logo_uniro.png"></a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">EXPLORE</a></li>
-                    <li><a href="">CONTACT</a></li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-
-        </nav>
-
-        <div class="text-box">
-            <h1>Gaseste universitatea perfecta</h1>
-            <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
-            <a href="" class="hero-btn">Exploreaza</a>
+      <nav>
+        <a href="/"> <%- include("partials/logo") %> </a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="/explore">EXPLORE</a></li>
+            <li><a href="/add-university">CONTACT</a></li>
+          </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
 
+      <div class="text-box">
+        <h1>Gaseste universitatea perfecta</h1>
+        <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
+        <a href="/explore" class="hero-btn">Exploreaza</a>
+      </div>
+    </section>
+
+    <section class="second">
+      <div class="top-unis">
+        <h1>Universitati de top in Romania</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
+          quia id voluptatibus? Nihil aperiam consequuntur, culpa illum est
+          nostrum doloribus, ducimus facilis a corrupti minus veniam nobis odio
+          iste.
+        </p>
+
+        <div class="row">
+          <div class="col">
+            <h3>Politehnica Bucuresti</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
+              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+              perspiciatis pariatur dignissimos eum doloremque optio culpa,
+              sequi laboriosam. Quia?
+            </p>
+          </div>
+
+          <div class="col">
+            <h3>Universitatea Carol Davila</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
+              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+              perspiciatis pariatur dignissimos eum doloremque optio culpa,
+              sequi laboriosam. Quia?
+            </p>
+          </div>
+
+          <div class="col">
+            <h3>Universitatea Babes-Bolyai</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
+              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+              perspiciatis pariatur dignissimos eum doloremque optio culpa,
+              sequi laboriosam. Quia?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="contact-box">
+        <h1>Contacteaza-ne pentru detalii</h1>
+        <a class="hero-btn" href="/add-university">Contact</a>
+      </div>
+    </section>
+
+    <br /><br /><br />
+
+    <section class="footer">
+      <h4>Despre noi</h4>
+
+      <div class="desc">
+        <p>
+          UniRo are misiunea de a va ajuta sa va gasiti universitatea ideala
+          pentru dumneavoastra, iar platforma noastra are aproape toate
+          universitatile din Romania deja inregistrate. Daca doriti adaugarea
+          unei universitati noi, contactati-ne in legatura cu aceasta.
+        </p>
+      </div>
+
+      <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-envelope"></i>
+        <i class="fa fa-instagram"></i>
+      </div>
+
+      <p>© Copyright UniRo 2022</p>
     </section>
 
     <script src="scripts/menu.js"></script>
-
-</body>
-
+  </body>
 </html>
