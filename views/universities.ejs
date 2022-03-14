@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    ok
+    <% for(var i=1;i<lungime;i++){ %>
+        <% uni=uniArray[i]; %>
+            <%- include('partials/university', {uni: uni}); %>
+                <% } %>
+
+</body>
+<script src="scripts/number-of-elements.js"></script>
+<script src="scripts/show-uni.js"></script>
+<script src="scripts/get-uni.js"></script>
+
+</html>
