@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universitati Romania</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
@@ -17,8 +17,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
-    <%- include('partials/favicon'); %>
-    <link rel="stylesheet" href="css/explore.css">
+        <%- include('partials/favicon'); %>
+            <link rel="stylesheet" href="css/explore.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 
         <nav>
 
-            <a class="hero-btn" href="">Filtrare</a>
+            <p id="popUp-open-button" class="hero-btn">Filtrare</p>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
@@ -48,21 +48,39 @@
     <section class="display">
 
         <div class="container1">
-            
+
             <% for(var i=1;i<lungime;i++){ %>
-             
-            <% uni=uniArray[i]; %>
-            
-            <%- include('partials/university', {uni: uni}); %>
-            
-            <% } %>
-            
+
+                <% uni=uniArray[i]; %>
+
+                    <%- include('partials/university', {uni: uni}); %>
+
+                        <% } %>
+
         </div>
     </section>
 
 
+    <div class="popUp" id="popUp">
+        <div class="popUp-header">
+            <div class="popUp-title">Filtru</div>
+            <button class="popUp-close-button" id="popUp-close-button">&times;</button>
+        </div>
+        <div class="popUp-body">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker
+            including versions of Lorem Ipsum.
+        </div>
+    </div>
+    <div id="overlay"></div>
 
     <script src="scripts/menu.js"></script>
+    <script src="scripts/popUp.js"></script>
 
 </body>
 
