@@ -14,7 +14,7 @@ router.post(
   "/",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login-admin",
+    failureRedirect: "/admin",
   }),
   (req, res) => {
     console.log("siuuuu");
@@ -33,13 +33,13 @@ router.post("/register", (req, res) => {
       if (err) {
         console.log("fail");
       } else {
-        res.redirect("/login-admin");
+        res.redirect("/admin");
         console.log("succes");
       }
     });
   } else {
     console.log("gresit sefu");
-    res.redirect("/login-admin");
+    res.redirect("/admin");
   }
 });
 

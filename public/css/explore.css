@@ -134,4 +134,9 @@ svg * {
 
 .uni {
     border-radius: 0;
+    border-color: rgb(199, 199, 199);
+}
+
+.buton-link {
+    border-radius: 0;
 }
