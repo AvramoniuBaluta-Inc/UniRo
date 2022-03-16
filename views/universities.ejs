@@ -17,8 +17,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
-        <%- include('partials/favicon'); %>
-            <link rel="stylesheet" href="css/explore.css">
+    <%- include('partials/favicon'); %>
+    <link rel="stylesheet" href="css/explore.css">
 </head>
 
 <body>
@@ -27,13 +27,13 @@
 
         <nav>
 
-            <p id="popUp-open-button" class="hero-btn">Filtrare</p>
+            <p id="popUp-open-button" class="hero-btn filtru">Filtrare</p>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
                     <li><a href="/add-university">CONTACT</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a class="permanent" href="/">HOME</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -63,7 +63,7 @@
 
     <div class="popUp" id="popUp">
         <div class="popUp-header">
-            <div class="popUp-title">Filtru</div>
+            <h3 class="popUp-title">Filtreaza Universitatile</h3>
             <button class="popUp-close-button" id="popUp-close-button">&times;</button>
         </div>
         <div class="popUp-body">
@@ -75,6 +75,8 @@
             the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
             and more recently with desktop publishing software like Aldus PageMaker
             including versions of Lorem Ipsum.
+
+            
         </div>
     </div>
     <div id="overlay"></div>
