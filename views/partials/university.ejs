@@ -1,31 +1,39 @@
 <!-- aici iti faci tu talentu -->
 <div class="card mb-3 uni">
   <div class="row">
-    <div class="col-md-4 img-size" >
-      <img src="/images/uni1.jpg" class="" />
+    <div class="col-md-4 img-size">
+      <% if(!(uni.img.data===undefined )){ %>
+        <img src=" data:uni.photo/<%=uni.img.contentType%>;base64,
+                     <%=uni.img.data.toString('base64')%>">
+        <% } else {%>
+          <img src="/images/test.png" alt="">
+          <% } %>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h3 class="card-title"><%= uni.nume %></h3>
-        <p class="card-text"><%= uni.descriere %></p>
+        <h3 class="card-title">
+          <%= uni.nume %>
+        </h3>
+        <p class="card-text">
+          <%= uni.descriere %>
+        </p>
 
         <p id="taguri">
 
           <% for(var i=0;i<uni.tags.length;i++){ %>
-            <span class="tag" id="tag"><%= uni.tags[i] %></span>
-          <% } %>
+            <span class="tag" id="tag">
+              <%= uni.tags[i] %>
+            </span>
+            <% } %>
 
         </p>
 
         <p class="card-text">
-          <small class="text-muted"><%= uni.oras %></small>
+          <small class="text-muted">
+            <%= uni.oras %>
+          </small>
         </p>
-        <a
-          href="https://<%= uni.link %>"
-          target="_blank"
-          class="btn btn-success buton-link"
-          >Viziteaza website</a
-        >
+        <a href="https://<%= uni.link %>" target="_blank" class="btn btn-success buton-link">Viziteaza website</a>
       </div>
     </div>
   </div>

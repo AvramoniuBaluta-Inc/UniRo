@@ -1,108 +1,92 @@
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/add-university.css" />
-    <title>Add uni dashboard</title>
-    <script src="https://use.fontawesome.com/894924603a.js"></script>
-    <%- include('partials/favicon'); %>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div class="container-fluid">
-      <nav>
-        <h1>Add university</h1>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
-            <li class="home-btn"><a href="/">HOME</a></li>
-            <li class="other-btn"><a href="/universitati">UNIVERSITATI</a></li>
-          </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/add-university.css" />
+  <title>Add uni dashboard</title>
+  <script src="https://use.fontawesome.com/894924603a.js"></script>
+  <%- include('partials/favicon'); %>
+</head>
 
-      <div class="content">
-        <form action="/add-university" class="big_form" method="POST">
-          <div class="user-details">
-            <div class="input-box">
-              <span class="details">NUME</span>
-              <input class="form-control" type="text" name="nume" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">DESCRIERE</span>
-              <input class="form-control" type="text" name="descriere" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">ORAS</span>
-              <input class="form-control" type="text" name="oras" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">EMAIL</span>
-              <input class="form-control" type="text" name="email" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">LINK</span>
-              <input class="form-control" type="text" name="link" id="" />
-            </div>
-            <div class="input-box">
-              <div id="tags">
-                <span class="details">Tag 1</span>
-                <input class="form-control" type="text" name="tag1" id="" />
-              </div>
-
-              <br /><br /><br />
-
-              <input
-                type="button"
-                id="1"
-                class="hero-btn"
-                value="Adauga tag-uri"
-                onclick="createInputBox_tags();"
-              />
-            </div>
-          </div>
-          <br />
-          <div class="button">
-            <button type="submit" class="hero-btn" name="" value="">
-              Submit
-            </button>
-          </div>
-        </form>
+<body>
+  <div class="container-fluid">
+    <nav>
+      <h1>Add university</h1>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li class="home-btn"><a href="/">HOME</a></li>
+          <li class="other-btn"><a href="/universitati">UNIVERSITATI</a></li>
+        </ul>
       </div>
-    </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
 
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/tags.js"></script>
-  </body>
+    <div class="content">
+      <form action="/add-university" class="big_form" method="POST" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">NUME</span>
+            <input class="form-control" type="text" name="nume" id="" />
+          </div>
+          <div class="input-box">
+            <span class="details">DESCRIERE</span>
+            <input class="form-control" type="text" name="descriere" id="" />
+          </div>
+          <div class="input-box">
+            <span class="details">ORAS</span>
+            <input class="form-control" type="text" name="oras" id="" />
+          </div>
+          <div class="input-box">
+            <span class="details">EMAIL</span>
+            <input class="form-control" type="text" name="email" id="" />
+          </div>
+          <div class="input-box">
+            <span class="details">LINK</span>
+            <input class="form-control" type="text" name="link" id="" />
+          </div>
+          <div class="input-box">
+            <input type="file" name="photo" id="photo" value="">
+          </div>
+          <div class="input-box">
+            <div id="tags">
+              <span class="details">Tag 1</span>
+              <input class="form-control" type="text" name="tag1" id="" />
+            </div>
+
+            <br /><br /><br />
+
+            <input type="button" id="1" class="hero-btn" value="Adauga tag-uri" onclick="createInputBox_tags();" />
+          </div>
+        </div>
+        <br />
+        <div class="button">
+          <button type="submit" class="hero-btn" name="" value="">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/menu.js"></script>
+  <script src="scripts/tags.js"></script>
+</body>
+
 </html>
