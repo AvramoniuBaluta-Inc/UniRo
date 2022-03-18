@@ -4,6 +4,7 @@ var no = require;
 
 const { University } = require("../database_models/models.js");
 var uniFunctions = require("../backend_scripts/uniFunctions.js");
+var materii = require("../public/scripts/materii");
 
 router.get("/", function (req, res) {
   var cnt;
@@ -16,6 +17,7 @@ router.get("/", function (req, res) {
     res.render("universities", {
       lungime: cnt,
       uniArray: uniArray,
+      materii: materii,
     });
   })();
 });

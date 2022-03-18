@@ -1,33 +1,37 @@
-<form class="row g-3">
+<form class="row g-3" action="/filter" method="post">
   <div class="col-md-6">
     <label for="inputState" class="form-label">Oras</label>
-    <select id="inputState" class="form-select">
+    <select id="inputState" class="form-select" name="oras">
       <option selected>Alege...</option>
       <option>Bucuresti</option>
     </select>
   </div>
   <div class="col-md-6">
     <label for="inputState" class="form-label">Materii Studiate</label>
-    <select id="inputState" class="form-select">
+    <select id="inputState" class="form-select" name="materii">
       <option selected>Alege...</option>
-      <option>...</option>
+
+      <% for(var i=0;i<materii.length;i++){ %>
+            <option><%= materii[i] %></option>
+      <% } %>
+      
     </select>
   </div>
 
   <div class="col-md-6">
     <label for="inputState" class="form-label">Rating</label>
-    <select id="inputState" class="form-select">
+    <select id="inputState" class="form-select" name="rating">
       <option selected>Alege...</option>
-      <option><i class="fa-solid fa-star-sharp"></i></option>
-      <option>...</option>
-      <option>...</option>
-      <option>...</option>
-      <option>...</option>
+      <option>1 Stea</option>
+      <option>2 Stele</option>
+      <option>3 Stele</option>
+      <option>4 Stele</option>
+      <option>5 Stele</option>
     </select>
   </div>
   <div class="col-md-6">
     <label for="inputState" class="form-label">Specializare</label>
-    <select id="inputState" class="form-select">
+    <select id="inputState" class="form-select" name="specializare">
       <option selected>Alege...</option>
       <option>IT</option>
       <option>Medicina</option>
@@ -39,10 +43,14 @@
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck" />
-      <label class="form-check-label" for="gridCheck"> Check me out </label>
+      <label class="form-check-label" for="gridCheck">
+        In apropiere de mine
+      </label>
     </div>
   </div>
-  <div class="col-12">
-    <button type="submit" class="btn buton-link submit-btn">Sign in</button>
+  <div class="col-12 div-submit">
+    <button type="submit" class="btn buton-link submit-btn">
+      Aplica filtrele
+    </button>
   </div>
 </form>
