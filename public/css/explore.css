@@ -249,8 +249,8 @@ svg * {
   width: 100%;
 }
 
-.form-select {
-  border-radius: 0%;
+.form-range {
+  color: #f44336;
 }
 
 

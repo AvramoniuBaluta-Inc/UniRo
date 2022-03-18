@@ -12,9 +12,9 @@
       <option selected>Alege...</option>
 
       <% for(var i=0;i<materii.length;i++){ %>
-            <option><%= materii[i] %></option>
+      <option><%= materii[i] %></option>
       <% } %>
-      
+
     </select>
   </div>
 
@@ -41,11 +41,10 @@
     </select>
   </div>
   <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck" />
-      <label class="form-check-label" for="gridCheck">
-        In apropiere de mine
-      </label>
+    <div>
+      <label for="distantaUni" class="form-label">Distanta fata de mine : <span id="val"></span></label>
+      <input type="range" min="1" max="1000" value="500" class="form-range slider" id="distantaUni" name="distanta">
+      
     </div>
   </div>
   <div class="col-12 div-submit">
