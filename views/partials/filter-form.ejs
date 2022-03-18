@@ -1,9 +1,11 @@
-<form class="row g-3" action="/filter" method="post">
+<form class="row g-3" action="/universitati" method="post">
   <div class="col-md-6">
     <label for="inputState" class="form-label">Oras</label>
     <select id="inputState" class="form-select" name="oras">
       <option selected>Alege...</option>
       <option>Bucuresti</option>
+      <option>Craiova</option>
+      <option>Cluj</option>
     </select>
   </div>
   <div class="col-md-6">
@@ -12,8 +14,10 @@
       <option selected>Alege...</option>
 
       <% for(var i=0;i<materii.length;i++){ %>
-      <option><%= materii[i] %></option>
-      <% } %>
+        <option>
+          <%= materii[i] %>
+        </option>
+        <% } %>
 
     </select>
   </div>
@@ -42,9 +46,10 @@
   </div>
   <div class="col-12">
     <div>
+
       <label for="distantaUni" class="form-label">Distanta fata de mine : <span id="val"></span></label>
-      <input type="range" min="1" max="1000" value="500" class="form-range slider" id="distantaUni" name="distanta">
-      
+      <input type="range" min="1" max="1000" value="1000" class="form-range slider" id="distantaUni" name="distanta">
+
     </div>
   </div>
   <div class="col-12 div-submit">
