@@ -15,6 +15,11 @@
           <%= uni.nume %>
         </h3>
         <p class="card-text">
+          <small class="text-muted">
+            <%= uni.oras %>
+          </small>
+        </p>
+        <p class="card-text">
           <%= uni.descriere %>
         </p>
 
@@ -26,12 +31,6 @@
             </span>
             <% } %>
 
-        </p>
-
-        <p class="card-text">
-          <small class="text-muted">
-            <%= uni.oras %>
-          </small>
         </p>
         <a href="https://<%= uni.link %>" target="_blank" class="btn btn-success buton-link">Viziteaza website</a>
       </div>
