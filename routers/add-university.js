@@ -83,7 +83,6 @@ router.post("/", upload.single("photo"), (req, res) => {
         specializari: add.addArray(req.body.specializari),
         materii: add.addArray(req.body.materii),
       });
-      console.log("lol");
       fs.unlink("./public/uploads/" + req.file.filename, (err) => {
         if (err) {
           console.error(err);

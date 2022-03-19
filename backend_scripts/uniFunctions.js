@@ -8,29 +8,42 @@ module.exports = {
     }
   },
   oras: function oras(uni, req) {
-    if (req === "Alege...") return true;
+    if (req === "") return true;
     return uni.oras === req;
   },
   materii: function materii(uni, req) {
-    console.log(req);
-    if (req === "Alege...") return true;
-    var cnt = uni.tags.length;
-    for (var i = 0; i < cnt; i++) {
-      if (uni.tags[i] === req) return true;
+    if (req[0] === "") return true;
+    var cntUni = uni.materii.length;
+    var cntFilter = req.length;
+    for (var i = 0; i < cntFilter; i++) {
+      var ok = false;
+      for (var j = 0; j < cntUni; j++) {
+        if (uni.materii[j] === req[i]) {
+          ok = true;
+        }
+      }
+      if (ok === false) return false;
     }
-    return false;
+    return true;
   },
   rating: function rating(uni, req) {
     if (req === "Alege...") return true;
     return true;
   },
   specializare: function specializare(uni, req) {
-    if (req === "Alege...") return true;
-    var cnt = uni.tags.length;
-    for (var i = 0; i < cnt; i++) {
-      if (uni.tags[i] === req) return true;
+    if (req[0] === "") return true;
+    var cntUni = uni.specializari.length;
+    var cntFilter = req.length;
+    for (var i = 0; i < cntFilter; i++) {
+      var ok = false;
+      for (var j = 0; j < cntUni; j++) {
+        if (uni.specializari[j] === req[i]) {
+          ok = true;
+        }
+      }
+      if (ok === false) return false;
     }
-    return false;
+    return true;
   },
   distanta: function distanta(uni, req) {
     // if (req === "Alege...") return true;

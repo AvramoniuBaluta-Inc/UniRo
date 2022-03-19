@@ -5,6 +5,7 @@ var specializari = [
   "Inginerie",
   "Robotica",
   "Aeronautica",
+  "Economie",
 ];
 
 module.exports = specializari;
