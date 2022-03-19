@@ -7,6 +7,7 @@ const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
 const multer = require("multer");
 var fs = require("fs");
 var path = require("path");
+var allTags = require("../public/scripts/allTags");
 
 ///storage
 const storage = multer.diskStorage({

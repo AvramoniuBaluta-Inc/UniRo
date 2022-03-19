@@ -67,8 +67,18 @@
           <div class="input-box">
             <div id="tags">
               <span class="details">Tag 1</span>
-              <input class="form-control" type="text" name="tag1" id="" />
+              <select id="inputState" class="form-select" name="tag1">
+                <option selected>Alege...</option>
+
+                <% // for(var i=0;i<tags.length;i++){ %>
+                  <option>
+                    <%= //tags[i] %>
+                  </option>
+                  <% //} %>
+
+              </select>
             </div>
+
 
             <br /><br /><br />
 
