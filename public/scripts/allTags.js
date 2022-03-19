@@ -10,6 +10,10 @@ var tags = [
   "Geografie",
   "Istorie",
   "Fizica",
+  "IT",
+  "Medicina",
+  "Inginerie",
+  "Aeronautica",
 ];
 
 module.exports = tags;

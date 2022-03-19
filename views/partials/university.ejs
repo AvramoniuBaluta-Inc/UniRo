@@ -25,12 +25,16 @@
 
         <p id="taguri">
 
-          <% for(var i=0;i<uni.tags.length;i++){ %>
+          <% for(var i=0;i<uni.specializari.length;i++){ %>
             <span class="tag" id="tag">
-              <%= uni.tags[i] %>
+              <%= uni.specializari[i] %>
             </span>
             <% } %>
-
+              <% for(var i=0;i<uni.materii.length;i++){ %>
+                <span class="tag" id="tag">
+                  <%= uni.materii[i] %>
+                </span>
+                <% } %>
         </p>
         <a href="https://<%= uni.link %>" target="_blank" class="btn btn-success buton-link">Viziteaza website</a>
       </div>

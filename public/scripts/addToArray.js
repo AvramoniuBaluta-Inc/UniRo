@@ -1,8 +1,7 @@
-const tags = [];
-
 module.exports = {
-  addArray: function add_to_array(req, res) {
-    var string = req.body.tags;
+  addArray: function add_to_array(req) {
+    var newArray = [];
+    var string = req;
     var newTag = "";
     var cnt = string.length;
     var cntTags = 0;
@@ -12,10 +11,9 @@ module.exports = {
         newTag = newTag + string[i];
         i++;
       }
-      tags[cntTags] = newTag;
-      console.log(newTag);
+      newArray[cntTags] = newTag;
       cntTags++;
     }
+    return newArray;
   },
-  taguri: tags,
 };

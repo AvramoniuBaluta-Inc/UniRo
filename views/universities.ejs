@@ -17,8 +17,19 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
-    <%- include('partials/favicon'); %>
-    <link rel="stylesheet" href="css/explore.css">
+        <%- include('partials/favicon'); %>
+            <link rel="stylesheet" href="css/explore.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+                integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+                integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -51,11 +62,11 @@
 
             <% for(var i=1;i<lungime;i++){ %>
 
-            <% uni=uniArray[i]; %>
+                <% uni=uniArray[i]; %>
 
-            <%- include('partials/university', {uni: uni}); %>
+                    <%- include('partials/university', {uni: uni}); %>
 
-            <% } %>
+                        <% } %>
 
         </div>
     </section>
@@ -80,7 +91,9 @@
     <script src="scripts/menu.js"></script>
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
-
+    <script>
+        $('#materii').dropdown();
+    </script>
 </body>
 
 </html>

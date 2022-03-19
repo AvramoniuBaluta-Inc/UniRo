@@ -13,8 +13,8 @@ const uniSchema = new mongoose.Schema({
     contentType: String,
   },
   rating: Number,
-  tags: [], //info, biologie, filozofie, etc
-  facultati: [], //id ul facultatii
+  materii: [],
+  specializari: [],
 });
 
 module.exports = uniSchema;

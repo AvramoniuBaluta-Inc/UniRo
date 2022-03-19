@@ -60,7 +60,18 @@
           </div>
           <div class="input-box">
             <span class="details">ORAS</span>
-            <input class="form-control" type="text" name="oras" id="" />
+            <div id="oras" class="ui fluid search selection dropdown">
+              <input type="hidden" name="tags">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Tag</div>
+              <div class="menu">
+                <% for(var i=0;i<orase.length;i++){ %>
+                  <div class="item" data-value="<%= orase[i] %>">
+                    <%= orase[i] %>
+                  </div>
+                  <% } %>
+              </div>
+            </div>
           </div>
           <div class="input-box">
             <span class="details">EMAIL</span>
@@ -74,27 +85,36 @@
             <input type="file" name="photo" id="photo" value="">
           </div>
           <div class="input-box">
-            <div id="tags">
-
+            <div>
               <span class="details">Tag 1</span>
-              <div id="tagSelect" class="ui fluid multiple search selection dropdown">
-                <input type="hidden" name="tags">
+              <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
+                <input type="hidden" name="materii">
                 <i class="dropdown icon"></i>
-                <div class="default text">Select Tag</div>
+                <div class="default text">Materii...</div>
                 <div class="menu">
-                  <% for(var i=0;i<tags.length;i++){ %>
-                    <div class="item" data-value="<%= tags[i] %>">
-                      <%= tags[i] %>
+                  <% for(var i=0;i<materii.length;i++){ %>
+                    <div class="item" data-value="<%= materii[i] %>">
+                      <%= materii[i] %>
                     </div>
                     <% } %>
                 </div>
               </div>
             </div>
-
-
-            <br /><br /><br />
-
-            <input type="button" id="1" class="hero-btn" value="Adauga tag-uri" onclick="createInputBox_tags();" />
+            <div>
+              <span class="details">Tag 1</span>
+              <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
+                <input type="hidden" name="specializari">
+                <i class="dropdown icon"></i>
+                <div class="default text">Specializari...</div>
+                <div class="menu">
+                  <% for(var i=0;i<specializari.length;i++){ %>
+                    <div class="item" data-value="<%= specializari[i] %>">
+                      <%= specializari[i] %>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <br />
@@ -110,9 +130,10 @@
   <br><br><br><br><br><br>
 
   <script src="scripts/menu.js"></script>
-  <script src="scripts/tags.js"></script>
   <script>
-    $('#tagSelect').dropdown();
+    $('#materiiSelect').dropdown();
+    $('#specializariSelect').dropdown();
+    $('#oras').dropdown();
   </script>
 </body>
 

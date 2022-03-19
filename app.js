@@ -19,7 +19,7 @@ var homeRoutes = require("./routers/home.js");
 var addUniRoutes = require("./routers/add-university.js");
 var adminRoutes = require("./routers/login_admin.js");
 
-const { University, Admin, Facultate } = require("./database_models/models");
+const { University, Admin } = require("./database_models/models");
 
 ///////////////////////////
 

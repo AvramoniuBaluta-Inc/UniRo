@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var add = require("../public/scripts/addTags.js");
+var add = require("../public/scripts/addToArray.js");
 const { University } = require("../database_models/models.js");
 var idGenerate = require("../backend_scripts/addId.js");
 const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
@@ -8,6 +8,9 @@ const multer = require("multer");
 var fs = require("fs");
 var path = require("path");
 var allTags = require("../public/scripts/allTags");
+var orase = require("../public/scripts/orase");
+var materii = require("../public/scripts/materii.js");
+var specializari = require("../public/scripts/specializari.js");
 
 ///storage
 const storage = multer.diskStorage({
@@ -26,13 +29,14 @@ const upload = multer({
 
 router.get("/", isLoggedIn, (req, res) => {
   res.render("add-university", {
-    tags: allTags,
+    specializari: specializari,
+    materii: materii,
+    orase: orase,
   });
 });
 
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
-  add.addArray(req, res);
   if (req.file === undefined) {
     (async () => {
       idUni = await idGenerate.generateID(University);
@@ -43,7 +47,8 @@ router.post("/", upload.single("photo"), (req, res) => {
         oras: req.body.oras,
         email: req.body.email,
         link: req.body.link,
-        tags: add.taguri,
+        specializari: add.addArray(req.body.specializari),
+        materii: add.addArray(req.body.materii),
       });
 
       if (
@@ -57,13 +62,11 @@ router.post("/", upload.single("photo"), (req, res) => {
         console.log("Error : No input");
       } else {
         universitate.save();
-        tags = [];
       }
     })();
   } else {
     (async () => {
       idUni = await idGenerate.generateID(University);
-
       const universitate = new University({
         _id: idUni,
         nume: req.body.nume,
@@ -77,8 +80,10 @@ router.post("/", upload.single("photo"), (req, res) => {
           ),
           contentType: "image/png",
         },
-        tags: add.taguri,
+        specializari: add.addArray(req.body.specializari),
+        materii: add.addArray(req.body.materii),
       });
+      console.log("lol");
       fs.unlink("./public/uploads/" + req.file.filename, (err) => {
         if (err) {
           console.error(err);
@@ -97,7 +102,6 @@ router.post("/", upload.single("photo"), (req, res) => {
         console.log("Error : No input");
       } else {
         universitate.save();
-        tags = [];
       }
     })();
   }

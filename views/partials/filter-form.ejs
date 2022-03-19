@@ -10,16 +10,18 @@
   </div>
   <div class="col-md-6">
     <label for="inputState" class="form-label">Materii Studiate</label>
-    <select id="inputState" class="form-select" name="materii">
-      <option selected>Alege...</option>
-
-      <% for(var i=0;i<materii.length;i++){ %>
-        <option>
-          <%= materii[i] %>
-        </option>
-        <% } %>
-
-    </select>
+    <div id="materii" class="ui fluid search multiple selection dropdown">
+      <input type="hidden" name="tags">
+      <i class="dropdown icon"></i>
+      <div class="default text">Alege...</div>
+      <div class="menu">
+        <% for(var i=0;i<materii.length;i++){ %>
+          <div class="item" data-value="<%= materii[i] %>">
+            <%= materii[i] %>
+          </div>
+          <% } %>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-6">

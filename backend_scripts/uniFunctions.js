@@ -12,6 +12,7 @@ module.exports = {
     return uni.oras === req;
   },
   materii: function materii(uni, req) {
+    console.log(req);
     if (req === "Alege...") return true;
     var cnt = uni.tags.length;
     for (var i = 0; i < cnt; i++) {
