@@ -119,10 +119,12 @@ svg * {
 
 .card-title {
   padding-top: 3%;
+  font-size: 32px;
 }
 
 .card-text {
   margin-bottom: 5%;
+  font-size: 16px;
 }
 
 .buton-link {
@@ -232,13 +234,19 @@ svg * {
   color: #f44336;
 }
 
-.content_after_load {
-  display: none;
+
+.popUp-title {
+  font-size: 32px;
 }
+
 
 
  /* loader */
  
+.content_after_load {
+  display: none;
+}
+
 .loader {
   height: 100vh;
   width: 100vw;
@@ -266,6 +274,19 @@ svg * {
 }
 
 
+/* general styles */
+
 .navigation {
   display: flex;
+}
+
+.mat-btn {
+  border-radius: 0%;
+  color: #111;
+  background-color: #fff;
+  border-color: #111;
+}
+
+.item {
+  padding: 0 10px ;
 }

@@ -3,11 +3,11 @@
   <div class="row">
     <div class="col-md-4 img-size">
       <% if(!(uni.img.data===undefined )){ %>
-        <img src=" data:uni.photo/<%=uni.img.contentType%>;base64,
+      <img src=" data:uni.photo/<%=uni.img.contentType%>;base64,
                      <%=uni.img.data.toString('base64')%>">
-        <% } else {%>
-          <img src="/images/test.png" alt="">
-          <% } %>
+      <% } else {%>
+      <img src="/images/test.png" alt="">
+      <% } %>
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -24,19 +24,31 @@
         </p>
 
         <p id="taguri">
-
           <% for(var i=0;i<uni.specializari.length;i++){ %>
-            <span class="tag" id="tag">
-              <%= uni.specializari[i] %>
-            </span>
-            <% } %>
-              <% for(var i=0;i<uni.materii.length;i++){ %>
-                <span class="tag" id="tag">
-                  <%= uni.materii[i] %>
-                </span>
-                <% } %>
+          <span class="tag" id="tag">
+            <%= uni.specializari[i] %>
+          </span>
+          <% } %>
         </p>
-        <a href="https://<%= uni.link %>" target="_blank" class="btn btn-success buton-link">Viziteaza website</a>
+
+
+        <div class="dropdown">
+
+          <button class="btn btn-info mat-btn" type="button" data-toggle="dropdown">
+            Materii studiate <i class="dropdown icon"></i>
+          </button>
+
+          <div class="dropdown-menu">
+            <% for(var i=0;i<uni.materii.length;i++){ %>
+            <p class="item">
+              <%= uni.materii[i] %>
+            </p>
+            <% } %>
+          </div>
+
+        </div>
+
+        <a href="https://<%= uni.link %>" target="_blank" class="btn buton-link">Viziteaza website</a>
       </div>
     </div>
   </div>
