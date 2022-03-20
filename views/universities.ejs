@@ -95,9 +95,13 @@
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
     <script>
+        $("#submit-button").on('click', function () {
+            $('.content_after_load').fadeOut(1000);
+            $('.loader').fadeIn(1000);
+        });
         $(window).on('load', function () {
-            $('.loader').fadeOut(2000);
-            $('.content_after_load').fadeIn(2000);
+            $('.loader').fadeOut(1000);
+            $('.content_after_load').fadeIn(1000);
         });
         $('#materii').dropdown();
         $('#specializari').dropdown();
