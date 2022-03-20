@@ -246,8 +246,8 @@ svg * {
   position: absolute;
 }
 .loading-circle {
-  height: 100px;
-  width: 100px;
+  height: 126px;
+  width: 126px;
   border: 13px solid #000;
   border-top-color: #f44336;
   position: absolute;
