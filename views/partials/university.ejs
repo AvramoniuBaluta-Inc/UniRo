@@ -12,7 +12,10 @@
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title">
-          <%= uni.nume %>
+          <%= uni.nume %> 
+          <span class="rating">
+            <%= uni.rating %> <i class="fa fa-star"aria-hidden="true"></i>
+          </span>
         </h3>
         <p class="card-text">
           <small class="text-muted">
@@ -34,7 +37,7 @@
 
         <div class="dropdown">
 
-          <button class="btn btn-info mat-btn" type="button" data-toggle="dropdown">
+          <button class="btn mat-btn" type="button" data-toggle="dropdown">
             Materii studiate <i class="dropdown icon"></i>
           </button>
 

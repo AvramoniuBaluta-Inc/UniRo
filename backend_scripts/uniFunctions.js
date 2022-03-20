@@ -28,7 +28,7 @@ module.exports = {
   },
   rating: function rating(uni, req) {
     if (req === "Alege...") return true;
-    return true;
+    return uni.rating === req;
   },
   specializare: function specializare(uni, req) {
     if (req[0] === "") return true;

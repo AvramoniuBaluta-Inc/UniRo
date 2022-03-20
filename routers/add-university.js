@@ -49,6 +49,7 @@ router.post("/", upload.single("photo"), (req, res) => {
         link: req.body.link,
         specializari: add.addArray(req.body.specializari),
         materii: add.addArray(req.body.materii),
+        rating: req.body.rating,
       });
 
       if (
@@ -57,7 +58,8 @@ router.post("/", upload.single("photo"), (req, res) => {
         universitate.descriere === "" ||
         universitate.oras === "" ||
         universitate.email === "" ||
-        universitate.link === ""
+        universitate.link === "" ||
+        universitate.rating === ""
       ) {
         console.log("Error : No input");
       } else {
@@ -82,6 +84,7 @@ router.post("/", upload.single("photo"), (req, res) => {
         },
         specializari: add.addArray(req.body.specializari),
         materii: add.addArray(req.body.materii),
+        rating: req.body.rating,
       });
       fs.unlink("./public/uploads/" + req.file.filename, (err) => {
         if (err) {
@@ -96,7 +99,8 @@ router.post("/", upload.single("photo"), (req, res) => {
         universitate.descriere === "" ||
         universitate.oras === "" ||
         universitate.email === "" ||
-        universitate.link === ""
+        universitate.link === "" ||
+        universitate.rating === ""
       ) {
         console.log("Error : No input");
       } else {

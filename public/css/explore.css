@@ -31,8 +31,8 @@
 }
 
 .hero-btn:hover {
-  border: 1px solid #f44336;
-  background: #f44336;
+  border: 1px solid #111;
+  background: #111;
   transition: 0.7s;
   color: #fff;
 }
@@ -143,7 +143,7 @@ svg * {
 
 .tag {
   border-radius: 20px;
-  padding: 0 1.3%;
+  padding: 0 1.5%;
   margin-right: 0.5%;
   color: #fff;
   background-color: #f44336;
@@ -230,10 +230,6 @@ svg * {
   width: 100%;
 }
 
-.form-range {
-  color: #f44336;
-}
-
 
 .popUp-title {
   font-size: 32px;
@@ -280,13 +276,34 @@ svg * {
   display: flex;
 }
 
+/* materii button styling */
+
 .mat-btn {
   border-radius: 0%;
-  color: #111;
+  color: #11a8ff;
   background-color: #fff;
-  border-color: #111;
+  border-color: #11a8ff;
+}
+
+.mat-btn:hover {
+  background-color: #11a8ff;
+  color: #fff;
+}
+
+.mat-btn:focus {
+  outline: none !important;
+  box-shadow: none;
 }
 
 .item {
   padding: 0 10px ;
 }
+
+/* star rating  */
+/* color: #ffc400; */
+.rating {
+  color: #f44336;
+  margin-left: 1%;
+}
+
+/*  */
