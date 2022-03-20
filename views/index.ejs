@@ -41,7 +41,7 @@
       <div class="text-box">
         <h1>Gaseste universitatea perfecta</h1>
         <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
-        <a href="/universitati" class="hero-btn">Exploreaza</a>
+        <a id="explore-button2" href="/universitati" class="hero-btn">Exploreaza</a>
       </div>
     </section>
 
@@ -131,6 +131,10 @@
       $('.content_after_load').fadeIn(1);
     });
     $("#explore-button").on('click', function () {
+      $('.content_after_load').fadeOut(400);
+      $('.loader').fadeIn(400);
+    });
+    $("#explore-button2").on('click', function () {
       $('.content_after_load').fadeOut(400);
       $('.loader').fadeIn(400);
     });
