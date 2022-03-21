@@ -5,7 +5,11 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< Updated upstream
       <title>Document</title>
+=======
+      <title>Admin Login</title>
+>>>>>>> Stashed changes
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -34,6 +38,7 @@
       />
       <link rel="stylesheet" href="css/styles-homepage.css" />
       <link rel="stylesheet" href="css/styles-login_admin.css" />
+<<<<<<< Updated upstream
 
       <script src="https://use.fontawesome.com/894924603a.js"></script>
       <script
@@ -51,20 +56,42 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"
       ></script>
+=======
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="https://use.fontawesome.com/894924603a.js"></script>
+      <%- include('partials/scriptbootstrap'); %> <%-
+      include('partials/favicon'); %>
+>>>>>>> Stashed changes
     </head>
   </head>
 
   <body>
+<<<<<<< Updated upstream
     <section class="header">
+=======
+    <section class="header content_after_load">
+>>>>>>> Stashed changes
       <nav>
         <a href="/"> <%- include("partials/logo") %> </a>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
+<<<<<<< Updated upstream
             <li><a href="/">HOME</a></li>
             <li><a href="">ABOUT</a></li>
             <li><a href="/explore">EXPLORE</a></li>
             <li><a href="/add-university">CONTACT</a></li>
+=======
+            <li><a href="/">ACASA</a></li>
+            <li>
+              <a id="explore-button" href="/universitati">UNIVERSITATI</a>
+            </li>
+>>>>>>> Stashed changes
           </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -75,11 +102,15 @@
           <input type="checkbox" id="chk" aria-hidden="true" />
 
           <div class="signup">
+<<<<<<< Updated upstream
             <form
               class="signup-form"
               action="/login-admin/register"
               method="POST"
             >
+=======
+            <form class="signup-form" action="/admin/register" method="POST">
+>>>>>>> Stashed changes
               <label for="chk" aria-hidden="true">Sign up</label>
               <input type="text" placeholder="Admin Key" name="admin" />
               <input type="text" placeholder="Username" name="username" />
@@ -90,7 +121,11 @@
           </div>
 
           <div class="login">
+<<<<<<< Updated upstream
             <form action="/login-admin" method="POST">
+=======
+            <form action="/admin" method="POST">
+>>>>>>> Stashed changes
               <label for="chk" aria-hidden="true">Login</label>
               <input type="text" placeholder="Username" name="username" />
               <input type="password" placeholder="Password" name="password" />
@@ -101,6 +136,23 @@
       </div>
     </section>
 
+<<<<<<< Updated upstream
     <script src="scripts/menu.js"></script>
+=======
+    <div class="loader">
+      <div class="loading-circle"></div>
+    </div>
+    <script src="scripts/menu.js"></script>
+    <script>
+      $(window).on("load", function () {
+        $(".loader").fadeOut(1);
+        $(".content_after_load").fadeIn(1);
+      });
+      $("#explore-button").on("click", function () {
+        $(".content_after_load").fadeOut(400);
+        $(".loader").fadeIn(400);
+      });
+    </script>
+>>>>>>> Stashed changes
   </body>
 </html>
