@@ -45,6 +45,8 @@ router.post("/", upload.single("photo"), (req, res) => {
         nume: req.body.nume,
         descriere: req.body.descriere,
         oras: req.body.oras,
+        latitudine: req.body.latitude,
+        longitudine: req.body.longitude,
         email: req.body.email,
         link: req.body.link,
         specializari: add.addArray(req.body.specializari),
@@ -74,6 +76,8 @@ router.post("/", upload.single("photo"), (req, res) => {
         nume: req.body.nume,
         descriere: req.body.descriere,
         oras: req.body.oras,
+        latitudine: req.body.latitude,
+        longitudine: req.body.longitude,
         email: req.body.email,
         link: req.body.link,
         img: {

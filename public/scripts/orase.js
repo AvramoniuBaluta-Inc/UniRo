@@ -1,4 +1,5 @@
 var orase = [
+  "Alege...",
   "Alba Iulia",
   "Arad",
   "Bacau",

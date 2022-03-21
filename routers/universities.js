@@ -47,7 +47,12 @@ router.post("/", function (req, res) {
           uniArray[i],
           add.addArray(req.body.specializari)
         ) &&
-        uniFunctions.distanta(uniArray[i], req.body.distanta)
+        uniFunctions.distanta(
+          uniArray[i],
+          req.body.distanta,
+          req.body.latitude,
+          req.body.longitude
+        )
       ) {
         uniArrayFiltered[cntFiltered] = uniArray[i];
         cntFiltered++;

@@ -6,6 +6,8 @@ const uniSchema = new mongoose.Schema({
   nume: String,
   descriere: String,
   oras: String,
+  latitudine: Number,
+  longitudine: Number,
   email: String,
   link: String,
   img: {

@@ -1,5 +1,24 @@
 const { University } = require("../database_models/models.js");
 
+function calcDistanta(lat1, lon1, lat2, lon2) {
+  var R = 6371;
+  var dLat = radiani(lat2 - lat1);
+  var dLon = radiani(lon2 - lon1);
+  var lat1 = radiani(lat1);
+  var lat2 = radiani(lat2);
+
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  return d;
+}
+
+function radiani(Value) {
+  return (Value * Math.PI) / 180;
+}
+
 module.exports = {
   number_of_elements: async function number_of_elements(req, res) {
     for (let i = 1; 1; i++) {
@@ -8,7 +27,7 @@ module.exports = {
     }
   },
   oras: function oras(uni, req) {
-    if (req === "") return true;
+    if (req === "" || req === "Alege...") return true;
     return uni.oras === req;
   },
   materii: function materii(uni, req) {
@@ -46,8 +65,13 @@ module.exports = {
     }
     return true;
   },
-  distanta: function distanta(uni, req) {
-    // if (req === "Alege...") return true;
-    return true;
+  distanta: function distanta(uni, req_distanta, req_lat, req_lon) {
+    if (uni.latitudine == undefined) return true;
+    if (
+      req_distanta >=
+      calcDistanta(uni.latitudine, uni.longitudine, req_lat, req_lon)
+    )
+      return true;
+    return false;
   },
 };
