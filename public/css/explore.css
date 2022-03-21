@@ -42,9 +42,8 @@ nav .fa {
 }
 
 nav {
-
   display: flex;
-  padding: 2% 4%;
+  padding: 1% 4%;
   justify-content: space-between;
   align-items: center;
 }
@@ -127,10 +126,7 @@ svg * {
   margin-bottom: 5%;
   font-size: 16px;
 }
-.display {
-  padding-top: 1%;
-  padding-bottom: 5%;
-}
+
 .buton-link {
   border-radius: 0;
   margin-top: 7%;

@@ -7,31 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universitati Romania</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css%22%3E
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/894924603a.js%22%3E</script>
+    <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
     <%- include('partials/favicon'); %>
     <!-- css file for dropdowns (not input) -->
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- css file  -->
+    <link rel="stylesheet" href="css/explore.css">
     <!-- dropdown css file (input drops)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!-- css file  -->
-    <link rel="stylesheet" href="css/explore.css">
-
     <!-- some scripts for other dropdowns (not the input ones)-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- scripts for input dropdowns  -->
     <%- include('partials/dropdown'); %>
+    
+
 
 </head>
 
@@ -52,9 +53,8 @@
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><a href="/add-university">CONTACT</a></li>
-                        <li><a href="/despre">DESPRE NOI</a></li>
-                        <li><a class="permanent" href="/">ACASA</a></li>
-
+                        <li><a href="">ABOUT</a></li>
+                        <li><a class="permanent" href="/">HOME</a></li>
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -75,7 +75,7 @@
                 <% uni=uniArray[i]; %>
 
                 <%- include('partials/university', {uni: uni}); %>
-                
+
                 <% } %>
 
             </div>
