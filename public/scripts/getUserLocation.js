@@ -11,10 +11,10 @@ button.addEventListener("click", () => {
 });
 
 function succes(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
+  document.getElementById("latitude").value = latitude;
+  document.getElementById("longitude").value = longitude;
 }
 
 function err() {
