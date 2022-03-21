@@ -43,7 +43,7 @@ nav .fa {
 
 nav {
   display: flex;
-  padding: 1% 4%;
+  padding: 2% 4%;
   justify-content: space-between;
   align-items: center;
 }
@@ -277,6 +277,11 @@ svg * {
 }
 
 /* materii button styling */
+
+.display {
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
 
 .mat-btn {
   border-radius: 0%;
