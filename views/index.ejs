@@ -18,105 +18,114 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://use.fontawesome.com/894924603a.js"></script>
   <%- include('partials/favicon'); %>
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-<body>
-  <section class="content_after_load">
-    <section class="header">
-      <nav>
-        <a href="/">
-          <%- include("partials/logo") %>
-        </a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
-            <li><a href="">ABOUT</a></li>
-            <li><a id="explore-button" href="/universitati">UNIVERSITATI</a></li>
-            <li><a href="/add-university">CONTACT</a></li>
-          </ul>
+  <body>
+    <section class="content_after_load">
+      <section class="header">
+        <nav>
+          <a href="/"> <%- include("partials/logo") %> </a>
+          <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="/despre">DESPRE NOI</a></li>
+              <li>
+                <a id="explore-button" href="/universitati">UNIVERSITATI</a>
+              </li>
+              <li><a href="/add-university">CONTACT</a></li>
+            </ul>
+          </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+          <h1>Gaseste universitatea perfecta</h1>
+          <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
+          <a id="explore-button2" href="/universitati" class="hero-btn"
+            >Exploreaza</a
+          >
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
+      </section>
 
-      <div class="text-box">
-        <h1>Gaseste universitatea perfecta</h1>
-        <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
-        <a id="explore-button2" href="/universitati" class="hero-btn">Exploreaza</a>
-      </div>
-    </section>
+      <section class="second">
+        <div class="top-unis">
+          <h1>Universitati de top in Romania</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
+            quia id voluptatibus? Nihil aperiam consequuntur, culpa illum est
+            nostrum doloribus, ducimus facilis a corrupti minus veniam nobis
+            odio iste.
+          </p>
 
-    <section class="second">
-      <div class="top-unis">
-        <h1>Universitati de top in Romania</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
-          quia id voluptatibus? Nihil aperiam consequuntur, culpa illum est
-          nostrum doloribus, ducimus facilis a corrupti minus veniam nobis odio
-          iste.
-        </p>
+          <div class="row">
+            <div class="col">
+              <h3>Politehnica Bucuresti</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                ex enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+                perspiciatis pariatur dignissimos eum doloremque optio culpa,
+                sequi laboriosam. Quia?
+              </p>
+            </div>
 
-        <div class="row">
-          <div class="col">
-            <h3>Politehnica Bucuresti</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
-              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
-              perspiciatis pariatur dignissimos eum doloremque optio culpa,
-              sequi laboriosam. Quia?
-            </p>
-          </div>
+            <div class="col">
+              <h3>Universitatea Carol Davila</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                ex enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+                perspiciatis pariatur dignissimos eum doloremque optio culpa,
+                sequi laboriosam. Quia?
+              </p>
+            </div>
 
-          <div class="col">
-            <h3>Universitatea Carol Davila</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
-              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
-              perspiciatis pariatur dignissimos eum doloremque optio culpa,
-              sequi laboriosam. Quia?
-            </p>
-          </div>
-
-          <div class="col">
-            <h3>Universitatea Babes-Bolyai</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
-              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
-              perspiciatis pariatur dignissimos eum doloremque optio culpa,
-              sequi laboriosam. Quia?
-            </p>
+            <div class="col">
+              <h3>Universitatea Babes-Bolyai</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                ex enim! Nam quos sunt quod repudiandae error eveniet cumque ut
+                perspiciatis pariatur dignissimos eum doloremque optio culpa,
+                sequi laboriosam. Quia?
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="cta">
-      <div class="contact-box">
-        <h1>Contacteaza-ne pentru detalii</h1>
-        <a class="hero-btn" href="/add-university">Contact</a>
-      </div>
-    </section>
+      <section class="cta">
+        <div class="contact-box">
+          <h1>Contacteaza-ne pentru detalii</h1>
+          <a class="hero-btn" href="/add-university">Contact</a>
+        </div>
+      </section>
 
-    <br /><br /><br />
+      <br /><br /><br />
 
-    <section class="footer">
-      <h4>Despre noi</h4>
+      <section class="footer">
+        <h4>Despre noi</h4>
 
-      <div class="desc">
-        <p>
-          UniRo are misiunea de a va ajuta sa va gasiti universitatea ideala
-          pentru dumneavoastra, iar platforma noastra are aproape toate
-          universitatile din Romania deja inregistrate. Daca doriti adaugarea
-          unei universitati noi, contactati-ne in legatura cu aceasta.
-        </p>
-      </div>
+        <div class="desc">
+          <p>
+            UniRo are misiunea de a va ajuta sa va gasiti universitatea ideala
+            pentru dumneavoastra, iar platforma noastra are aproape toate
+            universitatile din Romania deja inregistrate. Daca doriti adaugarea
+            unei universitati noi, contactati-ne in legatura cu aceasta.
+          </p>
+        </div>
 
-      <div class="icons">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-envelope"></i>
-        <i class="fa fa-instagram"></i>
-      </div>
+        <div class="icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-envelope"></i>
+          <i class="fa fa-instagram"></i>
+        </div>
 
-      <p>© Copyright UniRo 2022</p>
+        <p>© Copyright UniRo 2022</p>
+      </section>
     </section>
   </section>
 
@@ -138,8 +147,31 @@
       $('.content_after_load').fadeOut(400);
       $('.loader').fadeIn(400);
     });
-
+    $('#materii').dropdown();
+    $('#specializari').dropdown();
+    $('#oras').dropdown();
   </script>
 </body>
-
+    <div class="loader">
+      <div class="loading-circle"></div>
+    </div>
+    <script src="scripts/menu.js"></script>
+    <script>
+      $(window).on("load", function () {
+        $(".loader").fadeOut(1);
+        $(".content_after_load").fadeIn(1);
+      });
+      $("#explore-button").on("click", function () {
+        $(".content_after_load").fadeOut(400);
+        $(".loader").fadeIn(400);
+      });
+      $("#explore-button2").on("click", function () {
+        $(".content_after_load").fadeOut(400);
+        $(".loader").fadeIn(400);
+      });
+      $("#materii").dropdown();
+      $("#specializari").dropdown();
+      $("#oras").dropdown();
+    </script>
+  </body>
 </html>
