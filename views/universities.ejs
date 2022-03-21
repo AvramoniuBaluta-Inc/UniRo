@@ -46,7 +46,9 @@
 
             <nav class="navigation">
 
-                <p id="popUp-open-button" class="hero-btn filtru">Filtrare</p>
+                <button id="popUp-open-button" class="hero-btn filtru">Filtrare</button>
+                
+
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
@@ -95,10 +97,12 @@
             </div>
         </div>
         <div id="overlay"></div>
+
     </section>
     <script src="scripts/menu.js"></script>
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
+    <script src="scripts/getUserLocation.js"></script>
     <script>
         $("#submit-button").on('click', function () {
             $('.content_after_load').fadeOut(1000);
@@ -111,6 +115,7 @@
         $('#materii').dropdown();
         $('#specializari').dropdown();
         $('#oras').dropdown();
+
     </script>
 </body>
 
