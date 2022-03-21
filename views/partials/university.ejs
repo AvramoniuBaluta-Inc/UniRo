@@ -1,7 +1,58 @@
-<div>
-    <p>
-        <%= uni.nume %>
-    </p>
-</div>
-
 <!-- aici iti faci tu talentu -->
+<div class="card mb-3 uni">
+  <div class="row">
+    <div class="col-md-4 img-size">
+      <% if(!(uni.img.data===undefined )){ %>
+      <img src=" data:uni.photo/<%=uni.img.contentType%>;base64,
+                     <%=uni.img.data.toString('base64')%>">
+      <% } else {%>
+      <img src="/images/test.png" alt="">
+      <% } %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">
+          <%= uni.nume %> 
+          <span class="rating">
+            <%= uni.rating %> <i class="fa fa-star"aria-hidden="true"></i>
+          </span>
+        </h3>
+        <p class="card-text">
+          <small class="text-muted">
+            <%= uni.oras %>
+          </small>
+        </p>
+        <p class="card-text">
+          <%= uni.descriere %>
+        </p>
+
+        <p id="taguri">
+          <% for(var i=0;i<uni.specializari.length;i++){ %>
+          <span class="tag" id="tag">
+            <%= uni.specializari[i] %>
+          </span>
+          <% } %>
+        </p>
+
+
+        <div class="dropdown">
+
+          <button class="btn mat-btn" type="button" data-toggle="dropdown">
+            Materii studiate <i class="dropdown icon"></i>
+          </button>
+
+          <div class="dropdown-menu">
+            <% for(var i=0;i<uni.materii.length;i++){ %>
+            <p class="item">
+              <%= uni.materii[i] %>
+            </p>
+            <% } %>
+          </div>
+
+        </div>
+
+        <a href="https://<%= uni.link %>" target="_blank" class="btn buton-link">Viziteaza website</a>
+      </div>
+    </div>
+  </div>
+</div>

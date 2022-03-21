@@ -1,0 +1,77 @@
+<form class="row g-3" action="/universitati" method="post">
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Oras</label>
+    <div id="oras" class="ui fluid search selection dropdown">
+      <input type="hidden" name="oras">
+      <i class="dropdown icon"></i>
+      <div class="default text">Toate</div>
+      <div class="menu">
+        <% for(var i=0;i<orase.length;i++){ %>
+          <div class="item" data-value="<%= orase[i] %>">
+            <%= orase[i] %>
+          </div>
+          <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Materii Studiate</label>
+    <div id="materii" class="ui fluid search multiple selection dropdown">
+      <input type="hidden" name="materii">
+      <i class="dropdown icon"></i>
+      <div class="default text">Toate</div>
+      <div class="menu">
+        <% for(var i=0;i<materii.length;i++){ %>
+          <div class="item" data-value="<%= materii[i] %>">
+            <%= materii[i] %>
+          </div>
+          <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Rating</label>
+    <select id="inputState" class="form-select" name="rating">
+      <option selected>Alege...</option>
+      <option>1 Stea</option>
+      <option>2 Stele</option>
+      <option>3 Stele</option>
+      <option>4 Stele</option>
+      <option>5 Stele</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">Specializare</label>
+    <div id="specializari" class="ui fluid search multiple selection dropdown">
+      <input type="hidden" name="specializari">
+      <i class="dropdown icon"></i>
+      <div class="default text">Toate</div>
+      <div class="menu">
+        <% for(var i=0;i<specializari.length;i++){ %>
+          <div class="item" data-value="<%= specializari[i] %>">
+            <%= specializari[i] %>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-12">
+    <div>
+
+      <label for="distantaUni" class="form-label">Distanta fata de mine : <span id="val"></span></label>
+      <input type="range" min="1" max="1000" value="1000" class="form-range slider" id="distantaUni" name="distanta">
+
+    </div>
+  </div>
+
+  <input id="latitude" type="hidden" name="latitude" value="-1" />
+  <input id="longitude" type="hidden" name="longitude" value="-1" />
+
+  <div class="col-12 div-submit">
+    <button type="submit" class="btn buton-link submit-btn" id="submit-button">
+      Aplica filtrele
+    </button>
+  </div>
+</form>

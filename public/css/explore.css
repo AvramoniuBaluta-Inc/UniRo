@@ -1,170 +1,313 @@
 * {
-    margin: 0% ;
-    padding: 0%;
-    font-family: "Poppins",
-    sans-serif;
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
 }
 
 .header {
-    width: 100%;
-    height: 20%;
-    background-position: top;
-    background-size: cover;
-    position: relative;
+  width: 100%;
+  height: 20%;
+  background-position: top;
+  background-size: cover;
+  position: relative;
 }
-
 
 /* navbar and filter button */
 
 .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
-    padding: 12px 34px;
-    font-size: 16px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #000;
+  padding: 12px 34px;
+  font-size: 16px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.filtru {
+  margin-left: 0;
 }
 
 .hero-btn:hover {
-    border: 1px solid #f44336;
-    background: #f44336;
-    transition: 0.7s;
+  border: 1px solid #111;
+  background: #111;
+  transition: 0.7s;
+  color: #fff;
 }
 
 nav .fa {
-    display: none;
+  display: none;
 }
 
 nav {
-<<<<<<< Updated upstream
-    display: flex;
-    padding: 1% 6%;
-    justify-content: space-between;
-    align-items: center;
-=======
+
   display: flex;
   padding: 2% 4%;
   justify-content: space-between;
   align-items: center;
->>>>>>> Stashed changes
 }
 
 nav img {
-    width: 170px;
+  width: 170px;
 }
 
 .nav-links {
-    flex: 1;
-    text-align: right;
+  flex: 1;
+  text-align: right;
 }
 
 .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 13px 13px;
-    position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 13px 13px;
+  position: relative;
 }
 
 .nav-links ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .nav-links ul li::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #f44336;
-    display: block;
-    margin: auto;
-    transition: 0.4s;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.4s;
 }
 
 .nav-links ul li:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 @media (max-width: 700px) {
-   
-
-    .nav-links ul li {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 0.7s;
-    }
-
-    nav .fa {
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-
-    .nav-links ul {
-        padding: 30px;
-    }
+  .nav-links ul li {
+    visibility: hidden;
+    padding: 0;
+  }
+  .permanent {
+    visibility: visible;
+  }
 }
-
-
 
 /* logo */
 svg {
-    width: 160px;
-    height: 120px;
+  width: 160px;
+  height: 120px;
 }
 
-<<<<<<< Updated upstream
 svg * {
-    width: 100%;
-    height: 100%;
-=======
-
-.display {
-  padding-top: 1%;
-  padding-bottom: 5%;
->>>>>>> Stashed changes
-}
-
-/* footer */
-.footer {
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 30px;
-    background-color: #1a1a1a;
-}
-
-.footer p {
-    font-size: 16px;
-    color: rgb(190, 190, 190);
-}
-
-.icons .fa {
-    color: #f44336;
-    margin: 10px 13px;
-    cursor: pointer;
-    padding: 18px 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 /* content */
 
-.display {
-    height: 100%;
-    width: 100%;
+.container1 {
+  margin: 0 4%;
 }
+
+.uni {
+  border-radius: 0;
+  border-color: rgb(199, 199, 199);
+}
+
+.card-title {
+  padding-top: 3%;
+  font-size: 32px;
+}
+
+.card-text {
+  margin-bottom: 5%;
+  font-size: 16px;
+}
+.display {
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
+.buton-link {
+  border-radius: 0;
+  margin-top: 7%;
+  background-color: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+.buton-link:hover {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.tag {
+  border-radius: 20px;
+  padding: 0 1.5%;
+  margin-right: 0.5%;
+  color: #fff;
+  background-color: #f44336;
+}
+
+@media (max-width: 700px) {
+  .tag {
+    margin-right: 1%;
+  }
+}
+
+.img-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-size img {
+  flex-shrink: 0;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* filter menu */
+
+.popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #111;
+  border-radius: 0;
+  z-index: 7;
+  background-color: #fff;
+  min-width: 75%;
+  min-height: 75%;
+}
+
+.popUp.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popUp-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #111; */
+}
+
+.popUp-close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.popUp-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+
+.popUp-title {
+  font-size: 32px;
+}
+
+
+
+ /* loader */
+ 
+.content_after_load {
+  display: none;
+}
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+}
+.loading-circle {
+  height: 126px;
+  width: 126px;
+  border: 13px solid #000;
+  border-top-color: #f44336;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* general styles */
+
+.navigation {
+  display: flex;
+}
+
+/* materii button styling */
+
+.mat-btn {
+  border-radius: 0%;
+  color: #11a8ff;
+  background-color: #fff;
+  border-color: #11a8ff;
+}
+
+.mat-btn:hover {
+  background-color: #11a8ff;
+  color: #fff;
+}
+
+.mat-btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.item {
+  padding: 0 10px ;
+}
+
+/* star rating  */
+/* color: #ffc400; */
+.rating {
+  color: #f44336;
+  margin-left: 1%;
+}
+
+/*  */

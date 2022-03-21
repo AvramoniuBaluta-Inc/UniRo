@@ -1,0 +1,26 @@
+var orase = [
+  "Alba Iulia",
+  "Arad",
+  "Bacau",
+  "Brasov",
+  "Bucuresti",
+  "Cluj Napoca",
+  "Constanta",
+  "Craiova",
+  "Galati ",
+  "Iasi",
+  "Lugoj",
+  "Oradea",
+  "Petrosani",
+  "Pitesti",
+  "Ploiesti",
+  "Resita",
+  "Sibiu",
+  "Suceava",
+  "Targoviste",
+  "Targu Jiu",
+  "Targu Mures",
+  "Timisoara",
+];
+
+module.exports = orase;

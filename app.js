@@ -10,24 +10,18 @@ var path = require("path");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require("passport-local").Strategy;
 
 ///////////////////////////
 
 var universitiesRouters = require("./routers/universities.js");
-<<<<<<< Updated upstream
-var homeRoutes = require("./routers/home.js") ;
-var addUniRoutes = require("./routers/add-university.js") ;
-var adminRoutes = require("./routers/login_admin.js") ;
-var exploreRoutes = require("./routers/explore") ;
-=======
+
 var homeRoutes = require("./routers/home.js");
 var addUniRoutes = require("./routers/add-university.js");
 var adminRoutes = require("./routers/login_admin.js");
 var aboutRoutes = require("./routers/about.js");
->>>>>>> Stashed changes
 
-const { University, Admin, Facultate } = require("./database_models/models");
+const { University, Admin } = require("./database_models/models");
 
 ///////////////////////////
 
@@ -77,12 +71,7 @@ mongoose
 ////////// main routes
 
 app.use("/", homeRoutes);
-app.use("/login-admin", adminRoutes);
-app.use("/universitati", universitiesRouters);
-<<<<<<< Updated upstream
-app.use("/add-university" , addUniRoutes) ;
-app.use("/explore" , exploreRoutes) ;
-=======
-app.use("/add-university", addUniRoutes);
 app.use("/despre", aboutRoutes);
->>>>>>> Stashed changes
+app.use("/admin", adminRoutes);
+app.use("/universitati", universitiesRouters.router);
+app.use("/add-university", addUniRoutes);

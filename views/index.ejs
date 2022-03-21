@@ -1,86 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UniRo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="css/styles-homepage.css" />
-<<<<<<< Updated upstream
-    <script src="https://use.fontawesome.com/894924603a.js"></script>
-  </head>
 
-  <body>
-    <section class="header">
-      <nav>
-        <a href="/"> <%- include("partials/logo") %> </a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="">ABOUT</a></li>
-            <li><a href="/explore">EXPLORE</a></li>
-            <li><a href="/add-university">CONTACT</a></li>
-          </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-
-      <div class="text-box">
-        <h1>Gaseste universitatea perfecta</h1>
-        <p>Gaseste universitatea ideala pentru tine si pentru visul tau.</p>
-        <a href="/explore" class="hero-btn">Exploreaza</a>
-      </div>
-    </section>
-
-    <section class="second">
-      <div class="top-unis">
-        <h1>Universitati de top in Romania</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
-          quia id voluptatibus? Nihil aperiam consequuntur, culpa illum est
-          nostrum doloribus, ducimus facilis a corrupti minus veniam nobis odio
-          iste.
-        </p>
-
-        <div class="row">
-          <div class="col">
-            <h3>Politehnica Bucuresti</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
-              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
-              perspiciatis pariatur dignissimos eum doloremque optio culpa,
-              sequi laboriosam. Quia?
-            </p>
-          </div>
-
-          <div class="col">
-            <h3>Universitatea Carol Davila</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, ex
-              enim! Nam quos sunt quod repudiandae error eveniet cumque ut
-              perspiciatis pariatur dignissimos eum doloremque optio culpa,
-              sequi laboriosam. Quia?
-            </p>
-=======
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniRo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="css/styles-homepage.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://use.fontawesome.com/894924603a.js"></script>
+  <%- include('partials/favicon'); %>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://use.fontawesome.com/894924603a.js"></script>
-    <%- include('partials/favicon'); %>
   </head>
 
   <body>
@@ -97,7 +40,6 @@
               </li>
               <li><a href="/add-university">CONTACT</a></li>
             </ul>
->>>>>>> Stashed changes
           </div>
           <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
@@ -185,10 +127,29 @@
         <p>© Copyright UniRo 2022</p>
       </section>
     </section>
+  </section>
 
-<<<<<<< Updated upstream
-    <script src="scripts/menu.js"></script>
-=======
+  <div class="loader">
+    <div class="loading-circle"></div>
+  </div>
+  <script src="scripts/menu.js"></script>
+  <script>
+
+    $(window).on('load', function () {
+      $('.loader').fadeOut(1);
+      $('.content_after_load').fadeIn(1);
+    });
+    $("#explore-button").on('click', function () {
+      $('.content_after_load').fadeOut(400);
+      $('.loader').fadeIn(400);
+    });
+    $("#explore-button2").on('click', function () {
+      $('.content_after_load').fadeOut(400);
+      $('.loader').fadeIn(400);
+    });
+
+  </script>
+</body>
     <div class="loader">
       <div class="loading-circle"></div>
     </div>
@@ -210,6 +171,5 @@
       $("#specializari").dropdown();
       $("#oras").dropdown();
     </script>
->>>>>>> Stashed changes
   </body>
 </html>
