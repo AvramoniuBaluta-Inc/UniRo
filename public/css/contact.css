@@ -1,0 +1,70 @@
+.contact-header {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../images/about3.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+
+.contact-header h1 {
+    margin-top: 70px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.contact-form {
+    margin-top: 10%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+label {
+    color: #f44336;
+}
+
+textarea {
+    height: 150px;
+}
+
+.buton-select{
+    width: 50%;
+    text-align: center;
+}
+
+.buton-select button {
+    margin: auto;
+    color: #111;
+    font-size: 20px;
+    font-weight: 600;
+    object-fit: fill;
+}
+.buton-select button:hover {
+    color: #f44336;
+}
+
+.form-control, .form-select {
+    border-radius: 0%;
+}
+
+.forms {
+    border: 1px solid #111;
+}
+
+.form1 {
+    margin: 3% 3%;
+}
+
+.submit-btn {
+    margin-top: 5%;
+    background-color: transparent;
+    border-color: #f44336;
+    color: #f44336;
+}
+
+.submit-btn:hover {
+    background-color: #f44336;
+    color: #fff;
+}
