@@ -8,11 +8,26 @@
     color: #fff;
 }
 
-
 .contact-header h1 {
     margin-top: 70px;
     font-size: 40px;
     font-weight: 600;
+}
+
+.desc {
+    width: 100vw;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.desc h3{
+    font-weight: 600;
+    padding: 0% 4%;
+    padding-bottom: 2%;
+}
+.desc h5 {
+    color: #f44336;
+    padding: 0 4%;
 }
 
 .contact-form {
@@ -49,6 +64,15 @@ textarea {
     border-radius: 0%;
 }
 
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+.form-select:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
 .forms {
     border: 1px solid #111;
 }
@@ -58,10 +82,11 @@ textarea {
 }
 
 .submit-btn {
-    margin-top: 5%;
+    margin-top: 3.3%;
     background-color: transparent;
     border-color: #f44336;
     color: #f44336;
+    width: 100%;
 }
 
 .submit-btn:hover {
