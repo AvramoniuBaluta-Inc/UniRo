@@ -19,6 +19,7 @@ var homeRoutes = require("./routers/home.js");
 var addUniRoutes = require("./routers/add-university.js");
 var adminRoutes = require("./routers/login_admin.js");
 var aboutRoutes = require("./routers/about.js");
+var contactRoutes = require("./routers/contact.js");
 
 const { University, Admin } = require("./database_models/models");
 
@@ -74,3 +75,4 @@ app.use("/admin", adminRoutes);
 app.use("/universitati", universitiesRouters.router);
 app.use("/add-university", addUniRoutes);
 app.use("/despre", aboutRoutes);
+app.use("/contact", contactRoutes);
