@@ -1,0 +1,87 @@
+<form action="/contact" class="row g-3 form1" method="POST" enctype="multipart/form-data">
+        <div>
+            <h4>Cerere de inregistrare a universitatii pe UniRo</h4>
+        </div>
+        <div class="col-12">
+            <br><br>
+            <label class="form-label">Numele universitatii pe care doriti sa o introduceti</label>
+            <input class="form-control" type="text" name="nume" id="" />
+        </div>
+        <div class="col-12">
+            <label for="inputState" class="form-label">
+                Localitatea in care se afla campusul
+            </label>
+            <input type="text" class="form-control" id="inputState"></input>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Descriere</label>
+            <textarea class="form-control" type="text" name="descriere" id="" /></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Latitudine</label>
+            <div class="default text">Necesar pentru geolocatie... </div>
+            <input class="form-control" type="number" name="latitude" step="any" id="" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Longitudine</label>
+            <div class="default text">Necesar pentru geolocatie... </div>
+            <input class="form-control" type="number" name="longitude" step="any" id="" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input class="form-control" type="text" name="email" id="" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Link website</label>
+            <input class="form-control" type="text" name="link" id="" />
+        </div>
+
+        <div class="col-12">
+            <div>
+                <label class="form-label">Materii studiate</label>
+                <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
+                    <input type="hidden" class="form-control" name="materii">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Selectati materiile </div>
+                    <div class="menu">
+                        <% for(var i=0;i<materii.length;i++){ %>
+                        <div class="item" data-value="<%= materii[i] %>">
+                            <%= materii[i] %>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <label class="form-label">Specializari</label>
+                <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
+                    <input type="hidden" class="form-control" name="specializari">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Selectati specializarile</div>
+                    <div class="menu">
+                        <% for(var i=0;i<specializari.length;i++){ %>
+                        <div class="item" data-value="<%= specializari[i] %>">
+                            <%= specializari[i] %>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    <div class="">
+        <br><br>
+        <label class="form-label">Incarcati o fotografie cu universiatea (de preferat 2000x2000)</label>
+        <input type="file" name="photo" id="photo" value="">
+    </div>
+    
+    <div class="button">
+        <br><br>
+        <p>Dupa ce ati trimis acest formular va vom contacta pe email pentru a ne asigura de autenticitatea cererii.</p>
+        <button type="submit" class="hero-btn submit-btn" name="" value="">
+            Trimite
+        </button>
+    </div>
+</form>
