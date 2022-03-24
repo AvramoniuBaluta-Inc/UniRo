@@ -11,6 +11,9 @@ var allTags = require("../public/scripts/allTags");
 var orase = require("../public/scripts/orase");
 var materii = require("../public/scripts/materii.js");
 var specializari = require("../public/scripts/specializari.js");
+var transformations = require("../backend_scripts/transformations.js");
+
+var fetch = require("node-fetch");
 
 ///storage
 const storage = multer.diskStorage({
@@ -37,6 +40,28 @@ router.get("/", isLoggedIn, (req, res) => {
 
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
+  //////////
+  var latitudine = transformations.to_number(req.body.latitude);
+  var longitudine = transformations.to_number(req.body.longitude);
+  var name_of_uni = transformations.to_url(req.body.nume);
+  var linkGoogleAPI =
+    "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+    latitudine +
+    "," +
+    longitudine +
+    "&radius=1&type=university&name=" +
+    name_of_uni +
+    "&key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ";
+    console.log(linkGoogleAPI);
+
+    var data_from_googleAPI;
+  (async () => {
+    var response = await fetch(linkGoogleAPI);
+    data_from_googleAPI = await response.json();
+  })();
+
+////////////// GoogleAPI
+
   if (req.file === undefined) {
     (async () => {
       idUni = await idGenerate.generateID(University);
@@ -51,7 +76,7 @@ router.post("/", upload.single("photo"), (req, res) => {
         link: req.body.link,
         specializari: add.addArray(req.body.specializari),
         materii: add.addArray(req.body.materii),
-        rating: req.body.rating,
+        rating: data_from_googleAPI.results[0].rating,
       });
 
       if (
@@ -88,7 +113,7 @@ router.post("/", upload.single("photo"), (req, res) => {
         },
         specializari: add.addArray(req.body.specializari),
         materii: add.addArray(req.body.materii),
-        rating: req.body.rating,
+        rating: data_from_googleAPI.results[0].rating,
       });
       fs.unlink("./public/uploads/" + req.file.filename, (err) => {
         if (err) {
