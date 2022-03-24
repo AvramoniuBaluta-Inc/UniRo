@@ -52,6 +52,10 @@ nav img {
   width: 170px;
 }
 
+nav ul {
+  margin-bottom: 0%;
+}
+
 .nav-links {
   flex: 1;
   text-align: right;
@@ -87,10 +91,15 @@ nav img {
 @media (max-width: 700px) {
   .nav-links ul li {
     visibility: hidden;
-    padding: 0;
+    padding: 0%;
   }
   .permanent {
     visibility: visible;
+    margin-bottom: 1%;
+  }
+  .hero-btn {
+    padding-left: 2%;
+    padding-right: 2%;
   }
 }
 
@@ -289,6 +298,7 @@ svg * {
 .mat-btn:hover {
   background-color: #11a8ff;
   color: #fff;
+  border-color: #11a8ff;
 }
 
 .mat-btn:focus {
@@ -308,3 +318,9 @@ svg * {
 }
 
 /*  */
+
+.search-bar {
+  border-radius: 0%;
+  padding: 12px 25px;
+  height: fit-content;
+}

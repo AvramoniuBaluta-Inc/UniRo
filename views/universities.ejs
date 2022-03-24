@@ -17,10 +17,9 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
-        <%- include('partials/favicon'); %>
+    <%- include('partials/favicon'); %>
     <!-- css file for dropdowns (not input) -->
-    <link rel="stylesheet" type="text/css"
-        href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <!-- dropdown css file (input drops)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
@@ -48,15 +47,19 @@
 
             <nav class="navigation">
 
-                <button id="popUp-open-button" class="hero-btn filtru">Filtrare</button>
-
+                <button id="popUp-open-button" class="hero-btn">Filtrare</button>
+                <form class="d-flex">
+                    <input class="form-control search-bar " type="search" placeholder="Cauta universitate..." aria-label="Search">
+                    <button class="hero-btn" type="submit">Cauta</button>
+                </form>
 
                 <div class="nav-links" id="navLinks">
                     <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><a href="/despre">DESPRE NOI</a></li>
-                        <li><a href="/contact">CONTACT</a></li>
                         <li><a class="permanent" href="/">ACASA</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
+                        
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -74,11 +77,11 @@
             <div class="container1">
                 <% for(var i=1;i<lungime;i++){ %>
 
-                    <% uni=uniArray[i]; %>
+                <% uni=uniArray[i]; %>
 
-                        <%- include('partials/university', {uni: uni}); %>
+                <%- include('partials/university', {uni: uni}); %>
 
-                            <% } %>
+                <% } %>
 
             </div>
         </section>
@@ -117,7 +120,6 @@
         $('#materii').dropdown();
         $('#specializari').dropdown();
         $('#oras').dropdown();
-
     </script>
 </body>
 
