@@ -52,16 +52,10 @@ router.post("/", upload.single("photo"), (req, res) => {
     "&radius=1&type=university&name=" +
     name_of_uni +
     "&key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ";
-    console.log(linkGoogleAPI);
-
     var data_from_googleAPI;
   (async () => {
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
-    console.log(data_from_googleAPI.results[0].rating);
-
-  //console.log(data_from_googleAPI.results[0].rating);
-
   if (req.file === undefined) {
     (async () => {
       idUni = await idGenerate.generateID(University);

@@ -10,7 +10,6 @@ module.exports = {
                 string = "." + string;
             }
             number = parameter - Math.trunc(parameter / 10) * 10;
-            console.log(number);
             string = number + string;
             parameter = parameter / 10;
             parameter = Math.trunc(parameter);
@@ -24,7 +23,6 @@ module.exports = {
             if (string[i].charCodeAt(0) === 32 || string[i].charCodeAt(0)>500) {
                 string = string.substring(0, i) + '%' +string.substring(i+1 , string.length);
             }
-            console.log(string[i].charCodeAt(0));
         }
         return string;
     }
