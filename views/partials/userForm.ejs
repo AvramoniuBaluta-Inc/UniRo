@@ -1,20 +1,18 @@
-<form class="row g-3 form1">
+<form class="row g-3 form1" onsubmit="sendEmail();">
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">
-      Nume
-    </label>
-    <input type="email" class="form-control" id="inputEmail4"></input>
+    <label for="inputname" class="form-label"> Nume </label>
+    <input type="text" class="form-control" id="inputname" />
   </div>
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">
-      Prenume
-    </label>
-    <input type="text" class="form-control" id="inputPassword4"></input>
+    <label for="inputPassword4" class="form-label"> Prenume </label>
+    <input type="text" class="form-control" id="inputPassword4" />
   </div>
   <div class="col-12">
-    <label for="inputAddress" class="form-label">
-      Mesaj
-    </label>
+    <label for="email1" class="form-label"> Email </label>
+    <input type="email" class="form-control" id="email1" value="" />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label"> Mesaj </label>
     <textarea
       type="text"
       class="form-control"
@@ -24,15 +22,11 @@
   </div>
 
   <div class="col-12">
-    <label for="inputState" class="form-label">
-      Localitate
-    </label>
-    <input type="text" class="form-control" id="inputState"></input>
+    <label for="inputState" class="form-label"> Localitate </label>
+    <input type="text" class="form-control" id="inputState" />
   </div>
 
   <div class="col-12">
-    <button type="submit" class="hero-btn submit-btn">
-      Trimite
-    </button>
+    <button type="submit" class="hero-btn submit-btn">Trimite</button>
   </div>
-</form>;
+</form>
