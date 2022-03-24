@@ -58,9 +58,9 @@ router.post("/", upload.single("photo"), (req, res) => {
   (async () => {
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
-  })();
+    console.log(data_from_googleAPI.results[0].rating);
 
-////////////// GoogleAPI
+  //console.log(data_from_googleAPI.results[0].rating);
 
   if (req.file === undefined) {
     (async () => {
@@ -137,7 +137,7 @@ router.post("/", upload.single("photo"), (req, res) => {
       }
     })();
   }
-
+})();
   res.redirect("/add-university");
 });
 
