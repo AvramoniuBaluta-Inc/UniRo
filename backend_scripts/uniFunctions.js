@@ -66,6 +66,7 @@ module.exports = {
     return true;
   },
   distanta: function distanta(uni, req_distanta, req_lat, req_lon) {
+    if(req_distanta === 1000 || (req_lat ===-1 && req_lon ===-1)) return true;
     if (uni.latitudine == undefined) return true;
     if (
       req_distanta >=
