@@ -14,7 +14,7 @@ function sendMsg(e) {
     From: "uniro.eu@gmail.com",
     Subject: nume.value + " " + prenume.value + " - " + loc.value,
     Body: msg.value,
-  }).then((message) => alert(message));
+  }).then((message) => alert("Mesajul a fost transmis cu succes!"));
 }
 
 form.addEventListener("submit", sendMsg);

@@ -324,3 +324,8 @@ svg * {
   padding: 12px 25px;
   height: fit-content;
 }
+
+.more {
+  display: flex;
+  justify-content: space-between;
+}

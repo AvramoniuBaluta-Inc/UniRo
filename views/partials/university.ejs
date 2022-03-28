@@ -12,9 +12,9 @@
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title">
-          <%= uni.nume %> 
+          <%= uni.nume %>
           <span class="rating">
-            <%= uni.rating %> <i class="fa fa-star"aria-hidden="true"></i>
+            <%= uni.rating %> <i class="fa fa-star" aria-hidden="true"></i>
           </span>
         </h3>
         <p class="card-text">
@@ -51,7 +51,11 @@
 
         </div>
 
-        <a href="https://<%= uni.link %>" target="_blank" class="btn buton-link">Viziteaza website</a>
+        <div class="more">
+          <a href="https://<%= uni.link %>" target="_blank" class="btn buton-link">Viziteaza website</a>
+          <a href="/universitati/<%= uni.nume %>" class="btn buton-link detalii">Mai multe detalii</a>
+        </div>
+
       </div>
     </div>
   </div>

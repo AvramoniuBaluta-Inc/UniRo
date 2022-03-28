@@ -20,6 +20,7 @@ var addUniRoutes = require("./routers/add-university.js");
 var adminRoutes = require("./routers/login_admin.js");
 var aboutRoutes = require("./routers/about.js");
 var contactRoutes = require("./routers/contact.js");
+var detailsRoutes = require("./routers/uniDetails.js");
 
 const { University, Admin } = require("./database_models/models");
 
@@ -28,6 +29,7 @@ const { University, Admin } = require("./database_models/models");
 const app = express();
 
 app.use(express.static("public"));
+app.use("/static", express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -76,3 +78,4 @@ app.use("/universitati", universitiesRouters.router);
 app.use("/add-university", addUniRoutes);
 app.use("/despre", aboutRoutes);
 app.use("/contact", contactRoutes);
+app.use("/universitati", detailsRoutes);
