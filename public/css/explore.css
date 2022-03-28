@@ -329,3 +329,14 @@ svg * {
   display: flex;
   justify-content: space-between;
 }
+
+.show-details {
+  margin-top: 5%;
+}
+
+
+#map {
+  min-height: 50vh;
+  height: 100%;
+  width: 100%;
+}

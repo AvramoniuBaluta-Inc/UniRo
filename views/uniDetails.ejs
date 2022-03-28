@@ -20,6 +20,7 @@
     %>
     <!-- css file  -->
     <link rel="stylesheet" href="/static/css/explore.css" />
+    <script src="/static/scripts/displayCustomMap.js"></script>
 </head>
 
 <body>
@@ -41,17 +42,40 @@
     <section class="show-details">
         <div class="container1">
 
-            <p class="text"><%= description %></p>
-            <br>
-            <br>
-            <a href="https://<%= link %>" target="_blank" class="hero-btn">Viziteaza wesite universitate</a>
-            <br>
-            <br>
-            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text"><%= description %></p>
+
+                    <br>
+                    <br>
+
+                    <a href="https://<%= link %>" target="_blank" class="hero-btn">Viziteaza wesite universitate</a>
+
+                    <br>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
+                    <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
+                    <div id="map"></div>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+
+
+
 
         </div>
-
     </section>
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly" async></script>
 </body>
 
 </html>

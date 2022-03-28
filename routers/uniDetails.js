@@ -11,6 +11,8 @@ router.get("/:uni", function (req, res) {
       nume: uni.nume,
       description: uni.descriere,
       link: uni.link,
+      lat: uni.latitudine,
+      long: uni.longitudine,
     });
   });
 });
