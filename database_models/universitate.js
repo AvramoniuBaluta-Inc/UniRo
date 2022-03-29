@@ -17,6 +17,9 @@ const uniSchema = new mongoose.Schema({
   rating: Number,
   materii: [],
   specializari: [],
+  studenti: Number,
+  public: Boolean,
+  camin: Boolean,
 });
 
 module.exports = uniSchema;
