@@ -13,6 +13,7 @@ router.get("/:uni", function (req, res) {
       link: uni.link,
       lat: uni.latitudine,
       long: uni.longitudine,
+      img: uni.img,
     });
   });
 });

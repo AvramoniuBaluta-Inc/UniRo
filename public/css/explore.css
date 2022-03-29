@@ -334,9 +334,19 @@ svg * {
   margin-top: 5%;
 }
 
+.col-md-6 {
+  height: 50vh;
+  margin-bottom: 2%;
+}
 
 #map {
   min-height: 50vh;
   height: 100%;
   width: 100%;
 }
+
+.image {
+  max-height: 50vh;
+  overflow-y: hidden;
+}
+

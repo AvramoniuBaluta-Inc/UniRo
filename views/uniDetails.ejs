@@ -60,10 +60,17 @@
                     <div id="map"></div>
                 </div>
                 <div class="col-md-6">
-                    
+                    <div class="image">
+                        <% if(!(img.data===undefined )){ %>
+                        <img src=" data:uni.photo/<%=img.contentType%>;base64,
+                     <%=img.data.toString('base64')%>" class="img-fluid">
+                        <% } else {%>
+                        <img src="/images/test.png" alt="">
+                        <% } %>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    
+
                 </div>
             </div>
 
@@ -75,7 +82,9 @@
 
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly" async></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly"
+        async></script>
 </body>
 
 </html>
