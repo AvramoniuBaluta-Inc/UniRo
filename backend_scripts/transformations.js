@@ -21,7 +21,7 @@ module.exports = {
         string = string_req;
         for (var i = 0; i < string.length; i++) {
             if (string[i].charCodeAt(0) === 32 || string[i].charCodeAt(0)>500) {
-                string = string.substring(0, i) + '%' +string.substring(i+1 , string.length);
+                string = string.substring(0, i) + '|' +string.substring(i+1 , string.length);
             }
         }
         return string;
