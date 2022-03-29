@@ -71,6 +71,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
           rating: data_from_googleAPI.results[0].rating,
+          reviewsNo:data_from_googleAPI.results[0].user_ratings_total,
         });
 
         if (
@@ -108,6 +109,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
           rating: data_from_googleAPI.results[0].rating,
+          reviewsNo:data_from_googleAPI.results[0].user_ratings_total,
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {
           if (err) {
