@@ -336,7 +336,7 @@ svg * {
 
 .details-display {
   height: 50vh;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
 }
 
 #map {
@@ -350,3 +350,14 @@ svg * {
   overflow-y: hidden;
 }
 
+.contact-email {
+  color: #f44336;
+}
+
+.tb-input {
+  color: #f44336;
+}
+
+.table {
+  height: 100%;
+}

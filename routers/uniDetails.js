@@ -14,6 +14,9 @@ router.get("/:uni", function (req, res) {
       lat: uni.latitudine,
       long: uni.longitudine,
       img: uni.img,
+      email: uni.email,
+      materii: uni.materii,
+      specializari: uni.specializari,
     });
   });
 });

@@ -49,6 +49,12 @@
                     <br>
                     <br>
 
+                    <h5>Poti contacta universitatea la adresa:</h5>
+                    <p class="contact-email"><%= email %></p>
+
+                    <br>
+                    <br>
+
                     <a href="https://<%= link %>" target="_blank" class="hero-btn">Viziteaza wesite universitate</a>
 
                     <br>
@@ -70,7 +76,28 @@
                     </div>
                 </div>
                 <div class="col-md-6 details-display">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Materii Studiate</th>
+                                <th scope="col">Specializari</th>
+                            </tr>
+                        </thead>
 
+                        <tbody>
+                            <% for(var i=0 , j=0 ; i < specializari.length, j < materii.length ;i++ , j++){ %>
+                            <tr>
+                                <th scope="row"><%= j+1 %></th>
+                                <td class="tb-input"><%= materii[j] %></td>
+                                <td class="tb-input"><%= specializari[i] %></td>
+
+                            </tr>
+                           
+                            <% } %>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

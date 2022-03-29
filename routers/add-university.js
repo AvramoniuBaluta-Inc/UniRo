@@ -52,87 +52,87 @@ router.post("/", upload.single("photo"), (req, res) => {
     "&radius=1&type=university&name=" +
     name_of_uni +
     "&key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ";
-    var data_from_googleAPI;
+  var data_from_googleAPI;
   (async () => {
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
-  if (req.file === undefined) {
-    (async () => {
-      idUni = await idGenerate.generateID(University);
-      const universitate = new University({
-        _id: idUni,
-        nume: req.body.nume,
-        descriere: req.body.descriere,
-        oras: req.body.oras,
-        latitudine: req.body.latitude,
-        longitudine: req.body.longitude,
-        email: req.body.email,
-        link: req.body.link,
-        specializari: add.addArray(req.body.specializari),
-        materii: add.addArray(req.body.materii),
-        rating: data_from_googleAPI.results[0].rating,
-      });
+    if (req.file === undefined) {
+      (async () => {
+        idUni = await idGenerate.generateID(University);
+        const universitate = new University({
+          _id: idUni,
+          nume: req.body.nume,
+          descriere: req.body.descriere,
+          oras: req.body.oras,
+          latitudine: req.body.latitude,
+          longitudine: req.body.longitude,
+          email: req.body.email,
+          link: req.body.link,
+          specializari: add.addArray(req.body.specializari),
+          materii: add.addArray(req.body.materii),
+          rating: data_from_googleAPI.results[0].rating,
+        });
 
-      if (
-        universitate._id === "" ||
-        universitate.nume === "" ||
-        universitate.descriere === "" ||
-        universitate.oras === "" ||
-        universitate.email === "" ||
-        universitate.link === "" ||
-        universitate.rating === ""
-      ) {
-        console.log("Error : No input");
-      } else {
-        universitate.save();
-      }
-    })();
-  } else {
-    (async () => {
-      idUni = await idGenerate.generateID(University);
-      const universitate = new University({
-        _id: idUni,
-        nume: req.body.nume,
-        descriere: req.body.descriere,
-        oras: req.body.oras,
-        latitudine: req.body.latitude,
-        longitudine: req.body.longitude,
-        email: req.body.email,
-        link: req.body.link,
-        img: {
-          data: fs.readFileSync(
-            path.join("./public/uploads/" + req.file.filename)
-          ),
-          contentType: "image/png",
-        },
-        specializari: add.addArray(req.body.specializari),
-        materii: add.addArray(req.body.materii),
-        rating: data_from_googleAPI.results[0].rating,
-      });
-      fs.unlink("./public/uploads/" + req.file.filename, (err) => {
-        if (err) {
-          console.error(err);
-          return;
+        if (
+          universitate._id === "" ||
+          universitate.nume === "" ||
+          universitate.descriere === "" ||
+          universitate.oras === "" ||
+          universitate.email === "" ||
+          universitate.link === "" ||
+          universitate.rating === ""
+        ) {
+          console.log("Error : No input");
+        } else {
+          universitate.save();
         }
-      });
+      })();
+    } else {
+      (async () => {
+        idUni = await idGenerate.generateID(University);
+        const universitate = new University({
+          _id: idUni,
+          nume: req.body.nume,
+          descriere: req.body.descriere,
+          oras: req.body.oras,
+          latitudine: req.body.latitude,
+          longitudine: req.body.longitude,
+          email: req.body.email,
+          link: req.body.link,
+          img: {
+            data: fs.readFileSync(
+              path.join("./public/uploads/" + req.file.filename)
+            ),
+            contentType: "image/png",
+          },
+          specializari: add.addArray(req.body.specializari),
+          materii: add.addArray(req.body.materii),
+          rating: data_from_googleAPI.results[0].rating,
+        });
+        fs.unlink("./public/uploads/" + req.file.filename, (err) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+        });
 
-      if (
-        universitate._id === "" ||
-        universitate.nume === "" ||
-        universitate.descriere === "" ||
-        universitate.oras === "" ||
-        universitate.email === "" ||
-        universitate.link === "" ||
-        universitate.rating === ""
-      ) {
-        console.log("Error : No input");
-      } else {
-        universitate.save();
-      }
-    })();
-  }
-})();
-  res.redirect("/add-university");
+        if (
+          universitate._id === "" ||
+          universitate.nume === "" ||
+          universitate.descriere === "" ||
+          universitate.oras === "" ||
+          universitate.email === "" ||
+          universitate.link === "" ||
+          universitate.rating === ""
+        ) {
+          console.log("Error : No input");
+        } else {
+          universitate.save();
+        }
+      })();
+    }
+  })();
+  res.redirect("/universitati");
 });
 
 module.exports = router;
