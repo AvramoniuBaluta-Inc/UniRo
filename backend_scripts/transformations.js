@@ -20,14 +20,10 @@ module.exports = {
         var string = [];
         string = string_req;
         for (var i = 0; i < string.length; i++) {
-            console.log(string[i]);
-            console.log(string[i].charCodeAt(0));
-            console.log("------");
             if (string[i].charCodeAt(0) === 32 || string[i].charCodeAt(0)>500 || string[i].charCodeAt(0) === 259|| string[i].charCodeAt(0) === 258||string[i].charCodeAt(0) === 194||string[i].charCodeAt(0) === 226||string[i].charCodeAt(0) === 206 ||string[i].charCodeAt(0) === 238||string[i].charCodeAt(0) === 536||string[i].charCodeAt(0) === 537||string[i].charCodeAt(0) === 350||string[i].charCodeAt(0) === 351||string[i].charCodeAt(0) === 538||string[i].charCodeAt(0) === 539) {
                 string = string.substring(0, i) + '|' +string.substring(i+1 , string.length);
             }
         }
-        console.log(string);
         return string;
     }
 };
