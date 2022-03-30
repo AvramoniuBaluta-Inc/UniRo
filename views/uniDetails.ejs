@@ -20,6 +20,7 @@
     %>
     <!-- css file  -->
     <link rel="stylesheet" href="/static/css/explore.css" />
+    <link rel="stylesheet" href="/static/css/details.css" />
     <script src="/static/scripts/displayCustomMap.js"></script>
 </head>
 
@@ -55,7 +56,7 @@
                     <br>
                     <br>
 
-                    <a href="https://<%= link %>" target="_blank" class="hero-btn">Viziteaza wesite universitate</a>
+                    <a href="https://<%= link %>" target="_blank" class="hero-btn" id="vizit">Viziteaza wesite universitate</a>
 
                     <br>
                     <br>
@@ -93,7 +94,7 @@
                                 <td class="tb-input"><%= specializari[i] %></td>
 
                             </tr>
-                           
+
                             <% } %>
 
                         </tbody>
@@ -108,7 +109,7 @@
     </section>
 
 
-
+    <script src="scripts/menu.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly"
         async></script>

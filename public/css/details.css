@@ -1,0 +1,44 @@
+/* details */
+
+.show-details {
+    margin-top: 16vh;
+}
+
+.details-display {
+    height: auto;
+    margin-bottom: 3%;
+}
+
+#map {
+    min-height: 50vh;
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    max-height: 50vh;
+    overflow-y: hidden;
+}
+
+.contact-email {
+    color: #f44336;
+}
+
+.tb-input {
+    color: #f44336;
+}
+
+.table {
+    height: 100%;
+}
+
+
+
+@media (max-width: 730px) {
+    .details-display {
+        max-height: 100vh;
+        margin-bottom: 10%;
+        padding-bottom: 10%;
+    }
+
+}
