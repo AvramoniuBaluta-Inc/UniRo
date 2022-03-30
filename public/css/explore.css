@@ -86,22 +86,43 @@ nav ul {
   transition: 0.4s;
 }
 
+
 .nav-links ul li:hover::after {
   width: 100%;
 }
 
 @media (max-width: 730px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+  }
   .nav-links ul li {
-    visibility: hidden;
-    padding: 0%;
+    display: block;
   }
-  .permanent {
-    visibility: visible;
-    margin-bottom: 1%;
+  .nav-links {
+    position: absolute;
+    background: #f44336;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 0.7s;
   }
-  .hero-btn {
-    padding-left: 2%;
-    padding-right: 2%;
+  nav .fa {
+    display: block;
+    color: #000;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .nav-links ul {
+    padding: 30px;
   }
 }
 
