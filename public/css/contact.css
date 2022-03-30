@@ -1,3 +1,7 @@
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .contact-header {
     height: 50vh;
     width: 100%;
