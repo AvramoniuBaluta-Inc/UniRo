@@ -10,14 +10,16 @@ var add = require("../public/scripts/addToArray.js");
 var orase = require("../public/scripts/orase");
 
 router.get("/", function (req, res) {
-  var cnt;
+  var cnt = 1;
   var uniArray = [];
   (async () => {
-    cnt = await uniFunctions.number_of_elements();
-    for (var i = 1; i < cnt; i++) {
-      uniArray[i] = await University.findById(i).exec();
-    }
-
+  await University.find().then((universitati) => {
+  universitati.forEach((universitate) => {
+    console.log(universitate);
+    uniArray[cnt] =universitate;
+    cnt++;
+  });
+});
     res.render("universities", {
       lungime: cnt,
       uniArray: uniArray,
@@ -26,6 +28,7 @@ router.get("/", function (req, res) {
       orase: orase,
     });
   })();
+
 });
 
 router.post("/", function (req, res) {
@@ -34,10 +37,14 @@ router.post("/", function (req, res) {
   var uniArray = [];
   var uniArrayFiltered = [];
   (async () => {
-    cnt = await uniFunctions.number_of_elements();
-    for (var i = 1; i < cnt; i++) {
-      uniArray[i] = await University.findById(i).exec();
-    }
+    var cnt = 1;
+    var uniArray = [];
+    await University.find().then((universitati) => {
+      universitati.forEach((universitate) => {
+        uniArray[cnt] =universitate;
+        cnt++;
+      });
+    });
     for (var i = 1; i < cnt; i++) {
       if (
         uniFunctions.oras(uniArray[i], req.body.oras) &&
