@@ -185,12 +185,17 @@ nav .fa {
   font-weight: 600;
 }
 
-.top-unis p {
+.col p {
   font-size: 16px;
   font-weight: 300;
   line-height: 22px;
   padding: 25px;
-  color: #777;
+  color: #444444;
+}
+
+.uni-p {
+  color: #f44336;
+  font-weight: 400;
 }
 
 .row {
