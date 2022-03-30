@@ -15,7 +15,6 @@ router.get("/", function (req, res) {
   (async () => {
   await University.find().then((universitati) => {
   universitati.forEach((universitate) => {
-    console.log(universitate);
     uniArray[cnt] =universitate;
     cnt++;
   });
