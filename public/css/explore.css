@@ -361,3 +361,8 @@ svg * {
 .table {
   height: 100%;
 }
+
+.recenzii {
+  font-weight: 300;
+  font-size: 30px;
+}
