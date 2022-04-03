@@ -51,7 +51,7 @@ router.post("/", upload.single("photo"), (req, res) => {
     longitudine +
     "&radius=1&type=university&name=" +
     name_of_uni +
-    "&key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ";
+    "&key=AIzaSyDTMH4Yri3PVdrU0SxRf-CpqqltDWvELdY";
   var data_from_googleAPI;
   (async () => {
     var response = await fetch(linkGoogleAPI);
