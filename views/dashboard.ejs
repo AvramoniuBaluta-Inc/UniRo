@@ -64,19 +64,28 @@
 
   <body>
     <div class="sidebar">
-      <a href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <form action="/admin/logout" method="post">
+        <button type="submit" class="logout">LOGOUT</button>
+      </form>
+
+      <a href="/add-university">ADAUGA UNIVERSITATE</a>
+      <a href="/edit">EDITEAZA REQUEST</a>
+      <a
+        href="https://cloud.mongodb.com/v2/61dc2a2c368f412d11523ecd#metrics/replicaSet/61dc2b2d36bc3d1e15c12545/explorer/mainDatabase/admins/find"
+        target="_blank"
+        >DATABASE</a
+      >
+      <a href="/">ACASA</a>
+      <a href="/universitati">UNIVERSITATI</a>
     </div>
 
     <!-- Page content -->
-    <div class="content">..</div>
+    <div class="content">
+      <div class="container1">
+        <h1>Cereri de introducere a universitatilor</h1>
+      </div>
+    </div>
 
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/popUp.js"></script>
-    <script src="scripts/slider.js"></script>
-    <script src="scripts/getUserLocation.js"></script>
     <script>
       $("#materii").dropdown();
       $("#specializari").dropdown();

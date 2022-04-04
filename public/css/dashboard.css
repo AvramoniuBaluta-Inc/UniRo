@@ -6,13 +6,27 @@
   position: fixed;
   height: 100%;
   overflow: auto;
+  display: block;
+  
 }
+
 
 .sidebar a {
   display: block;
-  color: black;
+  color: #111;
   padding: 16px;
   text-decoration: none;
+}
+
+.sidebar button {
+  display: block;
+  color: #111;
+  padding: 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  text-align: left;
 }
 
 
@@ -24,7 +38,7 @@
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: auto;
 }
 
 @media screen and (max-width: 700px) {
@@ -47,3 +61,20 @@ div.content {
     float: none;
   }
 }
+.sidebar .logout:hover{
+  background-color: #111;
+}
+
+.sidebar .logout {
+  background-color: #353535;
+  color: #fff;
+}
+
+.container1 {
+  margin-top: 2%;
+}
+.container1 h1 {
+  font-size: 35px;
+}
+
+
