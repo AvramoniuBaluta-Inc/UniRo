@@ -31,7 +31,7 @@ const upload = multer({
 });
 
 router.get("/", isLoggedIn, (req, res) => {
-  res.render("add-university", {
+  res.render("dashboard", {
     specializari: specializari,
     materii: materii,
     orase: orase,
@@ -134,7 +134,7 @@ router.post("/", upload.single("photo"), (req, res) => {
       })();
     }
   })();
-  res.redirect("/universitati");
+  res.redirect("/dashboard");
 });
 
 module.exports = router;

@@ -8,15 +8,18 @@
   overflow: auto;
 }
 
-.sidebar a {
+.sidebar button {
   display: block;
   color: black;
   padding: 16px;
   text-decoration: none;
+  border: none;
+  background-color:#f1f1f1 ;
+  width: 100%;
 }
 
 
-.sidebar a:hover {
+.sidebar button:hover {
   background-color: #f44336;
   color: white;
 }
@@ -33,7 +36,7 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {
+  .sidebar button {
       float: left;
   }
   div.content {
@@ -42,8 +45,18 @@ div.content {
 }
 
 @media screen and (max-width: 400px) {
-  .sidebar a {
+  .sidebar button {
     text-align: center;
     float: none;
   }
+}
+
+#add_university{
+  display:none;
+}
+#edit_university{
+  display:none;
+}
+#req_to_add_university{
+  display: none;
 }

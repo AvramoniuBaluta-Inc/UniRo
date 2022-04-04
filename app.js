@@ -77,7 +77,6 @@ mongoose
 app.use("/", homeRoutes);
 app.use("/admin", adminRoutes);
 app.use("/universitati", universitiesRouters.router);
-app.use("/add-university", addUniRoutes);
 app.use("/despre", aboutRoutes);
 app.use("/contact", contactRoutes);
 app.use("/universitati", detailsRoutes);
