@@ -6,11 +6,20 @@
   position: fixed;
   height: 100%;
   overflow: auto;
+  display: block;
+  
 }
 
 .sidebar button {
   display: block;
-  color: black;
+  color: #111;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar button {
+  display: block;
+  color: #111;
   padding: 16px;
   text-decoration: none;
   border: none;
@@ -27,7 +36,7 @@
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: auto;
 }
 
 @media screen and (max-width: 700px) {

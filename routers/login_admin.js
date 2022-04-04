@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 router.post(
   "/",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/dashboard",
     failureRedirect: "/admin",
   }),
   (req, res) => {
@@ -41,6 +41,11 @@ router.post("/register", (req, res) => {
     console.log("gresit sefu");
     res.redirect("/admin");
   }
+});
+
+router.post("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
 });
 
 module.exports = router;
