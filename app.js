@@ -22,6 +22,7 @@ var aboutRoutes = require("./routers/about.js");
 var contactRoutes = require("./routers/contact.js");
 var detailsRoutes = require("./routers/uniDetails.js");
 var adsRoutes = require("./routers/ads.js");
+var dashboardRoutes = require("./routers/dashboard.js");
 
 const { University, Admin } = require("./database_models/models");
 
@@ -81,4 +82,4 @@ app.use("/despre", aboutRoutes);
 app.use("/contact", contactRoutes);
 app.use("/universitati", detailsRoutes);
 app.use("/ads.txt", adsRoutes);
-
+app.use("/dashboard", dashboardRoutes);
