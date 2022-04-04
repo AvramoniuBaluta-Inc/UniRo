@@ -16,7 +16,6 @@ const LocalStrategy = require("passport-local").Strategy;
 
 var universitiesRouters = require("./routers/universities.js");
 var homeRoutes = require("./routers/home.js");
-var addUniRoutes = require("./routers/add-university.js");
 var adminRoutes = require("./routers/login_admin.js");
 var aboutRoutes = require("./routers/about.js");
 var contactRoutes = require("./routers/contact.js");
