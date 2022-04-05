@@ -1,91 +1,90 @@
 <div id="add_university">
   <h1>Adauga Universitate</h1>
-        <form action="/dashboard" class="big_form" method="POST" enctype="multipart/form-data">
-          <div class="user-details">
-            <div class="input-box">
-              <span class="details">NUME</span>
-              <input class="form-control" type="text" name="nume" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">DESCRIERE</span>
-              <input class="form-control" type="text" name="descriere" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">ORAS</span>
-              <div id="oras" class="ui fluid search selection dropdown">
-                <input type="hidden" name="oras">
-                <i class="dropdown icon"></i>
-                <div class="default text">Select Tag</div>
-                <div class="menu">
-                  <% for(var i=0;i<orase.length;i++){ %>
-                    <div class="item" data-value="<%= orase[i] %>">
-                      <%= orase[i] %>
-                    </div>
-                    <% } %>
-                </div>
-              </div>
-            </div>
-            <div class="input-box">
-              <span class="details">Latitudine</span>
-              <input class="form-control" type="number" name="latitude" step="any" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">Longitudine</span>
-              <input class="form-control" type="number" name="longitude" step="any" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">EMAIL</span>
-              <input class="form-control" type="text" name="email" id="" />
-            </div>
-            <div class="input-box">
-              <span class="details">LINK</span>
-              <input class="form-control" type="text" name="link" id="" />
-            </div>
-  
-            <div class="input-box">
-              <div>
-                <span class="details">Materii</span>
-                <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
-                  <input type="hidden" name="materii">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Materii...</div>
-                  <div class="menu">
-                    <% for(var i=0;i<materii.length;i++){ %>
-                      <div class="item" data-value="<%= materii[i] %>">
-                        <%= materii[i] %>
-                      </div>
-                      <% } %>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span class="details">Specializari</span>
-                <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
-                  <input type="hidden" name="specializari">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Specializari...</div>
-                  <div class="menu">
-                    <% for(var i=0;i<specializari.length;i++){ %>
-                      <div class="item" data-value="<%= specializari[i] %>">
-                        <%= specializari[i] %>
-                      </div>
-                      <% } %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <br><br>
-          <div class="input-box">
-            <input type="file" name="photo" id="photo" value="">
-          </div>
-          <br /><br>
-          <div class="button">
-            <button type="submit" class="hero-btn" name="" value="">
-              Submit
-            </button>
-          </div>
-        </form>
+  <form action="/dashboard" class="big_form" method="POST" enctype="multipart/form-data">
+    <div class="user-details">
+      <div class="input-box">
+        <span class="details">NUME</span>
+        <input class="form-control" type="text" name="nume" id="" />
       </div>
-      <br><br><br><br><br><br>
+      <div class="input-box">
+        <span class="details">DESCRIERE</span>
+        <input class="form-control" type="text" name="descriere" id="" />
+      </div>
+      <div class="input-box">
+        <span class="details">ORAS</span>
+        <div id="oras" class="ui fluid search selection dropdown">
+          <input type="hidden" name="oras">
+          <i class="dropdown icon"></i>
+          <div class="default text">Select Tag</div>
+          <div class="menu">
+            <% for(var i=0;i<orase.length;i++){ %>
+            <div class="item" data-value="<%= orase[i] %>">
+              <%= orase[i] %>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="input-box">
+        <span class="details">Latitudine</span>
+        <input class="form-control" type="number" name="latitude" step="any" id="" />
+      </div>
+      <div class="input-box">
+        <span class="details">Longitudine</span>
+        <input class="form-control" type="number" name="longitude" step="any" id="" />
+      </div>
+      <div class="input-box">
+        <span class="details">EMAIL</span>
+        <input class="form-control" type="text" name="email" id="" />
+      </div>
+      <div class="input-box">
+        <span class="details">LINK</span>
+        <input class="form-control" type="text" name="link" id="" />
+      </div>
+
+      <div class="input-box">
+        <div>
+          <span class="details">Materii</span>
+          <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="materii">
+            <i class="dropdown icon"></i>
+            <div class="default text">Materii...</div>
+            <div class="menu">
+              <% for(var i=0;i<materii.length;i++){ %>
+              <div class="item" data-value="<%= materii[i] %>">
+                <%= materii[i] %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="details">Specializari</span>
+          <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="specializari">
+            <i class="dropdown icon"></i>
+            <div class="default text">Specializari...</div>
+            <div class="menu">
+              <% for(var i=0;i<specializari.length;i++){ %>
+              <div class="item" data-value="<%= specializari[i] %>">
+                <%= specializari[i] %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="input-box">
+      <input type="file" name="photo" id="photo" value="">
+    </div>
+    <br /><br>
+    <div class="button">
+      <button type="submit" class="hero-btn" name="" value="">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

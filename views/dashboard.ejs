@@ -6,29 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/add-university.css" />
     <title>Add uni dashboard</title>
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/favicon'); %>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
-        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- css file  -->
     <link rel="stylesheet" href="css/explore.css" />
     <link rel="stylesheet" href="css/dashboard.css" />
@@ -48,28 +73,39 @@
 
   <body>
     <div class="sidebar">
-
-        <button type="button" onclick="add_university_form()">Adauga Universitate</button>
-        <button type="button" onclick="edit_university_menu()">Editeaza Universitati</button>
-        <button type="button" onclick="req_to_add_university_menu()">Cereri de adaugare</button>
+      <form action="/admin/logout" method="post">
+        <button type="submit" class="logout">LOGOUT</button>
+      </form>
+      <button type="button" onclick="add_university_form()">
+        Adauga Universitate
+      </button>
+      <button type="button" onclick="edit_university_menu()">
+        Editeaza Universitati
+      </button>
+      <button type="button" onclick="req_to_add_university_menu()">
+        Cereri de adaugare
+      </button>
+      <a
+        href="https://cloud.mongodb.com/v2/61dc2a2c368f412d11523ecd#metrics/replicaSet/61dc2b2d36bc3d1e15c12545/explorer/mainDatabase/admins/find"
+        target="_blank"
+        >Baza de date</a
+      >
     </div>
 
-    <!-- Page content -->
     <div class="content">
-    <%- include('partials/add-university'); %>
-    <%- include('partials/edit-university'); %>
-    <%- include('partials/req-to-add-university'); %> 
+      <div class="container1">
+        <%- include('partials/add-university'); %> <%-
+        include('partials/edit-university'); %> <%-
+        include('partials/req-to-add-university'); %>
+      </div>
     </div>
 
     <script src="scripts/sidebar.js"></script>
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/popUp.js"></script>
-    <script src="scripts/slider.js"></script>
-    <script src="scripts/getUserLocation.js"></script>
+
     <script>
-      $('#materiiSelect').dropdown();
-    $('#specializariSelect').dropdown();
-    $('#oras').dropdown();
+      $("#materiiSelect").dropdown();
+      $("#specializariSelect").dropdown();
+      $("#oras").dropdown();
     </script>
   </body>
 </html>

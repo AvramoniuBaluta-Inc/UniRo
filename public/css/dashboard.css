@@ -10,6 +10,20 @@
   
 }
 
+.sidebar a {
+  display: block;
+  color: black;
+  color: #111;
+  padding: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.sidebar a:hover {
+  background-color: #f44336;
+  color: #fff;
+}
+
 .sidebar button {
   display: block;
   color: #111;
@@ -29,13 +43,14 @@
 
 
 .sidebar button:hover {
+  cursor: pointer;
   background-color: #f44336;
   color: white;
 }
 
 div.content {
   margin-left: 200px;
-  padding: 1px 16px;
+  padding: 0 16px;
   height: auto;
 }
 
@@ -60,12 +75,39 @@ div.content {
   }
 }
 
+button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.sidebar .logout:hover{
+  background-color: #111;
+}
+
+.sidebar .logout {
+  background-color: #353535;
+  color: #fff;
+}
+
+.container1 {
+  margin-top: 2%;
+}
+.container1 h1 {
+  font-size: 35px;
+}
+
 #add_university{
   display:none;
+  margin-bottom: 0%;
 }
 #edit_university{
   display:none;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 #req_to_add_university{
   display: none;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
+
