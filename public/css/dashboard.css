@@ -63,6 +63,10 @@ div.content {
   .sidebar button {
       float: left;
   }
+  .sidebar a {
+    width: 100%;
+      float: left;
+  }
   div.content {
       margin-left: 0;
   }
@@ -70,6 +74,10 @@ div.content {
 
 @media screen and (max-width: 400px) {
   .sidebar button {
+    text-align: center;
+    float: none;
+  }
+  .sidebar a {
     text-align: center;
     float: none;
   }
