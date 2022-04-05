@@ -119,3 +119,37 @@ button:focus {
   margin-bottom: 0%;
 }
 
+
+.materii span {
+  border-radius: 20px;
+  padding: 0 1.5%;
+  margin-right: 0.5%;
+  color: #fff;
+  background-color: #11a8ff;
+  margin-top: 5px;
+}
+
+
+.card-title {
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.accept {
+  display: flex;
+  justify-content: space-between;
+}
+
+.verde:hover {
+  background-color: #00a023;
+  border-color: #00a023;
+}
+
+.rosu:hover {
+  background-color: #c90d00;
+  border-color: #c90d00;
+}
+
+.detail-color {
+  color: #f44336;
+}

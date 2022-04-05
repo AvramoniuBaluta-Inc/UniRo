@@ -1,3 +1,76 @@
 <div id="req_to_add_university">
-  <h1>Cerere de Adaugare</h1>
+  <h1>Cereri de Adaugare</h1>
+  <br><br>
+
+  <% items.forEach(function(cerere) { %>
+
+  <div class="card mb-3 uni">
+    <div class="row">
+      <div class="col-md-4 img-size">
+
+        <img src="data:image/<%= cerere.img.contentType %>;base64,
+                     <%= cerere.img.data.toString('base64') %>">
+
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <p class="card-text">
+            <small class="text-muted">
+              <%= cerere._id %>
+            </small>
+          </p>
+          <h3 class="card-title">
+            <%= cerere.nume %>
+          </h3>
+          <p class="card-text">
+            <small class="text-muted">
+              <%= cerere.oras %>
+            </small>
+          </p>
+          <p class="card-text">
+            <%= cerere.descriere %>
+          </p>
+
+          <p id="taguri">
+            <% for(var i=0;i<cerere.specializari.length;i++){ %>
+            <span class="tag" >
+              <%= cerere.specializari[i] %>
+            </span>
+            <% } %>
+          </p>
+          
+          <p class="materii">
+            <% for(var i=0;i<cerere.materii.length;i++){ %>
+            <span >
+              <%= cerere.materii[i] %>
+            </span>
+            <% } %>
+          </p>
+
+          <br><br>
+
+          <div class="more">
+            <a href="https://<%=cerere.link%>"> Link website ( <span class="detail-color"><%=cerere.link%> </span>) </a>
+          </div>
+          <br>
+          <div class="more">
+            <p> Email contact: <span class="detail-color"> <%=cerere.email%></span> </p>
+          </div>
+          <br><br>
+
+          <div class="accept">
+            <button type="submit" class="hero-btn verde" value="<%= cerere._id %>">Accepta</button>
+            <button type="submit" class="hero-btn rosu" value="<%= cerere._id %>">Respinge</button>
+            <button type="submit" onclick="edit_university_menu()" class="hero-btn"
+              value="<%= cerere._id %>">Editeaza</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% }); %>
+
 </div>

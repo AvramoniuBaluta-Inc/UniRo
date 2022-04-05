@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var add = require("../public/scripts/addToArray.js");
-const { University } = require("../database_models/models.js");
+const { University, Cerere } = require("../database_models/models.js");
 var idGenerate = require("../backend_scripts/addId.js");
 const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
 const multer = require("multer");
@@ -31,10 +31,17 @@ const upload = multer({
 });
 
 router.get("/", isLoggedIn, (req, res) => {
-  res.render("dashboard", {
-    specializari: specializari,
-    materii: materii,
-    orase: orase,
+  Cerere.find({}, (err, cerere) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("dashboard", {
+        specializari: specializari,
+        materii: materii,
+        orase: orase,
+        items: cerere,
+      });
+    }
   });
 });
 
@@ -71,7 +78,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
           rating: data_from_googleAPI.results[0].rating,
-          reviewsNo:data_from_googleAPI.results[0].user_ratings_total,
+          reviewsNo: data_from_googleAPI.results[0].user_ratings_total,
         });
 
         if (
@@ -109,7 +116,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
           rating: data_from_googleAPI.results[0].rating,
-          reviewsNo:data_from_googleAPI.results[0].user_ratings_total,
+          reviewsNo: data_from_googleAPI.results[0].user_ratings_total,
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {
           if (err) {
