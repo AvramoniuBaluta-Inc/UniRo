@@ -31,20 +31,32 @@ const upload = multer({
 });
 
 router.get("/", isLoggedIn, (req, res) => {
+  var cnt = 1;
+  var uniArray = [];
+  (async () => {
+  await University.find().then((universitati) => {
+  universitati.forEach((universitate) => {
+    uniArray[cnt] =universitate;
+    cnt++;
+  });
+});
   Cerere.find({}, (err, cerere) => {
     if (err) {
       console.log(err);
     } else {
+      console.log(uniArray);
       res.render("dashboard", {
+        lungime: cnt,
         specializari: specializari,
+        uniArray: uniArray,
         materii: materii,
         orase: orase,
         items: cerere,
       });
     }
   });
+})();
 });
-
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
   //////////

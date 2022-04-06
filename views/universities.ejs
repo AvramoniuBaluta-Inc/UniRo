@@ -54,8 +54,7 @@
                 <div class="d-flex">
                 <button id="popUp-open-button" class="hero-btn">Filtrare</button>
                 <form class="d-flex">
-                    <input class="form-control search-bar " type="search" placeholder="Cauta universitate..." aria-label="Search">
-                    <button class="hero-btn" type="submit">Cauta</button>
+                    <input class="form-control search-bar " type="search" placeholder="Cauta universitate..." aria-label="Search" id="search">
                 </form>
                 </div>
                 <div class="nav-links" id="navLinks">
@@ -112,6 +111,7 @@
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/getUserLocation.js"></script>
+    <script src="scripts/search.js"></script>
     <script>
         $("#submit-button").on('click', function () {
             $('.content_after_load').fadeOut(1000);

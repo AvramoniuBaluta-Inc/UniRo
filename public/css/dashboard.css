@@ -153,3 +153,6 @@ button:focus {
 .detail-color {
   color: #f44336;
 }
+#search{
+  width: 50%;
+}

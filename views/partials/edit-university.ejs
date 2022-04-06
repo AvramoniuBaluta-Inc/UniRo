@@ -1,3 +1,19 @@
 <div id="edit_university">
   <h1>Editeaza Universitati</h1>
+
+  <section class="display">
+
+    <input type="search" id="search">
+    <div class="container1">
+        <% for(var i=1;i<lungime;i++){ %>
+
+        <% uni=uniArray[i]; %>
+
+        <%- include('university', {uni: uni}); %>
+
+        <% } %>
+
+    </div>
+</section>
+
 </div>

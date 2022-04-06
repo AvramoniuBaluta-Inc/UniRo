@@ -94,14 +94,15 @@
 
     <div class="content">
       <div class="container1">
-        <%- include('partials/add-university'); %> <%-
-        include('partials/edit-university'); %> <%-
-        include('partials/req-to-add-university'); %>
+        <%- include('partials/add-university'); %> 
+        <%-include('partials/edit-university',{uniArray:uniArray,lungime:lungime}); %> 
+        <%-include('partials/req-to-add-university'); %>
       </div>
     </div>
 
+    
     <script src="scripts/sidebar.js"></script>
-
+   <script src="scripts/search.js"></script>
     <script>
       $("#materiiSelect").dropdown();
       $("#specializariSelect").dropdown();
