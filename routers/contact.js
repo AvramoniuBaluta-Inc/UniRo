@@ -51,6 +51,10 @@ router.post("/", upload.single("photo"), (req, res) => {
     if (req.file === undefined) {
       (async () => {
         const cerere = new Cerere({
+          nume_reprezentant:req.body.nume_reprezentant,
+          prenume_reprezentant:req.body.prenume_reprezentant,
+          email_reprezentant:req.body.email_reprezentant,
+          universitate:{
           nume: req.body.nume,
           descriere: req.body.descriere,
           oras: req.body.oras,
@@ -60,6 +64,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
+          },
         });
 
         if (
@@ -79,6 +84,10 @@ router.post("/", upload.single("photo"), (req, res) => {
     } else {
       (async () => {
         const cerere = new Cerere({
+          nume_reprezentant:req.body.nume_reprezentant,
+          prenume_reprezentant:req.body.prenume_reprezentant,
+          email_reprezentant:req.body.email_reprezentant,
+          universitate:{
           nume: req.body.nume,
           descriere: req.body.descriere,
           oras: req.body.oras,
@@ -94,6 +103,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           },
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
+        },
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {
           if (err) {

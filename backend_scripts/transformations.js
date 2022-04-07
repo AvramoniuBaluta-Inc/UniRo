@@ -1,6 +1,5 @@
 module.exports = {
     to_number: function to_number(parameter) {
-        console.log("lol");
         var string = "";
         var number = "";
         parameter = parameter * 1000000000000000;

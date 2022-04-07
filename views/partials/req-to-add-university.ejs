@@ -3,46 +3,45 @@
   <br><br>
 
   <% items.forEach(function(cerere) { %>
-
   <div class="card mb-3 uni">
     <div class="row">
       <div class="col-md-4 img-size">
 
-        <img src="data:image/<%= cerere.img.contentType %>;base64,
-                     <%= cerere.img.data.toString('base64') %>">
+        <img src="data:image/<%= cerere.universitate.img.contentType %>;base64,
+                     <%= cerere.universitate.img.data.toString('base64') %>">
 
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <p class="card-text">
             <small class="text-muted">
-              <%= cerere._id %>
+              <%= cerere.universitate._id %>
             </small>
           </p>
           <h3 class="card-title">
-            <%= cerere.nume %>
+            <%= cerere.universitate.nume %>
           </h3>
           <p class="card-text">
             <small class="text-muted">
-              <%= cerere.oras %>
+              <%= cerere.universitate.oras %>
             </small>
           </p>
           <p class="card-text">
-            <%= cerere.descriere %>
+            <%= cerere.universitate.descriere %>
           </p>
 
           <p id="taguri">
-            <% for(var i=0;i<cerere.specializari.length;i++){ %>
+            <% for(var i=0;i< cerere.universitate.specializari.length;i++){ %>
             <span class="tag" >
-              <%= cerere.specializari[i] %>
+              <%= cerere.universitate.specializari[i] %>
             </span>
             <% } %>
           </p>
           
           <p class="materii">
-            <% for(var i=0;i<cerere.materii.length;i++){ %>
+            <% for(var i=0;i<cerere.universitate.materii.length;i++){ %>
             <span >
-              <%= cerere.materii[i] %>
+              <%= cerere.universitate.materii[i] %>
             </span>
             <% } %>
           </p>
@@ -50,19 +49,19 @@
           <br><br>
 
           <div class="more">
-            <a href="https://<%=cerere.link%>"> Link website ( <span class="detail-color"><%=cerere.link%> </span>) </a>
+            <a href="https://<%=cerere.universitate.link%>"> Link website ( <span class="detail-color"><%=cerere.universitate.link%> </span>) </a>
           </div>
           <br>
           <div class="more">
-            <p> Email contact: <span class="detail-color"> <%=cerere.email%></span> </p>
+            <p> Email contact: <span class="detail-color"> <%=cerere.universitate.email%></span> </p>
           </div>
           <br><br>
 
           <div class="accept">
-            <button type="submit" class="hero-btn verde" value="<%= cerere._id %>">Accepta</button>
-            <button type="submit" class="hero-btn rosu" value="<%= cerere._id %>">Respinge</button>
+            <button type="submit" class="hero-btn verde" value="<%= cerere.universitate._id %>">Accepta</button>
+            <button type="submit" class="hero-btn rosu" value="<%= cerere.universitate._id %>">Respinge</button>
             <button type="submit" onclick="edit_university_menu()" class="hero-btn"
-              value="<%= cerere._id %>">Editeaza</button>
+              value="<%= cerere.universitate._id %>">Editeaza</button>
           </div>
 
 

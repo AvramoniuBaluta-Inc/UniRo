@@ -36,7 +36,7 @@ router.get("/", isLoggedIn, (req, res) => {
   (async () => {
   await University.find().then((universitati) => {
   universitati.forEach((universitate) => {
-    uniArray[cnt] =universitate;
+    uniArray[cnt] = universitate;
     cnt++;
   });
 });
@@ -44,7 +44,6 @@ router.get("/", isLoggedIn, (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(uniArray);
       res.render("dashboard", {
         lungime: cnt,
         specializari: specializari,

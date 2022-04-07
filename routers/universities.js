@@ -13,14 +13,9 @@ router.get("/", function (req, res) {
   var cnt = 1;
   var uniArray = [];
   (async () => {
-  await University.find().then((universitati) => {
-  universitati.forEach((universitate) => {
-    uniArray[cnt] =universitate;
-    cnt++;
-  });
-});
+    uniArray = await University.find();
     res.render("universities", {
-      lungime: cnt,
+      lungime: uniArray.length,
       uniArray: uniArray,
       materii: materii,
       specializari: specializari,
@@ -32,19 +27,13 @@ router.get("/", function (req, res) {
 
 router.post("/", function (req, res) {
   var cnt;
-  var cntFiltered = 1;
+  var cntFiltered = 0;
   var uniArray = [];
   var uniArrayFiltered = [];
   (async () => {
-    var cnt = 1;
-    var uniArray = [];
-    await University.find().then((universitati) => {
-      universitati.forEach((universitate) => {
-        uniArray[cnt] =universitate;
-        cnt++;
-      });
-    });
-    for (var i = 1; i < cnt; i++) {
+    uniArray = await University.find();
+    var cnt =uniArray.length ;
+    for (var i = 0; i < cnt; i++) {
       if (
         uniFunctions.oras(uniArray[i], req.body.oras) &&
         uniFunctions.materii(uniArray[i], add.addArray(req.body.materii)) &&

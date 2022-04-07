@@ -1,23 +1,14 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const uniSchema = require("./universitate");
 
 const cerereSchema = new mongoose.Schema({
-  nume: String,
-  descriere: String,
-  oras: String,
-  latitudine: Number,
-  longitudine: Number,
-  email: String,
-  link: String,
-  img: {
-    data: Buffer,
-    contentType: String,
-  },
-  materii: [],
-  specializari: [],
-  studenti: Number,
-  public: Boolean,
-  camin: Boolean,
+  nume_reprezentant: String,
+  prenume_reprezentant: String,
+  email_reprezentant: String,
+  universitate: {
+    type :   uniSchema,
+  }
 });
 
 module.exports = cerereSchema;
