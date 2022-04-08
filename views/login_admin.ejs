@@ -47,9 +47,9 @@
   </head>
 
   <body>
-    <section class="header content_after_load">
+    <section class="header">
       <nav>
-        <a href="/"> <%- include("partials/logo") %> </a>
+        <h1>Acceseaza dashboard</h1>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
@@ -62,46 +62,68 @@
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
 
-      <div class="container-main">
-        <div class="main">
-          <input type="checkbox" id="chk" aria-hidden="true" />
-
-          <div class="signup">
-            <form class="signup-form" action="/admin/register" method="POST">
-              <label for="chk" aria-hidden="true">Sign up</label>
-              <input type="text" placeholder="Admin Key" name="admin" />
-              <input type="text" placeholder="Username" name="username" />
-              <input type="email" placeholder="Email" name="email" />
-              <input type="password" placeholder="Password" name="password" />
-              <button type="submit" class="signup-btn">Sign up</button>
-            </form>
+      <div class="container1">
+        <div class="row">
+          <div class="col-md-6" id="register">
+            <div class="signup">
+              <form class="signup-form" action="/admin/register" method="POST">
+                <h2 for="chk" aria-hidden="true">Inregistreaza-te</h2>
+                <br /><br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Admin Key"
+                  name="admin"
+                />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                />
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Parola"
+                  name="password"
+                />
+                <br /><br />
+                <button type="submit" class="hero-btn">Inregistreaza-te</button>
+              </form>
+            </div>
           </div>
-
-          <div class="login">
-            <form action="/admin" method="POST">
-              <label for="chk" aria-hidden="true">Login</label>
-              <input type="text" placeholder="Username" name="username" />
-              <input type="password" placeholder="Password" name="password" />
-              <button type="submit">Login</button>
-            </form>
+          <div class="col-md-6" id="login">
+            <div class="login">
+              <form action="/admin" method="POST">
+                <h2 for="chk" aria-hidden="true">Login</h2>
+                <br /><br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                />
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Parola"
+                  name="password"
+                />
+                <br /><br />
+                <button type="submit" class="hero-btn log">Login</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="loader">
-      <div class="loading-circle"></div>
-    </div>
     <script src="scripts/menu.js"></script>
-    <script>
-      $(window).on("load", function () {
-        $(".loader").fadeOut(1);
-        $(".content_after_load").fadeIn(1);
-      });
-      $("#explore-button").on("click", function () {
-        $(".content_after_load").fadeOut(400);
-        $(".loader").fadeIn(400);
-      });
-    </script>
   </body>
 </html>
