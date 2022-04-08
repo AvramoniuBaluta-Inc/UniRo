@@ -1,5 +1,6 @@
 <!-- aici iti faci tu talentu -->
 <div universitate >
+
 <div class="card mb-3 uni">
   <div class="row">
     <div class="col-md-4 img-size">
@@ -13,7 +14,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title" id="nume">
-          <%= uni.nume %>
+          <p><%= uni.nume %></p>
           <span class="rating">
             <%= uni.rating %> <i class="fa fa-star" aria-hidden="true"></i>
           </span>
@@ -25,7 +26,7 @@
           </small>
         </p>
         <p class="card-text">
-          <%= uni.descriere %>
+          <p><%= uni.descriere %></p>
         </p>
 
         <p id="taguri">
@@ -62,4 +63,11 @@
     </div>
   </div>
 </div>
+<div style="display:none">
+  <p><%= uni.oras %></p>
+  <p><%=uni.longitudine%></p>
+  <p><%=uni.latitudine%></p>
+  <p><%= uni.email %></p>
+  <p><%= uni.link %></p>
+  </div>
 </div>
