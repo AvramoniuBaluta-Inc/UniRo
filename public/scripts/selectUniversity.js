@@ -11,6 +11,6 @@ document.querySelectorAll('[universitate]').forEach(item => {
       //  document.getElementById("add_university").children[1].children[5].value = 0;
       //  document.getElementById("add_university").children[1].children[6].value = 0;
       //  document.getElementById("add_university").children[1].children[7].value = 0;
-                // item.getElementById('toAdd').value = 0;
+      document.getElementById("add_university").children[1][12].value = 0;
     });
   });
