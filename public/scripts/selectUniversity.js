@@ -16,15 +16,15 @@ document.querySelectorAll('[universitate]').forEach(item => {
         document.getElementById("add_university").children[1][12].value = 0;
         addMaterii(item);
         addSpecializari(item);
+        document.getElementById("add_university").getElementsByClassName('idOfUni')[0].value = item.getElementsByClassName('idOfUni')[0].innerHTML;
+        console.log(item.getElementsByClassName('idOfUni')[0].innerHTML);
         var images = item.getElementsByClassName("img-size");
         var image = document.createElement('div');
         image.setAttribute('class', "edit_photo");
         image.innerHTML = images[0].innerHTML;
-        console.log(image);
+     //   console.log(image);
         document.getElementById("add_university").children[1].appendChild(image);
         document.getElementById("add_university").children[1].insertBefore(image,document.getElementById("add_university").children[1].children[4])
-        
-    
       });
   });
   document.getElementById("photo").addEventListener('change',function(){

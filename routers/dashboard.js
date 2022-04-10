@@ -59,6 +59,8 @@ router.get("/", isLoggedIn, (req, res) => {
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
   //////////
+  console.log(req.body.toAdd===true);
+  if(req.body.toAdd===true){
   var latitudine = transformations.to_number(req.body.latitude);
   var longitudine = transformations.to_number(req.body.longitude);
   var name_of_uni = transformations.to_url(req.body.nume);
@@ -152,6 +154,57 @@ router.post("/", upload.single("photo"), (req, res) => {
       })();
     }
   })();
+}
+else{
+  //editare
+  var uniArray = [];
+  var id = req.body.id;
+  (async()=>{
+    uniArray = await University.find({_id:id});
+    var univeristateDeEditat = uniArray[0] ;
+    if(req.file === undefined){
+      var updateDocument  = {
+        $set: {
+          _id: idUni,
+          nume: req.body.nume,
+          descriere: req.body.descriere,
+          oras: req.body.oras,
+          latitudine: req.body.latitude,
+          longitudine: req.body.longitude,
+          email: req.body.email,
+          link: req.body.link,
+          specializari: add.addArray(req.body.specializari),
+          materii: add.addArray(req.body.materii),
+        }
+      };
+    const result = await University.updateOne(univeristateDeEditat, updateDocument);
+    }
+    else{
+      var updateDocument  = {
+        $set: {
+          _id: idUni,
+          nume: req.body.nume,
+          descriere: req.body.descriere,
+          oras: req.body.oras,
+          latitudine: req.body.latitude,
+          longitudine: req.body.longitude,
+          email: req.body.email,
+          link: req.body.link,
+          img: {
+            data: fs.readFileSync(
+              path.join("./public/uploads/" + req.file.filename)
+            ),
+            contentType: "image/png",
+          },
+          specializari: add.addArray(req.body.specializari),
+          materii: add.addArray(req.body.materii),
+        }
+      };
+    const result = await University.updateOne(univeristateDeEditat, updateDocument);
+    }
+  })();
+  
+}
   res.redirect("/dashboard");
 });
 
