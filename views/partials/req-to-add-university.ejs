@@ -3,6 +3,7 @@
   <br><br>
 
   <% items.forEach(function(cerere) { %>
+    <div req>
   <div class="card mb-3 uni">
     <div class="row">
       <div class="col-md-4 img-size">
@@ -70,6 +71,16 @@
     </div>
   </div>
 
+  <div style="display:none">
+    <p><%= uni.nume %></p>
+    <p><%= uni.oras %></p>
+    <p><%=uni.longitudine%></p>
+    <p><%=uni.latitudine%></p>
+    <p><%= uni.email %></p>
+    <p><%= uni.link %></p>
+    </div>
+</div>
+</div>
   <% }); %>
 
 </div>
