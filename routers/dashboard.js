@@ -59,7 +59,6 @@ router.get("/", isLoggedIn, (req, res) => {
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
   //////////
-  console.log(req.body.toAdd===true);
   if(req.body.toAdd===true){
   var latitudine = transformations.to_number(req.body.latitude);
   var longitudine = transformations.to_number(req.body.longitude);
