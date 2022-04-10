@@ -14,7 +14,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title" id="nume">
-          <p><%= uni.nume %></p>
+          <%= uni.nume %>
           <span class="rating">
             <%= uni.rating %> <i class="fa fa-star" aria-hidden="true"></i>
           </span>
@@ -31,9 +31,7 @@
 
         <p id="taguri">
           <% for(var i=0;i<uni.specializari.length;i++){ %>
-          <span class="tag" id="tag">
-            <%= uni.specializari[i] %>
-          </span>
+          <span class="tag" id="tag"><%= uni.specializari[i] %></span>
           <% } %>
         </p>
 
@@ -46,9 +44,7 @@
 
           <div class="dropdown-menu">
             <% for(var i=0;i<uni.materii.length;i++){ %>
-            <p class="item">
-              <%= uni.materii[i] %>
-            </p>
+            <p class="item"><%= uni.materii[i] %></p>
             <% } %>
           </div>
 
@@ -64,6 +60,7 @@
   </div>
 </div>
 <div style="display:none">
+  <p><%= uni.nume %></p>
   <p><%= uni.oras %></p>
   <p><%=uni.longitudine%></p>
   <p><%=uni.latitudine%></p>
