@@ -62,23 +62,7 @@
 
                     <br>
                     <br>
-                </div>
-                <div class="col-md-6 details-display">
-                    <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
-                    <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
-                    <div id="map"></div>
-                </div>
-                <div class="col-md-6 details-display">
-                    <div class="image">
-                        <% if(!(img.data===undefined )){ %>
-                        <img src=" data:uni.photo/<%=img.contentType%>;base64,
-                     <%=img.data.toString('base64')%>" class="img-fluid">
-                        <% } else {%>
-                        <img src="/images/test.png" alt="">
-                        <% } %>
-                    </div>
-                </div>
-                <div class="col-md-6 details-display">
+
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -102,6 +86,24 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="col-md-6 details-display">
+                    <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
+                    <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
+                    <div id="map"></div>
+                </div>
+                <!-- <div class="col-md-6 details-display">
+                    
+                </div> -->
+                <!-- <div class="col-md-6 details-display">
+                    <div class="image">
+                        <% if(!(img.data===undefined )){ %>
+                        <img src=" data:uni.photo/<%=img.contentType%>;base64,
+                     <%=img.data.toString('base64')%>" class="img-fluid">
+                        <% } else {%>
+                        <img src="/images/test.png" alt="">
+                        <% } %>
+                    </div>
+                </div> -->
             </div>
 
 

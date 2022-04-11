@@ -29,7 +29,8 @@
 }
 
 .table {
-    height: 100%;
+    margin-top: 3%;
+    max-height: 100%;
 }
 
 
