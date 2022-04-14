@@ -172,4 +172,6 @@ img{
 
 .click:hover {
   cursor: pointer;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+  transition: 0.2s;
 }
