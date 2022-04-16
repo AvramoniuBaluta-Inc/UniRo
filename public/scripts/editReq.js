@@ -29,6 +29,6 @@ document.querySelectorAll('[req]').forEach(item => {
             photo[0].remove();
         document.getElementById("add_university").children[1].appendChild(image);
         document.getElementById("add_university").children[1].insertBefore(image,document.getElementById("add_university").children[1].children[4]);
-        
+        document.getElementById("add_university").getElementsByClassName("toDelete")[0].value = item.getElementsByClassName("idOfReq")[0].innerText;
     });
   });

@@ -3,6 +3,8 @@ var router = express.Router();
 var orase = require("../public/scripts/orase");
 var materii = require("../public/scripts/materii.js");
 var specializari = require("../public/scripts/specializari.js");
+var idGenerate = require("../backend_scripts/addId.js");
+
 
 const multer = require("multer");
 var add = require("../public/scripts/addToArray.js");
@@ -46,11 +48,13 @@ router.post("/", upload.single("photo"), (req, res) => {
   var latitudine = transformations.to_number(req.body.latitude);
   var longitudine = transformations.to_number(req.body.longitude);
   var name_of_uni = transformations.to_url(req.body.nume);
-  
   (async () => {
     if (req.file === undefined) {
       (async () => {
+        var idOfReq = await idGenerate.generateID(Cerere);
+
         const cerere = new Cerere({
+          _id: idOfReq,
           nume_reprezentant:req.body.nume_reprezentant,
           prenume_reprezentant:req.body.prenume_reprezentant,
           email_reprezentant:req.body.email_reprezentant,
@@ -83,7 +87,10 @@ router.post("/", upload.single("photo"), (req, res) => {
       })();
     } else {
       (async () => {
+        var idOfReq = await idGenerate.generateID(Cerere);
+
         const cerere = new Cerere({
+          _id: idOfReq,
           nume_reprezentant:req.body.nume_reprezentant,
           prenume_reprezentant:req.body.prenume_reprezentant,
           email_reprezentant:req.body.email_reprezentant,

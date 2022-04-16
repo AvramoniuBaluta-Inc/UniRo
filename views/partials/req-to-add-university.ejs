@@ -45,7 +45,6 @@
             <p> Email contact: <span class="detail-color"> <%=cerere.universitate.email%></span> </p>
           </div>
           <br><br>
-
           <div class="accept">
             <button type="submit" class="hero-btn rosu" value="<%= cerere.universitate._id %>">Respinge</button>
             <button reqButton type="submit" onclick="edit_university_menu()" class="hero-btn"
@@ -65,6 +64,7 @@
     <p><%=cerere.universitate.latitudine%></p>
     <p><%= cerere.universitate.email %></p>
     <p><%= cerere.universitate.link %></p>
+    <p class="idOfReq"><%= cerere._id%></p>
     </div>
 </div>
   <% }); %>

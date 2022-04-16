@@ -59,7 +59,7 @@ router.get("/", isLoggedIn, (req, res) => {
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
   //////////
-  if(req.body.toAdd===true){
+  if(req.body.toAdd === '1'){
   var latitudine = transformations.to_number(req.body.latitude);
   var longitudine = transformations.to_number(req.body.longitude);
   var name_of_uni = transformations.to_url(req.body.nume);
@@ -73,8 +73,22 @@ router.post("/", upload.single("photo"), (req, res) => {
     "&key=AIzaSyDTMH4Yri3PVdrU0SxRf-CpqqltDWvELdY";
   var data_from_googleAPI;
   (async () => {
+    if(req.body.toDelete != '-1'){
+      var idToDelete = req.body.toDelete;
+      await Cerere.findByIdAndDelete(idToDelete);
+    }
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
+    var ratingFromAPI;
+    var reviewsNoFromApi;
+    if(data_from_googleAPI.results[0] === undefined ){
+      ratingFromAPI = 0;
+      reviewsNoFromApi  = 0;
+    }
+    else{
+      ratingFromAPI = data_from_googleAPI.results[0].rating;
+      reviewsNoFromApi  = data_from_googleAPI.results[0].user_ratings_total;
+    }
     if (req.file === undefined) {
       (async () => {
         idUni = await idGenerate.generateID(University);
@@ -89,8 +103,8 @@ router.post("/", upload.single("photo"), (req, res) => {
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
-          rating: data_from_googleAPI.results[0].rating,
-          reviewsNo: data_from_googleAPI.results[0].user_ratings_total,
+          rating: ratingFromAPI,
+          reviewsNo: reviewsNoFromApi,
         });
 
         if (
@@ -127,8 +141,8 @@ router.post("/", upload.single("photo"), (req, res) => {
           },
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
-          rating: data_from_googleAPI.results[0].rating,
-          reviewsNo: data_from_googleAPI.results[0].user_ratings_total,
+          rating: ratingFromAPI,
+          reviewsNo: reviewsNoFromApi,
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {
           if (err) {
