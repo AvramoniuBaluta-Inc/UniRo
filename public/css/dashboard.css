@@ -120,7 +120,7 @@ button:focus {
 }
 
 
-.materii span {
+.materii {
   border-radius: 20px;
   padding: 0 1.5%;
   margin-right: 0.5%;
@@ -174,4 +174,7 @@ img{
   cursor: pointer;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
   transition: 0.2s;
+}
+.materiiContiner{
+  display: inline-block;
 }

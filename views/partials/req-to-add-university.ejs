@@ -27,26 +27,14 @@
               <%= cerere.universitate.oras %>
             </small>
           </p>
-          <p class="card-text">
-            <%= cerere.universitate.descriere %>
-          </p>
+          <p class="card-text"><%= cerere.universitate.descriere %></p>
 
-          <p id="taguri">
-            <% for(var i=0;i< cerere.universitate.specializari.length;i++){ %>
-            <span class="tag" >
-              <%= cerere.universitate.specializari[i] %>
-            </span>
+          <p id="taguri"><% for(var i=0;i< cerere.universitate.specializari.length;i++){ %><span class="tag" ><%= cerere.universitate.specializari[i] %></span><% } %></p>
+          <p class="materiiContiner">
+          <% for(var i=0;i<cerere.universitate.materii.length;i++){ %>
+            <span class="materii"><%= cerere.universitate.materii[i] %></span>
             <% } %>
           </p>
-          
-          <p class="materii">
-            <% for(var i=0;i<cerere.universitate.materii.length;i++){ %>
-            <span >
-              <%= cerere.universitate.materii[i] %>
-            </span>
-            <% } %>
-          </p>
-
           <br><br>
 
           <div class="more">
@@ -59,9 +47,8 @@
           <br><br>
 
           <div class="accept">
-            <button type="submit" class="hero-btn verde" value="<%= cerere.universitate._id %>">Accepta</button>
             <button type="submit" class="hero-btn rosu" value="<%= cerere.universitate._id %>">Respinge</button>
-            <button type="submit" onclick="edit_university_menu()" class="hero-btn"
+            <button reqButton type="submit" onclick="edit_university_menu()" class="hero-btn"
               value="<%= cerere.universitate._id %>">Editeaza</button>
           </div>
 
@@ -72,12 +59,12 @@
   </div>
 
   <div style="display:none">
-    <p><%= uni.nume %></p>
-    <p><%= uni.oras %></p>
-    <p><%=uni.longitudine%></p>
-    <p><%=uni.latitudine%></p>
-    <p><%= uni.email %></p>
-    <p><%= uni.link %></p>
+    <p><%= cerere.universitate.nume %></p>
+    <p><%= cerere.universitate.oras %></p>
+    <p><%=cerere.universitate.longitudine%></p>
+    <p><%=cerere.universitate.latitudine%></p>
+    <p><%= cerere.universitate.email %></p>
+    <p><%= cerere.universitate.link %></p>
     </div>
 </div>
   <% }); %>
