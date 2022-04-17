@@ -46,9 +46,13 @@
           </div>
           <br><br>
           <div class="accept">
-            <button type="submit" class="hero-btn rosu" value="<%= cerere.universitate._id %>">Respinge</button>
+
+            <form action="/dashboard" method="POST">
+              <input type="hidden" name="toDelete" value="<%= cerere._id %>">
+            <button type="submit" class="hero-btn rosu" >Respinge</button>
+          </form>
             <button reqButton type="submit" onclick="edit_university_menu()" class="hero-btn"
-              value="<%= cerere.universitate._id %>">Editeaza</button>
+              >Editeaza</button>
           </div>
 
 

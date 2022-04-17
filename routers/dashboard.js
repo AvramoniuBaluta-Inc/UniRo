@@ -58,6 +58,12 @@ router.get("/", isLoggedIn, (req, res) => {
 });
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
+  (async() =>{
+    if(req.body.toDelete != '-1'){
+      var idToDelete = req.body.toDelete;
+      await Cerere.findByIdAndDelete(idToDelete);
+    }
+  })();
   //////////
   if(req.body.toAdd === '1'){
   var latitudine = transformations.to_number(req.body.latitude);
@@ -73,10 +79,7 @@ router.post("/", upload.single("photo"), (req, res) => {
     "&key=AIzaSyDTMH4Yri3PVdrU0SxRf-CpqqltDWvELdY";
   var data_from_googleAPI;
   (async () => {
-    if(req.body.toDelete != '-1'){
-      var idToDelete = req.body.toDelete;
-      await Cerere.findByIdAndDelete(idToDelete);
-    }
+ 
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
     var ratingFromAPI;
@@ -168,7 +171,7 @@ router.post("/", upload.single("photo"), (req, res) => {
     }
   })();
 }
-else{
+else if(req.body.toAdd === '0'){
   //editare
   var uniArray = [];
   var id = req.body.id;
