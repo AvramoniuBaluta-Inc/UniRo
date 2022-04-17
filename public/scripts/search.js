@@ -1,13 +1,14 @@
 function removeDiacritics(nume) {
     var lungime = nume.length;
     for(var i = 0;i<lungime;i++){
+        console.log("-------");
         if(nume[i].charCodeAt(0) == 259 || nume[i].charCodeAt(0) == 258 || nume[i].charCodeAt(0) == 226 || nume[i].charCodeAt(0) == 194){
             nume = nume.substring(0,i) + 'a'  + nume.substring(i+1,lungime);
         }
         if(nume[i].charCodeAt(0) == 238 || nume[i].charCodeAt(0) == 206 ){
             nume = nume.substring(0,i) + 'i'  + nume.substring(i+1,lungime);
         }
-        if(nume[i].charCodeAt(0) == 351 || nume[i].charCodeAt(0) == 350 ){
+        if(nume[i].charCodeAt(0) == 351 || nume[i].charCodeAt(0) == 350 || nume[i].charCodeAt(0) == 537 ){
             nume = nume.substring(0,i) + 's'  + nume.substring(i+1,lungime);
         }
         if(nume[i].charCodeAt(0) == 355 || nume[i].charCodeAt(0) == 354 ){
