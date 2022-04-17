@@ -5,7 +5,7 @@ const { University } = require("../database_models/models.js");
 
 router.get("/universitati", (req, res) => {
   University.find({}, (err, uni) => {
-    if (err) {
+    if (uni === null) {
       console.log(err);
     } else {
       // afiseaza toate obiectele json din baza de date
@@ -18,9 +18,10 @@ router.get("/universitati/:id", (req, res) => {
   const uniId = req.params.id;
 
   University.findOne({ _id: uniId }, (err, uni) => {
-    if (err) {
+    console.log(uni);
+    if (uni === null) {
       console.log(err);
-      res.json("nu exista");
+      res.json(null);
     } else {
       const object = {
         _id: uni._id,
