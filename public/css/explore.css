@@ -161,6 +161,11 @@ svg * {
   border-color: rgb(199, 199, 199);
 }
 
+.uni:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+  transition: 0.2s;
+}
+
 .card-title {
   padding-top: 3%;
   font-size: 32px;
