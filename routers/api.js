@@ -32,16 +32,15 @@ router.get("/universitati/:id", (req, res) => {
         longitudine: uni.longitudine,
         email: uni.email,
         link: uni.link,
-        img: uni.img,
+        img: uni.img.data.toString('base64'),
         rating: uni.rating,
         materii: uni.materii,
         specializari: uni.specializari,
         reviewsNo: uni.reviewsNo,
       };
-
       // poate fi folosit obiectul pentru a modifica datele afisate
       // res.json(object);
-      res.json(uni);
+      res.json(object);
     }
   });
 

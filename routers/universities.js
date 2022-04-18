@@ -12,11 +12,18 @@ var orase = require("../public/scripts/orase");
 router.get("/", function (req, res) {
   var cnt = 1;
   var uniArray = [];
+  var uniArrayId = [];
   (async () => {
     uniArray = await University.find();
+    var lungime = uniArray.length;
+    for(var i = 0;i<lungime;i++){
+      uniArrayId[i] = uniArray[i]._id;
+    }
+    console.log(uniArray[0].img.data);
     res.render("universities", {
-      lungime: uniArray.length,
-      uniArray: uniArray,
+      lungime: lungime,
+      uniArray: uniArrayId,
+      dummyUni:uniArray[0],
       materii: materii,
       specializari: specializari,
       orase: orase,
@@ -49,7 +56,7 @@ router.post("/", function (req, res) {
           req.body.longitude
         )
       ) {
-        uniArrayFiltered[cntFiltered] = uniArray[i];
+        uniArrayFiltered[cntFiltered] = uniArray[i]._id;
         cntFiltered++;
       }
     }

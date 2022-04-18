@@ -78,14 +78,13 @@
         <section class="display">
 
             <div class="container1">
-                <% for(var i=0;i<lungime;i++){ %>
-
-                <% uni=uniArray[i]; %>
-
-                <%- include('partials/university', {uni: uni}); %>
-
-                <% } %>
-
+                <div id="dummyUni">
+                <%- include('partials/university', {uni: dummyUni}); %>
+            </div>
+                <div class="card mb-3 uni click" id="dummyCircleCard">
+                    <div id="dummyCircle"></div>
+                </div>
+               
             </div>
         </section>
 
@@ -105,8 +104,18 @@
             </div>
         </div>
         <div id="overlay"></div>
-
+<% poz = 0; %> 
     </section>
+    <script src="scripts/renderUni.js"></script>
+    <script>
+        var uniArray = [];
+        var lungime = <%= lungime %>;
+        uniArray = <%- JSON.stringify(uniArray) %>;
+        console.log(uniArray[0]);
+        window.onload = function() {
+            renderUni();
+            };
+    </script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
