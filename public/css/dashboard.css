@@ -129,6 +129,10 @@ button:focus {
   margin-top: 5px;
 }
 
+.materii-dash {
+  margin-left: 0%;
+}
+
 
 .card-title {
   margin-top: 0%;
@@ -177,4 +181,5 @@ img{
 }
 .materiiContiner{
   display: inline-block;
+  width: 100%;
 }
