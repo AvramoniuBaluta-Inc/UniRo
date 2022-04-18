@@ -163,6 +163,16 @@ nav .fa {
     font-size: 14px;
     color: #fff;
   }
+
+  .top-unis h1 {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .uni-p {
+    color: #f44336;
+    font-weight: 400;
+    padding-bottom: 10%;
+  }
 }
 
 /* top universities section */
@@ -196,6 +206,7 @@ nav .fa {
 .uni-p {
   color: #f44336;
   font-weight: 400;
+  padding-bottom: 10%;
 }
 
 .row {
