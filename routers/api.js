@@ -18,7 +18,6 @@ router.get("/universitati/:id", (req, res) => {
   const uniId = req.params.id;
 
   University.findOne({ _id: uniId }, (err, uni) => {
-    //console.log(uni);
     if (uni === null) {
       console.log(err);
       res.json(null);
@@ -43,8 +42,6 @@ router.get("/universitati/:id", (req, res) => {
       res.json(object);
     }
   });
-
-  console.log(uniId);
 });
 
 module.exports = router;

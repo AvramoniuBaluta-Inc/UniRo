@@ -19,7 +19,6 @@ router.get("/", function (req, res) {
     for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
-    //console.log(uniArray[0].img.data);
     res.render("universities", {
       lungime: lungime,
       uniArray: uniArrayId,
