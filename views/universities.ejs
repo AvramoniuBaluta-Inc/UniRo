@@ -123,12 +123,13 @@
       <div id="overlay"></div>
       <% poz = 0; %>
     </section>
+    
+    <script src="scripts/search.js"></script>
     <script src="scripts/renderUni.js"></script>
     <script>
       var uniArray = [];
       var lungime = <%= lungime %>;
       uniArray = <%- JSON.stringify(uniArray) %>;
-      //console.log(uniArray[0]);
       window.onload = function() {
           renderUni();
           };
@@ -137,7 +138,6 @@
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/getUserLocation.js"></script>
-    <script src="scripts/search.js"></script>
     <script>
       $("#submit-button").on("click", function () {
         $(".content_after_load").fadeOut(1000);

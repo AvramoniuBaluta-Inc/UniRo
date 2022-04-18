@@ -20,6 +20,17 @@ async function renderUni() {
         else{
             document.querySelectorAll('[universitate]')[i].getElementsByClassName("img-size")[0].innerHTML ='<img src="/images/test.png" alt="">';
         } 
+        document.querySelectorAll('[universitate]')[i].getElementsByClassName("taguri")[0].innerHTML = "";
+        for(var j =0;j<universityDetails.specializari.length;j++){
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("taguri")[0].innerHTML += '<span class="tag" id="tag">'+universityDetails.specializari[j]+'</span>';
+        }
 
+        document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML = "";
+        for(var j =0;j<universityDetails.materii.length;j++){
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML += '<p class="materii">'+universityDetails.materii[j]+'</p>';
+        }
+        universitate.style.display = "block";
+        verifFilter();
     } 
+    document.getElementById('dummyCircleCard').style.display = "none";
 };
