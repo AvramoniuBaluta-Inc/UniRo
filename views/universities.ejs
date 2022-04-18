@@ -96,7 +96,9 @@
       <section class="display">
         <div class="container1">
           <div id="dummyUni">
+            <% if(uniArray.length != 0){ %> 
             <%- include('partials/university', {uni: dummyUni}); %>
+            <% } %> 
           </div>
           <div class="card mb-3 uni click" id="dummyCircleCard">
             <div id="dummyCircle"></div>

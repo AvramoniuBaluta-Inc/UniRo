@@ -59,7 +59,9 @@ router.post("/", function (req, res) {
         cntFiltered++;
       }
     }
+    var dummyUni = await University.findById(uniArrayFiltered[0]);
     res.render("universities", {
+      dummyUni: dummyUni,
       lungime: cntFiltered,
       uniArray: uniArrayFiltered,
       materii: materii,
