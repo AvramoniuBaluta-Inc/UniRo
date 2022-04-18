@@ -16,20 +16,19 @@ router.get("/", function (req, res) {
   (async () => {
     uniArray = await University.find();
     var lungime = uniArray.length;
-    for(var i = 0;i<lungime;i++){
+    for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
-    console.log(uniArray[0].img.data);
+    //console.log(uniArray[0].img.data);
     res.render("universities", {
       lungime: lungime,
       uniArray: uniArrayId,
-      dummyUni:uniArray[0],
+      dummyUni: uniArray[0],
       materii: materii,
       specializari: specializari,
       orase: orase,
     });
   })();
-
 });
 
 router.post("/", function (req, res) {
@@ -39,7 +38,7 @@ router.post("/", function (req, res) {
   var uniArrayFiltered = [];
   (async () => {
     uniArray = await University.find();
-    var cnt =uniArray.length ;
+    var cnt = uniArray.length;
     for (var i = 0; i < cnt; i++) {
       if (
         uniFunctions.oras(uniArray[i], req.body.oras) &&

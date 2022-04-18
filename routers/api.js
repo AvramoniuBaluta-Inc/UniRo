@@ -18,7 +18,7 @@ router.get("/universitati/:id", (req, res) => {
   const uniId = req.params.id;
 
   University.findOne({ _id: uniId }, (err, uni) => {
-    console.log(uni);
+    //console.log(uni);
     if (uni === null) {
       console.log(err);
       res.json(null);
@@ -32,7 +32,7 @@ router.get("/universitati/:id", (req, res) => {
         longitudine: uni.longitudine,
         email: uni.email,
         link: uni.link,
-        img: uni.img.data.toString('base64'),
+        img: uni.img.data.toString("base64"),
         rating: uni.rating,
         materii: uni.materii,
         specializari: uni.specializari,

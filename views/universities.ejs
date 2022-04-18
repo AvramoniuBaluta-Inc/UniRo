@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    
+
     <title>Universitati Romania</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <script src="https://use.fontawesome.com/894924603a.js"></script>
-    <%- include('partials/scriptbootstrap'); %>
-    <%- include('partials/favicon'); %>
+    <%- include('partials/scriptbootstrap'); %> <%- include('partials/favicon');
+    %>
     <!-- css file for dropdowns (not input) -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
     <!-- dropdown css file (input drops)-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- css file  -->
-    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="css/explore.css" />
 
     <!-- some scripts for other dropdowns (not the input ones)-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -36,85 +54,82 @@
     <!-- scripts for input dropdowns  -->
     <%- include('partials/dropdown'); %>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308683022339229"
-     crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308683022339229"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-
-</head>
-
-<body>
-
+  <body>
     <div class="loader">
-        <div class="loading-circle"></div>
+      <div class="loading-circle"></div>
     </div>
     <section class="content_after_load">
-        <section class="header">
+      <section class="header">
+        <nav class="navigation">
+          <div class="d-flex">
+            <button id="popUp-open-button" class="hero-btn">Filtrare</button>
+            <form class="d-flex">
+              <input
+                class="form-control search-bar"
+                type="search"
+                placeholder="Cauta universitate..."
+                aria-label="Search"
+                id="search"
+                onkeypress="return event.keyCode!=13"
+              />
+            </form>
+          </div>
+          <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="/despre">DESPRE NOI</a></li>
+              <li><a class="permanent" href="/">ACASA</a></li>
+              <li><a href="/contact">CONTACT</a></li>
+            </ul>
+          </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+      </section>
 
-            <nav class="navigation">
-                <div class="d-flex">
-                <button id="popUp-open-button" class="hero-btn">Filtrare</button>
-                <form class="d-flex">
-                    <input class="form-control search-bar " type="search" placeholder="Cauta universitate..." aria-label="Search" id="search" onkeypress="return event.keyCode!=13">
-                </form>
-                </div>
-                <div class="nav-links" id="navLinks">
-                    <i class="fa fa-times" onclick="hideMenu()"></i>
-                    <ul>
-                        <li><a href="/despre">DESPRE NOI</a></li>
-                        <li><a class="permanent" href="/">ACASA</a></li>
-                        <li><a href="/contact">CONTACT</a></li>
-                        
-                    </ul>
-                </div>
-                <i class="fa fa-bars" onclick="showMenu()"></i>
-
-            </nav>
-
-        </section>
-
-
-
-
-        <section class="display">
-
-            <div class="container1">
-                <div id="dummyUni">
-                <%- include('partials/university', {uni: dummyUni}); %>
-            </div>
-                <div class="card mb-3 uni click" id="dummyCircleCard">
-                    <div id="dummyCircle"></div>
-                </div>
-               
-            </div>
-        </section>
-
-
-        <div class="popUp" id="popUp">
-            <br><br>
-            <div class="popUp-header">
-                <br>
-                <h3 class="popUp-title">Filtreaza Universitatile</h3>
-                <button class="popUp-close-button" id="popUp-close-button">&times;</button>
-            </div>
-            <div class="popUp-body">
-
-                <br><br>
-                <%- include('partials/filter-form'); %>
-
-            </div>
+      <section class="display">
+        <div class="container1">
+          <div id="dummyUni">
+            <%- include('partials/university', {uni: dummyUni}); %>
+          </div>
+          <div class="card mb-3 uni click" id="dummyCircleCard">
+            <div id="dummyCircle"></div>
+          </div>
         </div>
-        <div id="overlay"></div>
-<% poz = 0; %> 
+      </section>
+
+      <div class="popUp" id="popUp">
+        <br /><br />
+        <div class="popUp-header">
+          <br />
+          <h3 class="popUp-title">Filtreaza Universitatile</h3>
+          <button class="popUp-close-button" id="popUp-close-button">
+            &times;
+          </button>
+        </div>
+        <div class="popUp-body">
+          <br /><br />
+          <%- include('partials/filter-form'); %>
+        </div>
+      </div>
+      <div id="overlay"></div>
+      <% poz = 0; %>
     </section>
     <script src="scripts/renderUni.js"></script>
     <script>
-        var uniArray = [];
-        var lungime = <%= lungime %>;
-        uniArray = <%- JSON.stringify(uniArray) %>;
-        console.log(uniArray[0]);
-        window.onload = function() {
-            renderUni();
-            };
+      var uniArray = [];
+      var lungime = <%= lungime %>;
+      uniArray = <%- JSON.stringify(uniArray) %>;
+      //console.log(uniArray[0]);
+      window.onload = function() {
+          renderUni();
+          };
     </script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/popUp.js"></script>
@@ -122,18 +137,17 @@
     <script src="scripts/getUserLocation.js"></script>
     <script src="scripts/search.js"></script>
     <script>
-        $("#submit-button").on('click', function () {
-            $('.content_after_load').fadeOut(1000);
-            $('.loader').fadeIn(1000);
-        });
-        $(window).on('load', function () {
-            $('.loader').fadeOut(1000);
-            $('.content_after_load').fadeIn(1000);
-        });
-        $('#materii').dropdown();
-        $('#specializari').dropdown();
-        $('#oras').dropdown();
+      $("#submit-button").on("click", function () {
+        $(".content_after_load").fadeOut(1000);
+        $(".loader").fadeIn(1000);
+      });
+      $(window).on("load", function () {
+        $(".loader").fadeOut(1000);
+        $(".content_after_load").fadeIn(1000);
+      });
+      $("#materii").dropdown();
+      $("#specializari").dropdown();
+      $("#oras").dropdown();
     </script>
-</body>
-
+  </body>
 </html>
