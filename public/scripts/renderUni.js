@@ -1,5 +1,4 @@
 async function renderUni() {
-    console.log(lungime);
     var linkUniRoAPI;
     var isDashboard = (document.getElementById('isDashboard').innerText === '1');
     for(var i=1;i<lungime;i++){
@@ -34,8 +33,8 @@ async function renderUni() {
         universitate.style.display = "block";
         verifFilter();
         if(isDashboard){
-            selectUni(document.querySelectorAll('[universitate]')[i]);
             addDetailsForReq(document.querySelectorAll('[universitate]')[i],universityDetails);
+            selectUni(document.querySelectorAll('[universitate]')[i]);
         }
     } 
     document.getElementById('dummyCircleCard').style.display = "none";

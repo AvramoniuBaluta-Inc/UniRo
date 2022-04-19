@@ -10,15 +10,6 @@
         <% if(uniArray.length != 0){ %> 
         <%- include('university', {uni: dummyUni}); %>
         <% } %> 
-        <div style="display:none">
-          <p><%= dummyUni.nume %></p>
-          <p><%= dummyUni.oras %></p>
-          <p><%=dummyUni.longitudine%></p>
-          <p><%=dummyUni.latitudine%></p>
-          <p><%= dummyUni.email %></p>
-          <p><%= dummyUni.link %></p>
-          <p class="idOfUni"><%= dummyUni._id%></p>
-          </div>
       </div>
       
       <div class="card mb-3 uni click" id="dummyCircleCard">

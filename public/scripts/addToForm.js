@@ -1,13 +1,11 @@
 function addMaterii(item) {
     var materii =  item.getElementsByClassName("materii");
-    console.log();
+    document.getElementById("meteriiInput").value = "";
     for(var i = 0;i<materii.length;i++){
-     // console.log(materii[i].innerText);
       var materie = document.createElement('a');
       materie.setAttribute('class', "ui label transition visible");
       materie.setAttribute('data-value', materii[i].innerText);
       materie.setAttribute('style', "display: inline-block !important;");
-      console.log();
       if(document.getElementById("meteriiInput").value === ""){
         document.getElementById("meteriiInput").value =  materii[i].innerText;
       }
@@ -23,14 +21,12 @@ function addMaterii(item) {
   
   function addSpecializari(item) {
     var specializari =  item.getElementsByClassName("tag");
-    console.log();
+    document.getElementById("specializariInput").value = "";
     for(var i = 0;i<specializari.length;i++){
-     // console.log(materii[i].innerText);
       var materie = document.createElement('a');
       materie.setAttribute('class', "ui label transition visible");
       materie.setAttribute('data-value', specializari[i].innerText);
       materie.setAttribute('style', "display: inline-block !important;");
-      console.log();
       if(document.getElementById("specializariInput").value === ""){
         document.getElementById("specializariInput").value =  specializari[i].innerText;
       }

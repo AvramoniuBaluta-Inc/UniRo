@@ -96,7 +96,7 @@
     <div class="content">
       <div class="container1">
         <%- include('partials/add-university'); %> 
-        <%-include('partials/edit-university',{uniArray:uniArray,lungime:lungime}); %> 
+        <%-include('partials/edit-university',{dummyUni:dummyUni,uniArray:uniArray,lungime:lungime}); %> 
         <%-include('partials/req-to-add-university'); %>
       </div>
     </div>
@@ -112,7 +112,7 @@
       var lungime = <%= lungime %>;
       uniArray = <%- JSON.stringify(uniArray) %>;
       window.onload = function() {
-        addDetailsForReq(document.querySelectorAll('[universitate]')[0],dummyUni)
+        //addDetailsForReq(document.querySelectorAll('[universitate]')[0],dummyUni)
           renderUni();
           };
     </script>

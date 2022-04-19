@@ -40,6 +40,7 @@ router.get("/", isLoggedIn, (req, res) => {
     for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
+  //  console.log(uniArray[0]);
   Cerere.find({}, (err, cerere) => {
     if (err) {
       console.log(err);
@@ -180,6 +181,7 @@ else if(req.body.toAdd === '0'){
     uniArray = await University.find({_id:id});
     var univeristateDeEditat = uniArray[0] ;
     if(req.file === undefined){
+      console.log(add.addArray(req.body.specializari));
       var updateDocument  = {
         $set: {
           _id: idUni,

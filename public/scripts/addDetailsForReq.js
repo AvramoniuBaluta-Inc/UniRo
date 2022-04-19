@@ -1,11 +1,31 @@
 function addDetailsForReq(universitate,universityDetails){
-    var details = '';
-    details +=  '<p>' + universityDetails.nume + '</p>';
-    details +=  '<p>' + universityDetails.oras + '</p>';
-    details +=  '<p>' + universityDetails.longitudine + '</p>';
-    details +=  '<p>' + universityDetails.latitudine + '</p>';
-    details +=  '<p>' + universityDetails.email + '</p>';
-    details +=  '<p>' + universityDetails.link + '</p>';
-    details +=  '<p class="idOfUni">' + universityDetails._id + '</p>';
-    universitate.innerHTML += '<div style="display:none">' + details + '</div>';
+    //console.log(universityDetails);
+    var details = document.createElement('div');
+    var nume = document.createElement('p');
+    nume.innerHTML = universityDetails.nume;
+    var oras = document.createElement('p');
+    oras.innerHTML = universityDetails.oras;
+    var longitudine = document.createElement('p');
+    longitudine.innerHTML = universityDetails.longitudine;
+    var latitudine = document.createElement('p');
+    latitudine.innerHTML = universityDetails.latitudine;
+    var email = document.createElement('p');
+    email.innerHTML = universityDetails.email;
+    var link = document.createElement('p');
+    link.innerHTML = universityDetails.link;
+    var id = document.createElement('p');
+    id.innerHTML = universityDetails._id;
+    id.classList.add("idOfUni");
+    details.appendChild(nume);
+    details.appendChild(oras) ;
+    details.appendChild(longitudine);
+    details.appendChild(latitudine) ;
+    details.appendChild(email) ;
+    details.appendChild(link);
+    details.appendChild(id) ;
+   // console.log(details);
+    details.style.display = "none";
+    universitate.appendChild(details);
+    universitate.insertBefore(details,universitate.children[1])
+
 }
