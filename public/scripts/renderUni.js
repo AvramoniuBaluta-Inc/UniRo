@@ -1,13 +1,15 @@
 async function renderUni() {
+    console.log(lungime);
     var linkUniRoAPI;
+    var isDashboard = (document.getElementById('isDashboard').innerText === '1');
     for(var i=1;i<lungime;i++){
         linkUniRoAPI = "/api/universitati/" + uniArray[i];
         var response = await fetch(linkUniRoAPI);
         var universityDetails = await response.json();
         var universitate = document.createElement('div');
         universitate.innerHTML = document.getElementById("dummyUni").innerHTML;
-        document.getElementsByClassName("container1")[0].appendChild(universitate);
-        document.getElementsByClassName("container1")[0].insertBefore(universitate,document.getElementById("dummyCircleCard"));
+        document.getElementsByClassName("containerUni")[0].appendChild(universitate);
+        document.getElementsByClassName("containerUni")[0].insertBefore(universitate,document.getElementById("dummyCircleCard"));
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("nume")[0].innerHTML = universityDetails.nume;
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("rating")[0].innerHTML = universityDetails.rating+'<i class="fa fa-star" aria-hidden="true"></i>';
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("recenzii")[0].innerHTML = "(" + universityDetails.reviewsNo + ")";
@@ -31,6 +33,10 @@ async function renderUni() {
         }
         universitate.style.display = "block";
         verifFilter();
+        if(isDashboard){
+            selectUni(document.querySelectorAll('[universitate]')[i]);
+            addDetailsForReq(document.querySelectorAll('[universitate]')[i],universityDetails);
+        }
     } 
     document.getElementById('dummyCircleCard').style.display = "none";
 };

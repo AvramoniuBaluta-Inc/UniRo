@@ -62,6 +62,7 @@
   </head>
 
   <body>
+    <p id="isDashboard" style="display: none;">0</p>
     <div class="loader">
       <div class="loading-circle"></div>
     </div>
@@ -94,7 +95,7 @@
       </section>
 
       <section class="display">
-        <div class="container1">
+        <div class="containerUni container1">
           <div id="dummyUni">
             <% if(uniArray.length != 0){ %> 
             <%- include('partials/university', {uni: dummyUni}); %>

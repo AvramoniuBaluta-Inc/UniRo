@@ -5,16 +5,27 @@
 
     <input type="search" id="search" class="form-control" onkeypress="return event.keyCode!=13" placeholder="Cauta numele universitatii...">
     <br><br>
-    <!-- <div class="container1"> -->
-        <% for(var i=1;i<lungime;i++){ %>
-
-        <% uni=uniArray[i]; %>
-          
-        <%- include('university', {uni: uni}); %>
-
-        <% } %>
-
-    <!-- </div> -->
+     <div class="container1 containerUni">
+      <div id="dummyUni">
+        <% if(uniArray.length != 0){ %> 
+        <%- include('university', {uni: dummyUni}); %>
+        <% } %> 
+        <div style="display:none">
+          <p><%= dummyUni.nume %></p>
+          <p><%= dummyUni.oras %></p>
+          <p><%=dummyUni.longitudine%></p>
+          <p><%=dummyUni.latitudine%></p>
+          <p><%= dummyUni.email %></p>
+          <p><%= dummyUni.link %></p>
+          <p class="idOfUni"><%= dummyUni._id%></p>
+          </div>
+      </div>
+      
+      <div class="card mb-3 uni click" id="dummyCircleCard">
+        <div id="dummyCircle"></div>
+      </div>
+    </div>
+    </div> 
 </section>
 
 </div>

@@ -33,21 +33,22 @@ const upload = multer({
 router.get("/", isLoggedIn, (req, res) => {
   var cnt = 1;
   var uniArray = [];
+  var uniArrayId = [];
   (async () => {
-  await University.find().then((universitati) => {
-  universitati.forEach((universitate) => {
-    uniArray[cnt] = universitate;
-    cnt++;
-  });
-});
+    uniArray = await University.find();
+    var lungime = uniArray.length;
+    for (var i = 0; i < lungime; i++) {
+      uniArrayId[i] = uniArray[i]._id;
+    }
   Cerere.find({}, (err, cerere) => {
     if (err) {
       console.log(err);
     } else {
       res.render("dashboard", {
-        lungime: cnt,
+        dummyUni: uniArray[0],
+        lungime: lungime,
         specializari: specializari,
-        uniArray: uniArray,
+        uniArray: uniArrayId,
         materii: materii,
         orase: orase,
         items: cerere,

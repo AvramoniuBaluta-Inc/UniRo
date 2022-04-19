@@ -72,6 +72,7 @@
   </head>
 
   <body>
+    <p id="isDashboard" style="display: none;">1</p>
     <div class="sidebar">
       <form action="/admin/logout" method="post">
         <button type="submit" class="logout">LOGOUT</button>
@@ -100,10 +101,21 @@
       </div>
     </div>
 
+    <script src="scripts/addDetailsForReq.js"></script>
     <script src="scripts/addToForm.js"></script>
     <script src="scripts/revertChanges.js"></script>
     <script src="scripts/sidebar.js"></script>
-   <script src="scripts/search.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/renderUni.js"></script>
+    <script>
+      var uniArray = [];
+      var lungime = <%= lungime %>;
+      uniArray = <%- JSON.stringify(uniArray) %>;
+      window.onload = function() {
+        addDetailsForReq(document.querySelectorAll('[universitate]')[0],dummyUni)
+          renderUni();
+          };
+    </script>
    <script src="scripts/selectUniversity.js"></script>
    <script src="scripts/editReq.js"></script>
    <script>
