@@ -1,16 +1,14 @@
 async function darkStyles() {
-  var isDarkTheme = document.getElementById('darkTheme');
-  if(isDarkTheme.innerHTML === "0"){
+  var isDarkTheme = document.getElementById("darkTheme");
+  if (isDarkTheme.innerHTML === "0") {
     isDarkTheme.innerHTML = "1";
     var link1 = document.getElementById("link1");
     var link2 = document.getElementById("link2");
     var link3 = document.getElementById("link3");
-    console.log(link1.children[0]);
     link1.children[0].style.color = "white";
     link2.children[0].style.color = "white";
     link3.children[0].style.color = "white";
-  }
-  else{
+  } else {
     isDarkTheme.innerHTML = "0";
     var link1 = document.getElementById("link1");
     var link2 = document.getElementById("link2");
@@ -27,13 +25,6 @@ async function darkStyles() {
 
   var searchBar = document.getElementById("search");
   searchBar.classList.toggle("transparent");
-
-  var link1 = document.getElementById("link1");
-  var link2 = document.getElementById("link2");
-  var link3 = document.getElementById("link3");
-  link1.classList.toggle("dark-text");
-  link2.classList.toggle("dark-text");
-  link3.classList.toggle("dark-text");
 
   var navBtn = document.getElementsByClassName("nav-btn");
   for (var i = 0; i < navBtn.length; i++) {
