@@ -44,3 +44,12 @@
     border: #EEEEEE solid 1px;
     color: #EEEEEE;
 }
+
+.transparent {
+    background-color: transparent;
+}
+
+.transparent:focus {
+    background-color: transparent;
+    color: #EEEEEE;
+}

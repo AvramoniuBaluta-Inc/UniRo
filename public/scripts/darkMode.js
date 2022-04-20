@@ -5,6 +5,9 @@ async function darkStyles() {
   var nav = document.getElementsByClassName("navigation")[0];
   nav.classList.toggle("dark-bg");
 
+  var searchBar = document.getElementById("search");
+  searchBar.classList.toggle("transparent");
+
   var link1 = document.getElementById("link1");
   var link2 = document.getElementById("link2");
   var link3 = document.getElementById("link3");
@@ -35,21 +38,26 @@ async function darkStyles() {
   }
 
   // popup styles
+
+  var popup = document.getElementById("popUp");
+  popup.classList.toggle("dark-bg");
+
   var label = document.getElementsByTagName("label");
   for (var i = 0; i < label.length; i++) {
-    label[i].classList.toggle("dark");
+    label[i].classList.toggle("dark-text");
   }
 
   var title = document.getElementsByClassName("popUp-title")[0];
-  title.classList.add("dark");
+  title.classList.add("dark-text");
   var icon = document.getElementById("popUp-close-button");
-  icon.classList.add("dark");
+  icon.classList.add("dark-text");
 }
 
 function changeIcon() {
   darkMode = document.getElementById("floatingBtn");
   if (darkMode.classList.contains("fa-moon")) {
     darkMode.classList.replace("fa-moon", "fa-sun");
+    darkMode.classList.replace("fa", "fas");
   } else {
     darkMode.classList.replace("fa-sun", "fa-moon");
   }
