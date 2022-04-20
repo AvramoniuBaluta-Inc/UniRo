@@ -1,4 +1,24 @@
 async function darkStyles() {
+  var isDarkTheme = document.getElementById('darkTheme');
+  if(isDarkTheme.innerHTML === "0"){
+    isDarkTheme.innerHTML = "1";
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var link3 = document.getElementById("link3");
+    console.log(link1.children[0]);
+    link1.children[0].style.color = "white";
+    link2.children[0].style.color = "white";
+    link3.children[0].style.color = "white";
+  }
+  else{
+    isDarkTheme.innerHTML = "0";
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var link3 = document.getElementById("link3");
+    link1.children[0].style.color = "black";
+    link2.children[0].style.color = "black";
+    link3.children[0].style.color = "black";
+  }
   var navbar = document.getElementsByTagName("body")[0];
   navbar.classList.toggle("dark-bg");
 
