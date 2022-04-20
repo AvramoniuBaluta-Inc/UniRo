@@ -45,3 +45,12 @@ async function darkStyles() {
   var icon = document.getElementById("popUp-close-button");
   icon.classList.add("dark");
 }
+
+function changeIcon() {
+  darkMode = document.getElementById("floatingBtn");
+  if (darkMode.classList.contains("fa-moon")) {
+    darkMode.classList.replace("fa-moon", "fa-sun");
+  } else {
+    darkMode.classList.replace("fa-sun", "fa-moon");
+  }
+}

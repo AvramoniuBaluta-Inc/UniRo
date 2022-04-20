@@ -421,6 +421,8 @@ svg * {
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
+  
 }
 
 .float:hover {
@@ -429,9 +431,12 @@ svg * {
 }
 
 .moonfloat{
-	margin-top:22px;
+  padding: 22px;
+  border-radius: 50%;
 }
 
 .moonfloat:hover {
   color: #fff;
+  transform: scale(1.5);
+  transition: 0.2s;
 }
