@@ -433,6 +433,7 @@ svg * {
 .moonfloat{
   padding: 22px;
   border-radius: 50%;
+  transition: 0.2s;
 }
 
 .moonfloat:hover {
