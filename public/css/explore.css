@@ -72,7 +72,7 @@ nav ul {
   position: relative;
 }
 
-.nav-links ul li a {
+.links li a{
   color: #000;
   text-decoration: none;
   font-size: 16px;
@@ -392,4 +392,46 @@ svg * {
   margin-left: 10px;
 }
 
+#dummyCircleCard {
+  padding-top: 2%;
+  border: 0 ;
+}
+#dummyCircleCard:hover {
+  box-shadow: none;
+}
 
+#dummyCircleCard #dummyCircle {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #000;
+  border-top-color: #f44336;
+}
+
+.nume {
+  font-weight: 600;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#f44336;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+}
+
+.float:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.moonfloat{
+	margin-top:22px;
+}
+
+.moonfloat:hover {
+  color: #fff;
+}

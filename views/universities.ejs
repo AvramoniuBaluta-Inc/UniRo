@@ -59,10 +59,11 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308683022339229"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="css/darkmode.css" />
   </head>
 
   <body>
-    <p id="isDashboard" style="display: none;">0</p>
+    <p id="isDashboard" style="display: none">0</p>
     <div class="loader">
       <div class="loading-circle"></div>
     </div>
@@ -70,7 +71,9 @@
       <section class="header">
         <nav class="navigation">
           <div class="d-flex">
-            <button id="popUp-open-button" class="hero-btn">Filtrare</button>
+            <button id="popUp-open-button" class="hero-btn nav-btn">
+              Filtrare
+            </button>
             <form class="d-flex">
               <input
                 class="form-control search-bar"
@@ -84,10 +87,10 @@
           </div>
           <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-              <li><a href="/despre">DESPRE NOI</a></li>
-              <li><a class="permanent" href="/">ACASA</a></li>
-              <li><a href="/contact">CONTACT</a></li>
+            <ul class="links">
+              <li id="link1"><a href="/despre">DESPRE NOI</a></li>
+              <li id="link2"><a href="/">ACASA</a></li>
+              <li id="link3"><a href="/contact">CONTACT</a></li>
             </ul>
           </div>
           <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -97,14 +100,17 @@
       <section class="display">
         <div class="containerUni container1">
           <div id="dummyUni">
-            <% if(uniArray.length != 0){ %> 
-            <%- include('partials/university', {uni: dummyUni}); %>
-            <% } %> 
+            <% if(uniArray.length != 0){ %> <%- include('partials/university',
+            {uni: dummyUni}); %> <% } %>
           </div>
           <div class="card mb-3 uni click" id="dummyCircleCard">
             <div id="dummyCircle"></div>
           </div>
         </div>
+
+        <a class="float" onclick="darkStyles()">
+          <i class="fa fa-moon moonfloat"></i>
+        </a>
       </section>
 
       <div class="popUp" id="popUp">
@@ -124,7 +130,7 @@
       <div id="overlay"></div>
       <% poz = 0; %>
     </section>
-    
+
     <script src="scripts/search.js"></script>
     <script src="scripts/renderUni.js"></script>
     <script>
@@ -139,6 +145,7 @@
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/getUserLocation.js"></script>
+    <script src="scripts/darkMode.js"></script>
     <script>
       $("#submit-button").on("click", function () {
         $(".content_after_load").fadeOut(1000);

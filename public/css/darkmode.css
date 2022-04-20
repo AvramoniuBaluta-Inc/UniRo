@@ -1,0 +1,46 @@
+/* 
+    171717
+    393E46
+    FFD369
+    EEEEEE
+*/
+
+.dark {
+    color: #111;
+}
+
+.dark-text {
+    color: #EEEEEE;
+}
+
+.dark-bg {
+    background: #191919;
+    color: #EEEEEE;
+    transition: 0.1s;
+}
+
+.dark-card {
+    background-color: #1f1f1f;
+    border: #1f1f1f;
+    transition: 0.1s
+}
+
+
+
+.dark-btn {
+    color: #EEEEEE;
+    background: transparent;
+    border: #EEEEEE solid 1px;
+    transition: 0.1s
+}
+
+.dark-btn:hover {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.materii-dark {
+    background-color: transparent;
+    border: #EEEEEE solid 1px;
+    color: #EEEEEE;
+}
