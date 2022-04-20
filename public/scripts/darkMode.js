@@ -1,5 +1,3 @@
-const { link } = require("fs");
-
 async function darkStyles() {
   var navbar = document.getElementsByTagName("body")[0];
   navbar.classList.toggle("dark-bg");
