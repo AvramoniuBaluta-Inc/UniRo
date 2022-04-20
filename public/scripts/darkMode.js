@@ -68,9 +68,9 @@ async function darkStyles() {
   }
 
   var title = document.getElementsByClassName("popUp-title")[0];
-  title.classList.add("dark-text");
+  title.classList.toggle("dark-text");
   var icon = document.getElementById("popUp-close-button");
-  icon.classList.add("dark-text");
+  icon.classList.toggle("dark-text");
 }
 
 function changeIcon() {
