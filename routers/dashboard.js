@@ -110,6 +110,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           materii: add.addArray(req.body.materii),
           rating: ratingFromAPI,
           reviewsNo: reviewsNoFromApi,
+          viewsNo:0,
         });
 
         if (
@@ -148,6 +149,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           materii: add.addArray(req.body.materii),
           rating: ratingFromAPI,
           reviewsNo: reviewsNoFromApi,
+          viewsNo:0,
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {
           if (err) {
@@ -194,6 +196,7 @@ else if(req.body.toAdd === '0'){
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
+          viewsNo:0,
         }
       };
     const result = await University.updateOne(univeristateDeEditat, updateDocument);
@@ -217,6 +220,7 @@ else if(req.body.toAdd === '0'){
           },
           specializari: add.addArray(req.body.specializari),
           materii: add.addArray(req.body.materii),
+          viewsNo:0,
         }
       };
     const result = await University.updateOne(univeristateDeEditat, updateDocument);

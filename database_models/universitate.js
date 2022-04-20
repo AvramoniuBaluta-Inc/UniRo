@@ -21,6 +21,7 @@ const uniSchema = new mongoose.Schema({
   studenti: Number,
   public: Boolean,
   camin: Boolean,
+  viewsNo: Number,
 });
 
 module.exports = uniSchema;
