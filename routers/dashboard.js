@@ -12,7 +12,7 @@ var orase = require("../public/scripts/orase");
 var materii = require("../public/scripts/materii.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
-var updateFunction = require("../backend_scripts/updateFunction.js");
+var updateFunctions = require("../backend_scripts/updateFunctions.js");
 
 var fetch = require("node-fetch");
 
@@ -82,7 +82,6 @@ router.post("/", upload.single("photo"), (req, res) => {
     "&key=AIzaSyDTMH4Yri3PVdrU0SxRf-CpqqltDWvELdY";
   var data_from_googleAPI;
   (async () => {
- 
     var response = await fetch(linkGoogleAPI);
     data_from_googleAPI = await response.json();
     var ratingFromAPI;
@@ -234,7 +233,8 @@ else if(req.body.toAdd === '0'){
 
 router.post("/update", function (req, res) {
   (async()=>{
-    await updateFunction.sortUni();
+    await updateFunctions.sortUni();
+    await updateFunctions.updateRatings();
     res.redirect("/");
   })();
 });
