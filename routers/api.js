@@ -36,6 +36,7 @@ router.get("/universitati/:id", (req, res) => {
         materii: uni.materii,
         specializari: uni.specializari,
         reviewsNo: uni.reviewsNo,
+        viewsNo:uni.viewsNo,
       };
       // poate fi folosit obiectul pentru a modifica datele afisate
       // res.json(object);

@@ -11,16 +11,6 @@ router.get("/:uni", function (req, res) {
     (async()=>{
     var updateDocument  = {
       $set: {
-        _id: uni._id,
-        nume: uni.nume,
-        descriere: uni.descriere,
-        oras: uni.oras,
-        latitudine: uni.latitude,
-        longitudine: uni.longitude,
-        email: uni.email,
-        link: uni.link,
-        specializari: uni.specializari,
-        materii: uni.materii,
         viewsNo: uni.viewsNo+1,
       }
     };

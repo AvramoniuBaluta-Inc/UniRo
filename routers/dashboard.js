@@ -12,6 +12,7 @@ var orase = require("../public/scripts/orase");
 var materii = require("../public/scripts/materii.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
+var updateFunction = require("../backend_scripts/updateFunction.js");
 
 var fetch = require("node-fetch");
 
@@ -229,6 +230,13 @@ else if(req.body.toAdd === '0'){
   
 }
   res.redirect("/dashboard");
+});
+
+router.post("/update", function (req, res) {
+  (async()=>{
+    await updateFunction.sortUni();
+    res.redirect("/");
+  })();
 });
 
 module.exports = router;
