@@ -30,6 +30,11 @@ async function darkStyles() {
     link2.children[0].style.color = "black";
     link3.children[0].style.color = "black";
   }
+
+  var navbarIcon = document.getElementsByClassName("fa");
+  for(var i=0;i<navbarIcon.length;i++)
+  navbarIcon[i].classList.toggle("dark-navbarIcon");
+
   var navbar = document.getElementsByTagName("body")[0];
   navbar.classList.toggle("dark-bg");
 
