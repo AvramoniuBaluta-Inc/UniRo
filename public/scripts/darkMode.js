@@ -115,6 +115,10 @@ function detailsDark() {
     localStorage.setItem("isDarkMode","true");
   }
 
+  var navbarIcon = document.getElementsByClassName("fa");
+  for(var i=0;i<navbarIcon.length;i++)
+  navbarIcon[i].classList.toggle("dark-navbarIcon");
+  
   var nav = document.getElementsByClassName("navigation")[0];
   nav.classList.toggle("dark-bg");
   
