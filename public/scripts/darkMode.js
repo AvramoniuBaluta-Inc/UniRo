@@ -119,10 +119,14 @@ function detailsDark() {
   var mainBody = document.getElementsByTagName("body")[0];
   mainBody.classList.toggle("dark-bg");
 
-  var table = document.getElementsByTagName("tr");
-  for(var i = 0 ; i<table.length ; i++) {
-    table[i].classList.toggle("dark-text");
+  var tableElements = document.getElementsByTagName("tr");
+  for(var i = 0 ; i<tableElements.length; i++) {
+    tableElements[i].classList.toggle("dark-text");
   }
+var table = document.getElementsByTagName("table")[0];
+console.log(table);
+table.classList.toggle("table-dark");
+
 
   var isDarkTheme = document.getElementById("darkTheme");
   if (isDarkTheme.innerHTML === "0") {
