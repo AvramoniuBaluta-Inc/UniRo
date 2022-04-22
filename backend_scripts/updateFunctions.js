@@ -2,6 +2,8 @@ const { University } = require("../database_models/models.js");
 var fetch = require("node-fetch");
 
 async function swapUni(uniArray,length){
+    var uniArrayCopy = [];
+    uniArrayCopy = await University.find();
     for(var i=0;i<length;i++){
         var updateDocument1  = {
             $set: {
@@ -23,7 +25,7 @@ async function swapUni(uniArray,length){
                 viewsNo: uniArray[i].viewsNo,
             }
         };
-        await University.updateOne(await University.findOne({ _id: uniArray[i]._id }) , updateDocument1);
+        await University.updateOne(uniArrayCopy[i], updateDocument1);
     }
 
 }
