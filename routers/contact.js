@@ -78,7 +78,10 @@ router.post("/", upload.single("photo"), (req, res) => {
           cerere.oras === "" ||
           cerere.email === "" ||
           cerere.link === "" ||
-          cerere.rating === ""
+          cerere.rating === ""||
+          req.body.nume_reprezentant ==="" ||
+          req.body.prenume_reprezentant==="" ||
+          req.body.email_reprezentant===""
         ) {
           console.log("Error : No input");
         } else {
@@ -126,7 +129,10 @@ router.post("/", upload.single("photo"), (req, res) => {
           cerere.oras === "" ||
           cerere.email === "" ||
           cerere.link === "" ||
-          cerere.rating === ""
+          cerere.rating === ""||
+          req.body.nume_reprezentant ==="" ||
+          req.body.prenume_reprezentant==="" ||
+          req.body.email_reprezentant===""
         ) {
           console.log("Error : No input");
         } else {

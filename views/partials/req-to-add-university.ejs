@@ -2,7 +2,8 @@
   <h1>Cereri de Adaugare</h1>
   <br><br>
 
-  <% items.forEach(function(cerere) { %>
+  <% items.forEach(function(cerere){ if(cerere.universitate.img.data!= undefined){ %>
+
     <div req>
   <div class="card mb-3 uni">
     <div class="row">
@@ -71,6 +72,6 @@
     <p class="idOfReq"><%= cerere._id%></p>
     </div>
 </div>
-  <% }); %>
+  <% }}); %>
 
 </div>
