@@ -1,3 +1,6 @@
+body{
+  background-color: #191919;
+}
 * {
   margin: 0%;
   padding: 0%;
@@ -441,3 +444,4 @@ svg * {
   transform: scale(1.5);
   transition: 0.2s;
 }
+

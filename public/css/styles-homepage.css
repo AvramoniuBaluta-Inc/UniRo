@@ -299,7 +299,7 @@ nav .fa {
 }
 
 .content_after_load {
-  display: none;
+  display: block;
 }
 
 .loader {
@@ -307,6 +307,7 @@ nav .fa {
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
+  display: none;
 }
 .loading-circle {
   height: 100px;

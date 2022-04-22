@@ -1,4 +1,17 @@
 async function darkStyles() {
+  if(localStorage.getItem("isDarkMode") === null){
+    localStorage.setItem("isDarkMode","false");
+    document.getElementsByTagName("body")[0].style.backgroundColor  = " #fff";
+    return;
+  }
+  else if(localStorage.getItem("isDarkMode")==="true" && document.getElementById("darkTheme").innerText==="1"){
+    localStorage.setItem("isDarkMode","false");
+    document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
+  }
+  else{
+    document.getElementsByTagName("body")[0].style.backgroundColor  = "#191919";
+    localStorage.setItem("isDarkMode","true");
+  }
   var isDarkTheme = document.getElementById("darkTheme");
   if (isDarkTheme.innerHTML === "0") {
     isDarkTheme.innerHTML = "1";
@@ -77,6 +90,25 @@ function changeIcon() {
 
 // am facut functii diferite pt fiecare pagina ca sa putem sa le modificam usor daca mai vrem sa adaugam cv 
 function detailsDark() {
+
+  if(localStorage.getItem("isDarkMode") === null){
+    localStorage.setItem("isDarkMode","false");
+    document.getElementsByTagName("body")[0].style.backgroundColor  = " #fff";
+    document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
+
+    return;
+  }
+  else if(localStorage.getItem("isDarkMode")==="true" && document.getElementById("darkTheme").innerText==="1"){
+    localStorage.setItem("isDarkMode","false");
+    document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
+    document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
+
+  }
+  else{
+    document.getElementsByTagName("body")[0].style.backgroundColor  = " #191919";
+    document.getElementsByTagName("nav")[0].style.backgroundColor  = "#191919";
+    localStorage.setItem("isDarkMode","true");
+  }
 
   var nav = document.getElementsByClassName("navigation")[0];
   nav.classList.toggle("dark-bg");

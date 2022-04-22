@@ -139,13 +139,19 @@
 
     <script src="scripts/search.js"></script>
     <script src="scripts/renderUni.js"></script>
-    <script>
+    <script src="scripts/darkMode.js"></script>
 
+    <script>
       function darkBtn() {
           darkStyles();
           changeIcon();
       }
-
+      if(!(localStorage.getItem("isDarkMode")==="false")){
+        darkBtn();
+      }
+      else{
+        document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
+      }
       var uniArray = [];
       var lungime = <%= lungime %>;
       uniArray = <%- JSON.stringify(uniArray) %>;
@@ -158,7 +164,6 @@
     <script src="scripts/popUp.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/getUserLocation.js"></script>
-    <script src="scripts/darkMode.js"></script>
     <script>
       $("#submit-button").on("click", function () {
         $(".content_after_load").fadeOut(1000);

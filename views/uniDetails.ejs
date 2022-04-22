@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    <p id="darkTheme" style="display: none">0</p>
     <section class="header">
         <nav class="navigation">
             <h3>
@@ -139,13 +140,20 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly"
         async></script>
     
+        <script src="../scripts/darkMode.js"></script>
     <script>
         function darkBtn() {
             detailsDark();
             changeIcon();
         }
+        if(!(localStorage.getItem("isDarkMode")==="false")){
+        darkBtn();
+      }
+      else{
+        document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
+        document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
+      }
     </script>
-    <script src="../scripts/darkMode.js"></script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
     />
+    <link rel="stylesheet" href="css/darkmode.css" />
     <link rel="stylesheet" href="css/styles-homepage.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -137,14 +138,18 @@
     <script src="scripts/menu.js"></script>
     <script>
       $(window).on("load", function () {
-        $(".loader").fadeOut(1);
+        $(".loader").fadeOut();
         $(".content_after_load").fadeIn(1);
       });
       $("#explore-button").on("click", function () {
+        if(localStorage.getItem("isDarkMode") ==="true")
+          document.getElementsByTagName("body")[0].classList.add("dark-bg");
         $(".content_after_load").fadeOut(400);
         $(".loader").fadeIn(400);
       });
       $("#explore-button2").on("click", function () {
+        if(localStorage.getItem("isDarkMode") ==="true")
+          document.getElementsByTagName("body")[0].classList.add("dark-bg");
         $(".content_after_load").fadeOut(400);
         $(".loader").fadeIn(400);
       });
