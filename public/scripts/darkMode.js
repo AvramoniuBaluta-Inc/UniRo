@@ -73,3 +73,43 @@ function changeIcon() {
     darkMode.classList.replace("fa-sun", "fa-moon");
   }
 }
+
+
+// am facut functii diferite pt fiecare pagina ca sa putem sa le modificam usor daca mai vrem sa adaugam cv 
+function detailsDark() {
+
+  var nav = document.getElementsByClassName("navigation")[0];
+  nav.classList.toggle("dark-bg");
+  
+  var visitBtn = document.getElementById("visit");
+  visitBtn.classList.toggle("dark-btn");
+
+  var mainBody = document.getElementsByTagName("body")[0];
+  mainBody.classList.toggle("dark-bg");
+
+  var table = document.getElementsByTagName("tr");
+  for(var i = 0 ; i<table.length ; i++) {
+    table[i].classList.toggle("dark-text");
+  }
+
+  var isDarkTheme = document.getElementById("darkTheme");
+  if (isDarkTheme.innerHTML === "0") {
+    isDarkTheme.innerHTML = "1";
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var link3 = document.getElementById("link3");
+    link1.children[0].style.color = "white";
+    link2.children[0].style.color = "white";
+    link3.children[0].style.color = "white";
+  } else {
+    isDarkTheme.innerHTML = "0";
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var link3 = document.getElementById("link3");
+    link1.children[0].style.color = "black";
+    link2.children[0].style.color = "black";
+    link3.children[0].style.color = "black";
+  }
+
+  
+}
