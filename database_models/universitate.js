@@ -18,9 +18,6 @@ const uniSchema = new mongoose.Schema({
   materii: [],
   specializari: [],
   reviewsNo:Number,
-  studenti: Number,
-  public: Boolean,
-  camin: Boolean,
   viewsNo: Number,
 });
 
