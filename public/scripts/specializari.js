@@ -1,11 +1,16 @@
 var specializari = [
+  "Arte",
+  "Arhitectura",
+  "Business",
   "IT",
-  "Medicina",
-  "Matematica",
   "Inginerie",
-  "Robotica",
-  "Aeronautica",
-  "Economie",
+  "Medicina",
+  "Științe Umaniste",
+  "Științe Juridice",
+  "Științe ale Naturii",
+  "Științe Economice",
+  "Teologie",
+  "Sport"
 ];
 
 module.exports = specializari;

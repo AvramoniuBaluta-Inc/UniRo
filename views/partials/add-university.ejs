@@ -46,7 +46,7 @@
         <div>
           <span class="details">Facultati</span>
           <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
-            <input id="meteriiInput" type="hidden" name="materii" value="">
+            <input id="meteriiInput" type="hidden" name="facultati" value="">
             <i class="dropdown icon"></i>
             <div class="default text">Facultati...</div>
             <div class="menu">
@@ -59,11 +59,11 @@
           </div>
         </div>
         <div>
-          <span class="details">Specializari</span>
+          <span class="details">Domenii</span>
           <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
             <input type="hidden" name="specializari" id="specializariInput">
             <i class="dropdown icon"></i>
-            <div class="default text">Specializari...</div>
+            <div class="default text">Doemnii...</div>
             <div class="menu">
               <% for(var i=0;i<specializari.length;i++){ %>
               <div class="item" data-value="<%= specializari[i] %>">
