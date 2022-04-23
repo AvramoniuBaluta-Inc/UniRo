@@ -33,7 +33,7 @@ router.get("/universitati/:id", (req, res) => {
         link: uni.link,
         img: uni.img.data.toString("base64"),
         rating: uni.rating,
-        materii: uni.materii,
+        facultati: uni.facultati,
         specializari: uni.specializari,
         reviewsNo: uni.reviewsNo,
         viewsNo:uni.viewsNo,

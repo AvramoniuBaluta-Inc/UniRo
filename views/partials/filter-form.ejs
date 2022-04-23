@@ -15,15 +15,15 @@
     </div>
   </div>
   <div class="col-md-6">
-    <label for="inputState" class="form-label">Materii Studiate</label>
+    <label for="inputState" class="form-label">Facultati</label>
     <div id="materii" class="ui fluid search multiple selection dropdown">
       <input type="hidden" name="materii">
       <i class="dropdown icon"></i>
       <div class="default text">Toate</div>
       <div class="menu">
-        <% for(var i=0;i<materii.length;i++){ %>
-          <div class="item" data-value="<%= materii[i] %>">
-            <%= materii[i] %>
+        <% for(var i=0;i<facultati.length;i++){ %>
+          <div class="item" data-value="<%= facultati[i] %>">
+            <%= facultati[i] %>
           </div>
           <% } %>
       </div>

@@ -23,7 +23,7 @@ router.get("/:uni", function (req, res) {
       long: uni.longitudine,
       img: uni.img,
       email: uni.email,
-      materii: uni.materii,
+      facultati: uni.facultati,
       specializari: uni.specializari,
     });
   })();

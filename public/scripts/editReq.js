@@ -17,7 +17,7 @@ document.querySelectorAll('[req]').forEach(item => {
         document.getElementById("add_university").children[1][6].value = item.children[1].children[4].innerText;
         document.getElementById("add_university").children[1][7].value = item.children[1].children[5].innerText;
         document.getElementById("add_university").children[1][12].value = 1;
-        addMaterii(item);
+        addFacultati(item);
         addSpecializari(item);
         var images = item.getElementsByClassName("img-size");
         var image = document.createElement('div');

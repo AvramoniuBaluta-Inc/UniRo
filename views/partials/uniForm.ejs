@@ -64,15 +64,15 @@
 
         <div class="col-12">
             <div>
-                <label class="form-label">Materii studiate</label>
+                <label class="form-label">Facultati</label>
                 <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
                     <input type="hidden" class="form-control" name="materii">
                     <i class="dropdown icon"></i>
                     <div class="default text">Selectati materiile </div>
                     <div class="menu">
-                        <% for(var i=0;i<materii.length;i++){ %>
-                        <div class="item" data-value="<%= materii[i] %>">
-                            <%= materii[i] %>
+                        <% for(var i=0;i<facultati.length;i++){ %>
+                        <div class="item" data-value="<%= facultati[i] %>">
+                            <%= facultati[i] %>
                         </div>
                         <% } %>
                     </div>

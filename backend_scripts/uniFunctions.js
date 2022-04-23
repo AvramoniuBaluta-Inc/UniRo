@@ -30,14 +30,14 @@ module.exports = {
     if (req === "" || req === "Alege...") return true;
     return uni.oras === req;
   },
-  materii: function materii(uni, req) {
+  facultati: function facultati(uni, req) {
     if (req[0] === "") return true;
-    var cntUni = uni.materii.length;
+    var cntUni = uni.facultati.length;
     var cntFilter = req.length;
     for (var i = 0; i < cntFilter; i++) {
       var ok = false;
       for (var j = 0; j < cntUni; j++) {
-        if (uni.materii[j] === req[i]) {
+        if (uni.facultati[j] === req[i]) {
           ok = true;
         }
       }

@@ -15,7 +15,7 @@ const uniSchema = new mongoose.Schema({
     contentType: String,
   },
   rating: Number,
-  materii: [],
+  facultati: [],
   specializari: [],
   reviewsNo:Number,
   viewsNo: Number,

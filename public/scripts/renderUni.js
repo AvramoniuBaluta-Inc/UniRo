@@ -31,8 +31,8 @@ async function renderUni() {
         }
 
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML = "";
-        for(var j =0;j<universityDetails.materii.length;j++){
-            document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML += '<p class="materii">'+universityDetails.materii[j]+'</p>';
+        for(var j =0;j<universityDetails.facultati.length;j++){
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML += '<p class="materii">'+universityDetails.facultati[j]+'</p>';
         }
         universitate.style.display = "block";
         verifFilter();

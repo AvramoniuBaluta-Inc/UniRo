@@ -1,20 +1,20 @@
-function addMaterii(item) {
-    var materii =  item.getElementsByClassName("materii");
+function addFacultati(item) {
+    var facultati =  item.getElementsByClassName("materii");
     document.getElementById("meteriiInput").value = "";
-    for(var i = 0;i<materii.length;i++){
-      var materie = document.createElement('a');
-      materie.setAttribute('class', "ui label transition visible");
-      materie.setAttribute('data-value', materii[i].innerText);
-      materie.setAttribute('style', "display: inline-block !important;");
+    for(var i = 0;i<facultati.length;i++){
+      var facultate = document.createElement('a');
+      facultate.setAttribute('class', "ui label transition visible");
+      facultate.setAttribute('data-value', facultati[i].innerText);
+      facultate.setAttribute('style', "display: inline-block !important;");
       if(document.getElementById("meteriiInput").value === ""){
-        document.getElementById("meteriiInput").value =  materii[i].innerText;
+        document.getElementById("meteriiInput").value =  facultati[i].innerText;
       }
       else{
-        document.getElementById("meteriiInput").value = document.getElementById("meteriiInput").value +',' + materii[i].innerText;
+        document.getElementById("meteriiInput").value = document.getElementById("meteriiInput").value +',' + facultati[i].innerText;
       }
-      materie.innerHTML = materii[i].innerText+'<i class="delete icon"></i>';
-      document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].appendChild(materie);
-      document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].insertBefore(materie,document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].firstChild);
+      facultate.innerHTML = facultati[i].innerText+'<i class="delete icon"></i>';
+      document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].appendChild(facultate);
+      document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].insertBefore(facultate,document.getElementById("add_university").children[1].children[0].children[7].children[0].children[1].firstChild);
     
     }
   }
@@ -23,19 +23,19 @@ function addMaterii(item) {
     var specializari =  item.getElementsByClassName("tag");
     document.getElementById("specializariInput").value = "";
     for(var i = 0;i<specializari.length;i++){
-      var materie = document.createElement('a');
-      materie.setAttribute('class', "ui label transition visible");
-      materie.setAttribute('data-value', specializari[i].innerText);
-      materie.setAttribute('style', "display: inline-block !important;");
+      var facultate = document.createElement('a');
+      facultate.setAttribute('class', "ui label transition visible");
+      facultate.setAttribute('data-value', specializari[i].innerText);
+      facultate.setAttribute('style', "display: inline-block !important;");
       if(document.getElementById("specializariInput").value === ""){
         document.getElementById("specializariInput").value =  specializari[i].innerText;
       }
       else{
         document.getElementById("specializariInput").value = document.getElementById("specializariInput").value +',' + specializari[i].innerText;
       }
-      materie.innerHTML = specializari[i].innerText+'<i class="delete icon"></i>';
-      document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].appendChild(materie);
-      document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].insertBefore(materie,document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].firstChild);
+      facultate.innerHTML = specializari[i].innerText+'<i class="delete icon"></i>';
+      document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].appendChild(facultate);
+      document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].insertBefore(facultate,document.getElementById("add_university").children[1].children[0].children[7].children[1].children[1].firstChild);
  //  document.getElementById("add_university").children[1].children[0].insertBefore();
     }
   }

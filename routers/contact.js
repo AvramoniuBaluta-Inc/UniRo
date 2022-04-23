@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var orase = require("../public/scripts/orase");
-var materii = require("../public/scripts/materii.js");
+var facultati = require("../public/scripts/facultati.js");
 var specializari = require("../public/scripts/specializari.js");
 var idGenerate = require("../backend_scripts/addId.js");
 
@@ -14,7 +14,7 @@ var path = require("path");
 const { Cerere } = require("../database_models/models.js");
 var allTags = require("../public/scripts/allTags");
 var orase = require("../public/scripts/orase");
-var materii = require("../public/scripts/materii.js");
+var facultati = require("../public/scripts/facultati.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
 var fetch = require("node-fetch");
@@ -37,7 +37,7 @@ const upload = multer({
 router.get("/", function (req, res) {
   res.render("contact", {
     specializari: specializari,
-    materii: materii,
+    facultati: facultati,
     orase: orase,
   });
 });
@@ -67,7 +67,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           email: req.body.email,
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
           },
         });
 
@@ -112,7 +112,7 @@ router.post("/", upload.single("photo"), (req, res) => {
             contentType: "image/png",
           },
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
         },
         });
         fs.unlink("./public/uploads/" + req.file.filename, (err) => {

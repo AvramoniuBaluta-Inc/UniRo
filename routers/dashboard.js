@@ -9,7 +9,7 @@ var fs = require("fs");
 var path = require("path");
 var allTags = require("../public/scripts/allTags");
 var orase = require("../public/scripts/orase");
-var materii = require("../public/scripts/materii.js");
+var facultati = require("../public/scripts/facultati.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
 var updateFunctions = require("../backend_scripts/updateFunctions.js");
@@ -51,7 +51,7 @@ router.get("/", isLoggedIn, (req, res) => {
         lungime: lungime,
         specializari: specializari,
         uniArray: uniArrayId,
-        materii: materii,
+        facultati: facultati,
         orase: orase,
         items: cerere,
       });
@@ -107,7 +107,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           email: req.body.email,
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
           rating: ratingFromAPI,
           reviewsNo: reviewsNoFromApi,
           viewsNo:0,
@@ -146,7 +146,7 @@ router.post("/", upload.single("photo"), (req, res) => {
             contentType: "image/png",
           },
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
           rating: ratingFromAPI,
           reviewsNo: reviewsNoFromApi,
           viewsNo:0,
@@ -195,7 +195,7 @@ else if(req.body.toAdd === '0'){
           email: req.body.email,
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
           viewsNo:0,
         }
       };
@@ -219,7 +219,7 @@ else if(req.body.toAdd === '0'){
             contentType: "image/png",
           },
           specializari: add.addArray(req.body.specializari),
-          materii: add.addArray(req.body.materii),
+          facultati: add.addArray(req.body.facultati),
           viewsNo:0,
         }
       };

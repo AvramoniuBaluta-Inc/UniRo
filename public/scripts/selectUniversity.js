@@ -23,7 +23,7 @@ function selectUni(item) {
       document.getElementById("add_university").children[1][6].value = item.children[1].children[4].innerText;
       document.getElementById("add_university").children[1][7].value = item.children[1].children[5].innerText;
       document.getElementById("add_university").children[1][12].value = 0;
-      addMaterii(item);
+      addFacultati(item);
       addSpecializari(item);
       document.getElementById("add_university").getElementsByClassName('idOfUni')[0].value = item.getElementsByClassName('idOfUni')[0].innerHTML;
       console.log(item.getElementsByClassName('idOfUni')[0].innerHTML);

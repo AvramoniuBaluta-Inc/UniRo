@@ -16,7 +16,7 @@ async function swapUni(uniArray,length){
                 link: uniArray[i].link,
                 img: uniArray[i].img,
                 rating: uniArray[i].rating,
-                materii: uniArray[i].materii,
+                facultati: uniArray[i].facultati,
                 specializari: uniArray[i].specializari,
                 reviewsNo:uniArray[i].reviewsNo,
             //  studenti: uniArray[i].studenti,

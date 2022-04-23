@@ -4,7 +4,7 @@ var no = require;
 
 const { University } = require("../database_models/models.js");
 var uniFunctions = require("../backend_scripts/uniFunctions.js");
-var materii = require("../public/scripts/materii");
+var facultati = require("../public/scripts/facultati");
 var specializari = require("../public/scripts/specializari");
 var add = require("../public/scripts/addToArray.js");
 var orase = require("../public/scripts/orase");
@@ -23,7 +23,7 @@ router.get("/", function (req, res) {
       lungime: lungime,
       uniArray: uniArrayId,
       dummyUni: uniArray[0],
-      materii: materii,
+      facultati: facultati,
       specializari: specializari,
       orase: orase,
     });
@@ -41,7 +41,7 @@ router.post("/", function (req, res) {
     for (var i = 0; i < cnt; i++) {
       if (
         uniFunctions.oras(uniArray[i], req.body.oras) &&
-        uniFunctions.materii(uniArray[i], add.addArray(req.body.materii)) &&
+        uniFunctions.facultati(uniArray[i], add.addArray(req.body.facultati)) &&
         uniFunctions.rating(uniArray[i], req.body.rating) &&
         uniFunctions.specializare(
           uniArray[i],
@@ -63,7 +63,7 @@ router.post("/", function (req, res) {
       dummyUni: dummyUni,
       lungime: cntFiltered,
       uniArray: uniArrayFiltered,
-      materii: materii,
+      facultati: facultati,
       specializari: specializari,
       orase: orase,
     });
