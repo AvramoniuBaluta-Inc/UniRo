@@ -81,13 +81,12 @@
                         <thead >
                             <tr >
                                 <th scope="col">#</th>
-                                <th scope="col">Materii Studiate</th>
-                                <th scope="col">Specializari</th>
+                                <th scope="col">Facultati</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <% for(var i=0 , j=0 ; i < specializari.length, j < materii.length ;i++ , j++){ %>
+                            <% for(var j=0 ; j < materii.length ; j++){ %>
                                 <tr>
                                     <th scope="row">
                                         <%= j+1 %>
@@ -95,9 +94,7 @@
                                     <td class="tb-input">
                                         <%= materii[j] %>
                                     </td>
-                                    <td class="tb-input">
-                                        <%= specializari[i] %>
-                                    </td>
+                                    
 
                                 </tr>
 
