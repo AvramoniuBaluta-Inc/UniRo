@@ -183,7 +183,6 @@ else if(req.body.toAdd === '0'){
     uniArray = await University.find({_id:id});
     var univeristateDeEditat = uniArray[0] ;
     if(req.file === undefined){
-      console.log(add.addArray(req.body.specializari));
       var updateDocument  = {
         $set: {
           _id: idUni,
@@ -242,7 +241,6 @@ router.get("/delete/:id", function (req, res) {
   (async()=>{
     if(req.params.id != undefined)
     var result = await University.findOneAndDelete({_id:req.params.id})
-    console.log(result);
     res.redirect("/dashboard");
   })();
 });
