@@ -24,5 +24,23 @@ module.exports = {
             }
         }
         return string;
-    }
+    },
+    toName: function toName(string) {
+        var length = string.length;
+        for(var i = 0;i < length;i++){
+          if(string[i]=='|'){
+            string = string.substring(0, i-1);
+            return string;
+          }
+        }
+      },
+      toId: function toName(string) {
+        var length = string.length;
+        for(var i = 0;i < length;i++){
+          if(string[i]=='|'){
+            string = string.substring(i+1, length);
+            return string;
+          }
+        }
+      },
 };

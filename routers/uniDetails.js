@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
+var transformations = require("../backend_scripts/transformations.js");
 
 const { University } = require("../database_models/models.js");
 
 router.get("/:uni", function (req, res) {
-  const uniName = req.params.uni;
-
-
-  University.findOne({ nume: uniName }, function (err, uni) {
+  var uniName =  transformations.toName(req.params.uni);
+  var uniId = transformations.toId(req.params.uni);
+  University.findOne({ _id: uniId }, function (err, uni) {
     (async()=>{
     var updateDocument  = {
       $set: {

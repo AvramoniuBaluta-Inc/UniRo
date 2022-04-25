@@ -233,7 +233,6 @@ else if(req.body.toAdd === '0'){
 
 router.post("/update", function (req, res) {
   (async()=>{
-    await updateFunctions.sortUni();
     await updateFunctions.updateRatings();
     res.redirect("/");
   })();

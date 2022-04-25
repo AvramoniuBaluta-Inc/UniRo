@@ -14,15 +14,16 @@ router.get("/", function (req, res) {
   var uniArray = [];
   var uniArrayId = [];
   (async () => {
-    uniArray = await University.find();
+    uniArray = await University.find({},{_id:1}).sort({viewsNo:-1});
     var lungime = uniArray.length;
+    var dummyUni = await University.findOne({_id:uniArray[0]._id});
     for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
     res.render("universities", {
       lungime: lungime,
       uniArray: uniArrayId,
-      dummyUni: uniArray[0],
+      dummyUni: dummyUni,
       facultati: facultati,
       specializari: specializari,
       orase: orase,

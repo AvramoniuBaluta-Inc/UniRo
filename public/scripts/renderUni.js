@@ -14,10 +14,10 @@ async function renderUni() {
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("oras")[0].innerHTML = universityDetails.oras;
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("descriere")[0].innerHTML = universityDetails.descriere;
         if(document.getElementById("darkTheme").innerHTML ==="1"){
-            document.querySelectorAll('[universitate]')[i].getElementsByClassName("more")[0].innerHTML =  "<a href='https://"+ universityDetails.link +"' target='_blank' class='btn buton-link dark-btn'>Viziteaza website</a><a href='/universitati/"+ universityDetails.nume +"' class='btn buton-link detalii dash-hide dark-btn'>Mai multe detalii</a>";
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("more")[0].innerHTML =  "<a href='https://"+ universityDetails.link +"' target='_blank' class='btn buton-link dark-btn'>Viziteaza website</a><a href='/universitati/"+ universityDetails.nume +"|"+  universityDetails._id + "' class='btn buton-link detalii dash-hide dark-btn'>Mai multe detalii</a>";
         }
         else{
-            document.querySelectorAll('[universitate]')[i].getElementsByClassName("more")[0].innerHTML =  "<a href='https://"+ universityDetails.link +"' target='_blank' class='btn buton-link'>Viziteaza website</a><a href='/universitati/"+ universityDetails.nume +"' class='btn buton-link detalii dash-hide '>Mai multe detalii</a>";
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("more")[0].innerHTML =  "<a href='https://"+ universityDetails.link +"' target='_blank' class='btn buton-link'>Viziteaza website</a><a href='/universitati/"+ universityDetails.nume +"|"+  universityDetails._id + "' class='btn buton-link detalii dash-hide '>Mai multe detalii</a>";
         }
         if(!(universityDetails.img===undefined )){ 
             document.querySelectorAll('[universitate]')[i].getElementsByClassName("img-size")[0].innerHTML = '<img src=" data:uni.photo/' + 'data:uni.photo/image/png;base64,' + universityDetails.img + '">';
