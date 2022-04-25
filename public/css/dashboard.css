@@ -183,3 +183,16 @@ img{
   display: inline-block;
   width: 100%;
 }
+.hero-btn-delete{
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: White;
+  border: 1px solid red;
+  padding: 12px 34px;
+  font-size: 16px;
+  background: red;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}

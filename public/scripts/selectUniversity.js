@@ -32,6 +32,10 @@ function selectUni(item) {
       image.setAttribute('class', "edit_photo");
       image.innerHTML = images[0].innerHTML;
       document.getElementById("add_university").children[1].appendChild(image);
-      document.getElementById("add_university").children[1].insertBefore(image,document.getElementById("add_university").children[1].children[4])
+      document.getElementById("add_university").children[1].insertBefore(image,document.getElementById("add_university").children[1].children[4]);
+      var deleteButton = document.createElement('div');
+      deleteButton.innerHTML = '<a class="button" href="http://localhost:3000/dashboard/delete/'+ item.getElementsByClassName('idOfUni')[0].innerHTML +'" ><p  class="hero-btn hero-btn-delete" >Sterge</p></a>';
+      deleteButton.setAttribute("id", "deleteButton");
+      document.getElementById("add_university").children[1].appendChild(deleteButton);
     });
   }

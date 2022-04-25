@@ -238,4 +238,12 @@ router.post("/update", function (req, res) {
   })();
 });
 
+router.get("/delete/:id", function (req, res) {
+  (async()=>{
+    if(req.params.id != undefined)
+    var result = await University.findOneAndDelete({_id:req.params.id})
+    console.log(result);
+    res.redirect("/dashboard");
+  })();
+});
 module.exports = router;

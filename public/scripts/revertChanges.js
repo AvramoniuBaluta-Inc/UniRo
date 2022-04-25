@@ -4,6 +4,10 @@ function revertForm() {
         elements[elements.length-1].remove();
     }
     var photo = document.getElementById("add_university").getElementsByTagName('img');
-    if(photo[0]!=undefined)
+    if(photo[0] != undefined)
         photo[0].remove();
+    var deleteButton = document.getElementById("deleteButton");
+    if(deleteButton != undefined){
+        deleteButton.remove();
+    }
 }
