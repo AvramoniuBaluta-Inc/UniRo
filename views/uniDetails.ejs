@@ -56,30 +56,43 @@
 
             <div class="row">
                 <div class="col-md-6 details-display">
-                    <p class="text">
-                        <%= description %>
-                    </p>
+                    <div class="first-part">
+                        <p class="text">
+                            <%= description %>
+                        </p>
 
-                    <br>
-                    <br>
+                        <br>
+                        <br>
 
-                    <h5>Poti contacta universitatea la adresa:</h5>
-                    <p class="contact-email">
-                        <%= email %>
-                    </p>
+                        <h5>Poti contacta universitatea la adresa:</h5>
+                        <p class="contact-email">
+                            <%= email %>
+                        </p>
 
-                    <br>
-                    <br>
+                        <br>
+                        <br>
 
-                    <a href="https://<%= link %>" target="_blank" class="hero-btn" id="visit">Viziteaza wesite
-                        universitate</a>
+                        <a href="https://<%= link %>" target="_blank" class="hero-btn" id="visit">Viziteaza wesite
+                            universitate</a>
 
-                    <br>
-                    <br>
+                    
+                    </div>
+                    <div class="second-part">
+                        <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
+                        <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
+                        <div id="map"></div>
 
+                        <!-- <img src="../static/images/test.png" alt=""> -->
+
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-6 details-display">
                     <table class="table table-bordered">
-                        <thead >
-                            <tr >
+                        <thead>
+                            <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Facultati</th>
                             </tr>
@@ -94,7 +107,7 @@
                                     <td class="tb-input">
                                         <%= facultati[j] %>
                                     </td>
-                                    
+
 
                                 </tr>
 
@@ -103,24 +116,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-6 details-display">
-                    <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
-                    <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
-                    <div id="map"></div>
-                </div>
-                <!-- <div class="col-md-6 details-display">
-                    
-                </div> -->
-                <!-- <div class="col-md-6 details-display">
-                    <div class="image">
-                        <% if(!(img.data===undefined )){ %>
-                        <img src=" data:uni.photo/<%=img.contentType%>;base64,
-                     <%=img.data.toString('base64')%>" class="img-fluid">
-                        <% } else {%>
-                        <img src="/images/test.png" alt="">
-                        <% } %>
-                    </div>
-                </div> -->
+
+
             </div>
 
 
@@ -136,20 +133,20 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly"
         async></script>
-    
-        <script src="../scripts/darkMode.js"></script>
+
+    <script src="../scripts/darkMode.js"></script>
     <script>
         function darkBtn() {
             detailsDark();
             changeIcon();
         }
-        if(!(localStorage.getItem("isDarkMode")==="false")){
-        darkBtn();
-      }
-      else{
-        document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
-        document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
-      }
+        if (!(localStorage.getItem("isDarkMode") === "false")) {
+            darkBtn();
+        }
+        else {
+            document.getElementsByTagName("body")[0].style.backgroundColor = "#fff";
+            document.getElementsByTagName("nav")[0].style.backgroundColor = " #fff";
+        }
     </script>
 </body>
 

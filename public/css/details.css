@@ -12,16 +12,12 @@ nav{
     margin-bottom: 3%;
 }
 
+
 #map {
-    min-height: 50vh;
     height: 100%;
     width: 100%;
 }
 
-.image {
-    max-height: 50vh;
-    overflow-y: hidden;
-}
 
 .contact-email {
     color: #f44336;
@@ -31,10 +27,20 @@ nav{
     color: #f44336;
 }
 
-.table {
-    margin-top: 3%;
-    max-height: 100%;
+.first-part {
+    height: 50%;
 }
+
+.second-part {
+    height: 50%;
+}
+
+.table {
+    max-height: 100%;
+    height: fit-content;
+    margin-bottom: 0%;
+}
+
 
 
 
@@ -45,4 +51,22 @@ nav{
         padding-bottom: 10%;
     }
 
+    .table {
+        margin-top: 32vh;
+        min-height: max-content;
+        overflow: hidden;
+    }
+
+    .first-part {
+        height: max-content;
+        margin-bottom: 10vh;
+    }
+
+    .second-part {
+        max-height: min-content;
+    }
+
+    .second-part #map {
+        position: relative;
+    }
 }
