@@ -46,27 +46,24 @@ nav{
 
 @media (max-width: 730px) {
     .details-display {
-        max-height: max-content;
-        margin-bottom: 10%;
-        padding-bottom: 10%;
+        height: max-content;
+        overflow: hidden;
     }
 
     .table {
-        margin-top: 32vh;
         min-height: max-content;
         overflow: hidden;
     }
 
     .first-part {
-        height: max-content;
-        margin-bottom: 10vh;
+        min-height: max-content;
+        overflow: hidden;
+        margin-bottom: 3%;
     }
 
     .second-part {
-        max-height: min-content;
+        height:80vh;
+        overflow: hidden;
     }
 
-    .second-part #map {
-        position: relative;
-    }
 }
