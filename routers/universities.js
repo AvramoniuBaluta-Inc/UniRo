@@ -42,7 +42,7 @@ router.post("/", function (req, res) {
     for (var i = 0; i < cnt; i++) {
       if (
         uniFunctions.oras(uniArray[i], req.body.oras) &&
-        uniFunctions.facultati(uniArray[i], add.addArray(req.body.facultati)) &&
+        uniFunctions.facultati(uniArray[i], add.addArray(req.body.materii)) &&
         uniFunctions.rating(uniArray[i], req.body.rating) &&
         uniFunctions.specializare(
           uniArray[i],
