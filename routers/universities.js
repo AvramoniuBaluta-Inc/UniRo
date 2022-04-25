@@ -37,7 +37,7 @@ router.post("/", function (req, res) {
   var uniArray = [];
   var uniArrayFiltered = [];
   (async () => {
-    uniArray = await University.find();
+    uniArray = await University.find().sort({viewsNo:-1});
     var cnt = uniArray.length;
     for (var i = 0; i < cnt; i++) {
       if (
