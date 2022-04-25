@@ -1,5 +1,5 @@
 var facultati = [
-  "Administrare a Afacerilor",
+  "Administrarea Afacerilor",
   "Administrație Publică",
   "Administrație și Management Public",
   "Afaceri Internaționale",
@@ -18,6 +18,7 @@ var facultati = [
   "Autovehicule și Transporturi",
   "Bioingineria Resurselor Animaliere",
   "Bioinginerie Medicala",
+  "Biologie",
   "Biotehnologii",
   "Business",
   "Cai Ferate Drumuri și Poduri",

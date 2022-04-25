@@ -28,6 +28,7 @@ async function renderUni() {
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("taguri")[0].innerHTML = "";
         for(var j =0;j<universityDetails.specializari.length;j++){
             document.querySelectorAll('[universitate]')[i].getElementsByClassName("taguri")[0].innerHTML += '<span class="tag" id="tag">'+universityDetails.specializari[j]+'</span>';
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("taguri")[0].innerHTML +='    ';
         }
 
         document.querySelectorAll('[universitate]')[i].getElementsByClassName("dropdown-menu")[0].innerHTML = "";
