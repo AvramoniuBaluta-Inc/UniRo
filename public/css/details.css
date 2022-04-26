@@ -3,6 +3,10 @@ nav{
 }
 /* details */
 
+.row {
+    min-height: 100vh;
+}
+
 .show-details {
     margin-top: 16vh;
 }
@@ -37,7 +41,7 @@ nav{
 
 .table {
     max-height: 100%;
-    height: fit-content;
+    height: 100%;
     margin-bottom: 0%;
 }
 
