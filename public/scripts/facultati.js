@@ -147,7 +147,6 @@ var facultati = [
   "Ştiinţe Umaniste ",
   "Stiintele Comunicarii",
   "Stiintele Comunicarii și Relații Internaționale",
-  "Stiintele Educației",
   "Studii Europene",
   "Teatru",
   "Tehnologia Construcțiilor de Mașini",
@@ -165,7 +164,7 @@ var facultati = [
   "Turism ",
   "Urbanism",
   "Utilaj Tehnologic",
-  "Zootehnie și Biotehnologii"
+  "Zootehnie și Biotehnologii",
 ];
 
 module.exports = facultati;

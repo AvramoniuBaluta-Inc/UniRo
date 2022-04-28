@@ -10,7 +10,8 @@ var specializari = [
   "Științe ale Naturii",
   "Științe Economice",
   "Teologie",
-  "Sport"
+  "Sport",
+  "Construcții",
 ];
 
 module.exports = specializari;
