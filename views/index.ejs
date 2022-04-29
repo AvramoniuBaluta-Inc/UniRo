@@ -40,7 +40,7 @@
             <ul>
               <li><a href="/despre">DESPRE NOI</a></li>
               <li>
-                <a id="explore-button" href="/universitati">UNIVERSITATI</a>
+                <a id="explore-button" href="/universitati">UNIVERSITĂȚI</a>
               </li>
               <li><a href="/contact">CONTACT</a></li>
             </ul>
@@ -49,8 +49,8 @@
         </nav>
 
         <div class="text-box">
-          <h1>Găseste universitatea perfectă</h1>
-          <p>Găseste universitatea ideală pentru tine si pentru visul tău.</p>
+          <h1>Găsește universitatea perfectă</h1>
+          <p>Găsește universitatea ideală pentru tine și pentru visul tău.</p>
           <a id="explore-button2" href="/universitati" class="hero-btn"
             >Explorează</a
           >
@@ -59,9 +59,9 @@
 
       <section class="second">
         <div class="top-unis">
-          <h1>Universităti de top in Romania</h1>
+          <h1>Universități de top in România</h1>
           <p class="uni-p">
-            Cele mai bune 3 universitati aflate pe teritoriul Romaniei conform
+            Cele mai bune 3 universități aflate pe teritoriul României conform
             clasamentelor oficiale.
           </p>
 
@@ -77,7 +77,7 @@
             </div>
 
             <div class="col">
-              <h3>Universitatea din Bucuresti</h3>
+              <h3>Universitatea din București</h3>
               <p>
                 Universitatea din București este o universitate de stat din
                 București și una dintre cele mai prestigioase instituții de
@@ -88,7 +88,7 @@
             </div>
 
             <div class="col">
-              <h3>Universitatea Babes-Bolyai</h3>
+              <h3>Universitatea Babeș-Bolyai</h3>
               <p>
                 Universitatea Babeș-Bolyai este o instituție de învățământ
                 superior de stat, cu sediul în Cluj-Napoca, în Sediul
@@ -103,7 +103,7 @@
 
       <section class="cta">
         <div class="contact-box">
-          <h1>Contacteăza-ne pentru detalii</h1>
+          <h1>Contactează-ne pentru detalii</h1>
           <a class="hero-btn" href="/contact">Contact</a>
         </div>
       </section>
@@ -115,15 +115,17 @@
 
         <div class="desc">
           <p>
-            UniRo are misiunea de a vă ajuta să vă gasiti universitatea ideală
+            UniRo are misiunea de a vă ajuta să vă gasiți universitatea ideală
             pentru dumneavoastră, iar platforma noastră are aproape toate
-            universitătile din Romania deja inregistrate. Dacă doriti adăugarea
-            unei universităti noi, contactati-ne in legatură cu aceasta.
+            universitățile din România deja înregistrate. Dacă doriți adăugarea
+            unei universități noi, contactați-ne în legatură cu aceasta.
           </p>
         </div>
 
         <div class="icons">
-          <a href="https://www.instagram.com/uniro_eu/" target="__blank"><i class="fa fa-instagram"></i></a>
+          <a href="https://www.instagram.com/uniro_eu/" target="__blank"
+            ><i class="fa fa-instagram"></i
+          ></a>
         </div>
 
         <p>© Copyright UniRo 2022</p>
@@ -140,13 +142,13 @@
         $(".content_after_load").fadeIn(1);
       });
       $("#explore-button").on("click", function () {
-        if(localStorage.getItem("isDarkMode") ==="true")
+        if (localStorage.getItem("isDarkMode") === "true")
           document.getElementsByTagName("body")[0].classList.add("dark-bg");
         $(".content_after_load").fadeOut(400);
         $(".loader").fadeIn(400);
       });
       $("#explore-button2").on("click", function () {
-        if(localStorage.getItem("isDarkMode") ==="true")
+        if (localStorage.getItem("isDarkMode") === "true")
           document.getElementsByTagName("body")[0].classList.add("dark-bg");
         $(".content_after_load").fadeOut(400);
         $(".loader").fadeIn(400);

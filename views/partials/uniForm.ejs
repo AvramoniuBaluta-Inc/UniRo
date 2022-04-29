@@ -1,7 +1,7 @@
 <form action="/contact" class="row g-3 form2" method="POST" enctype="multipart/form-data">
   
     <div>
-            <h4>Cerere de inregistrare a universitatii pe UniRo</h4>
+            <h4>Cerere de înregistrare a universitații pe UniRo</h4>
         </div>
         <div class="col-md-6">
             <label class="form-label">Nume Reprezentant</label>
@@ -18,17 +18,17 @@
         </div> 
         <div class="col-12">
             <br><br>
-            <label class="form-label">Numele universitatii pe care doriti sa o introduceti</label>
+            <label class="form-label">Numele universitații pe care doriți să o introduceți</label>
             <input class="form-control" type="text" name="nume" id="" required/>
         </div>
         <div class="col-12">
             <label for="inputState" class="form-label">
-                Localitatea in care se afla campusul
+                Localitatea în care se află campusul
             </label>
             <div id="oras" class="ui fluid search selection dropdown">
                 <input type="hidden" name="oras">
                 <i class="dropdown icon"></i>
-                <div class="default text">Selecteaza orasul</div>
+                <div class="default text">Selectează orasul</div>
                 <div class="menu">
                   <% for(var i=0;i<orase.length;i++){ %>
                     <div class="item" data-value="<%= orase[i] %>">
@@ -45,12 +45,12 @@
 
         <div class="col-md-6">
             <label class="form-label">Latitudine</label>
-            <div class="default text">Necesar pentru geolocatie... </div>
+            <div class="default text">Necesar pentru geolocație... </div>
             <input class="form-control" type="number" name="latitude" step="any" id="" required/>
         </div>
         <div class="col-md-6">
             <label class="form-label">Longitudine</label>
-            <div class="default text">Necesar pentru geolocatie... </div>
+            <div class="default text">Necesar pentru geolocație... </div>
             <input class="form-control" type="number" name="longitude" step="any" id="" required/>
         </div>
         <div class="col-md-6">
@@ -64,11 +64,11 @@
 
         <div class="col-12">
             <div>
-                <label class="form-label">Facultati</label>
+                <label class="form-label">Facultăți</label>
                 <div id="materiiSelect" class="ui fluid multiple search selection dropdown">
                     <input type="hidden" class="form-control" name="materii">
                     <i class="dropdown icon"></i>
-                    <div class="default text">Selectati facultatile </div>
+                    <div class="default text">Selectați facultățile </div>
                     <div class="menu">
                         <% for(var i=0;i<facultati.length;i++){ %>
                         <div class="item" data-value="<%= facultati[i] %>">
@@ -83,7 +83,7 @@
                 <div id="specializariSelect" class="ui fluid multiple search selection dropdown">
                     <input type="hidden" class="form-control" name="specializari">
                     <i class="dropdown icon"></i>
-                    <div class="default text">Selectati domeniile</div>
+                    <div class="default text">Selectați domeniile</div>
                     <div class="menu">
                         <% for(var i=0;i<specializari.length;i++){ %>
                         <div class="item" data-value="<%= specializari[i] %>">
@@ -98,7 +98,7 @@
     
     <div class="">
         <br><br>
-        <label class="form-label">Incarcati o fotografie cu universiatea (de preferat 2000x2000)</label>
+        <label class="form-label">Încărcați o fotografie cu universiatea (de preferat 2000x2000)</label>
         <input type="file" name="photo" id="photo" value="" required>
     </div>
 
@@ -106,7 +106,7 @@
     
     <div class="button">
         <br><br>
-        <p>Dupa ce ati trimis acest formular va vom contacta pe email pentru a ne asigura de autenticitatea cererii.</p>
+        <p>După ce ați trimis acest formular vă vom contacta pe email pentru a ne asigura de autenticitatea cererii.</p>
         <button type="submit" class="hero-btn submit-btn" disabled id="uniRequest">
             Trimite
         </button>
