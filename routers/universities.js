@@ -14,7 +14,7 @@ router.get("/", function (req, res) {
   var uniArray = [];
   var uniArrayId = [];
   (async () => {
-    uniArray = await University.find({},{_id:1}).sort({viewsNo:-1});
+    uniArray = await University.find({},{_id:1,viewsNo:1}).sort({viewsNo:-1});
     var lungime = uniArray.length;
     var dummyUni = await University.findOne({_id:uniArray[0]._id});
     for (var i = 0; i < lungime; i++) {
@@ -37,7 +37,7 @@ router.post("/", function (req, res) {
   var uniArray = [];
   var uniArrayFiltered = [];
   (async () => {
-    uniArray = await University.find().sort({viewsNo:-1});
+    uniArray = await University.find({},{_id:1,viewsNo:1,oras:1,rating:1,facultati:1,specializari:1,longitudine:1,latitudine:1}).sort({viewsNo:-1});
     var cnt = uniArray.length;
     for (var i = 0; i < cnt; i++) {
       if (
