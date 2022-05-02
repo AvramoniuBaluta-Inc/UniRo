@@ -188,7 +188,7 @@ img{
   display: inline-block;
   text-decoration: none;
   color: White;
-  border: 1px solid red;
+  border: 1px solid #111;
   padding: 12px 34px;
   font-size: 16px;
   background: red;
