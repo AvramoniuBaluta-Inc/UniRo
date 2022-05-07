@@ -71,37 +71,45 @@
     ></script>
   </head>
 
-  <body style="background-color: #fff;">
-    <p id="isDashboard" style="display: none;">1</p>
+  <body style="background-color: #fff">
+    <p id="isDashboard" style="display: none">1</p>
     <p id="darkTheme" style="display: none">0</p>
+    <!-- Side Navbar  -->
     <div class="sidebar">
+      <!-- Logout button -->
       <form action="/admin/logout" method="post">
         <button type="submit" class="logout">LOGOUT</button>
       </form>
+      <!-- Displays the form that allows admins to add unis to the database -->
       <button type="button" onclick="add_university_form()">
         Adauga Universitate
       </button>
+      <!-- Displays list of all unis and allows for dynamically rendered edit-university page  -->
       <button type="button" onclick="edit_university_menu()">
         Editeaza Universitati
       </button>
+      <!-- Displays the requests for new unis -->
       <button type="button" onclick="req_to_add_university_menu()">
         Cereri de adaugare
       </button>
+      <!-- Link to Mongo Db Atlas database cluster -->
       <a
         href="https://cloud.mongodb.com/v2/61dc2a2c368f412d11523ecd#clusters"
         target="_blank"
         >Baza de date</a
       >
+      <!-- Refreshes the /universitati page and updates the ratings and the viewcounts for the universities -->
       <form action="/dashboard/update" method="post">
-        <button type="submit" >Actualizeaza</button>
+        <button type="submit">Actualizeaza</button>
       </form>
     </div>
 
+    <!-- Dynamically rendered pages with custom utilities  -->
     <div class="content">
       <div class="container1">
-        <%- include('partials/add-university'); %> 
-        <%-include('partials/edit-university',{dummyUni:dummyUni,uniArray:uniArray,lungime:lungime}); %> 
-        <%-include('partials/req-to-add-university'); %>
+        <%- include('partials/add-university'); %>
+        <%-include('partials/edit-university',{dummyUni:dummyUni,uniArray:uniArray,lungime:lungime});
+        %> <%-include('partials/req-to-add-university'); %>
       </div>
     </div>
 
@@ -120,9 +128,9 @@
           renderUni();
           };
     </script>
-   <script src="scripts/selectUniversity.js"></script>
-   <script src="scripts/editReq.js"></script>
-   <script>
+    <script src="scripts/selectUniversity.js"></script>
+    <script src="scripts/editReq.js"></script>
+    <script>
       $("#materiiSelect").dropdown();
       $("#specializariSelect").dropdown();
       $("#oras").dropdown();

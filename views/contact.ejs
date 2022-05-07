@@ -52,6 +52,7 @@
 
   <body>
     <section class="contact-header">
+      <!-- Navbar and logo -->
       <nav>
         <a href="/"> <%- include("partials/logo") %> </a>
         <div class="nav-links" id="navLinks">
@@ -67,9 +68,11 @@
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
 
+      <!-- Call to action -->
       <h1>Contactează-ne</h1>
     </section>
 
+    <!-- Calls for user engagement -->
     <div class="desc container">
       <h3>
         Lasați-ne un mesaj cu sugestii și pareri cu privire la platforma UniRo.
@@ -80,6 +83,7 @@
       </h5>
     </div>
 
+    <!-- User input options -->
     <section>
       <div class="contact-form container">
         <div class="forms">
@@ -113,6 +117,7 @@
               </button>
             </li>
           </ul>
+          <!-- Dynamically displayed contact form for users -->
           <div class="tab-content" id="myTabContent">
             <div
               class="tab-pane fade show active"
@@ -122,7 +127,7 @@
             >
               <%- include('partials/userForm.ejs')%>
             </div>
-
+            <!-- Dynamically displayed contact form for university representative -->
             <div
               class="tab-pane fade"
               id="contact"
