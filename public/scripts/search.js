@@ -10,7 +10,7 @@ function removeDiacritics(nume) {
         if(nume[i].charCodeAt(0) == 351 || nume[i].charCodeAt(0) == 350 || nume[i].charCodeAt(0) == 537 ){
             nume = nume.substring(0,i) + 's'  + nume.substring(i+1,lungime);
         }
-        if(nume[i].charCodeAt(0) == 355 || nume[i].charCodeAt(0) == 354 ){
+        if(nume[i].charCodeAt(0) == 355 || nume[i].charCodeAt(0) == 354 || nume[i].charCodeAt(0) == 539){
             nume = nume.substring(0,i) + 't'  + nume.substring(i+1,lungime);
         }
     }
