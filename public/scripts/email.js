@@ -9,8 +9,8 @@ function sendMsg(e) {
     msg = document.getElementById("msg");
 
   Email.send({
-    SecureToken: "61d10347-3d4f-4d6b-8dac-459786c83f60",
-    To: "uniro.eu@gmail.com",
+    SecureToken: "e5efda31-b064-4a45-9a2a-1f3b26b8ab55",
+    To: "contact.uniro@gmail.com",
     From: "uniro.eu@gmail.com",
     Subject: nume.value + " " + prenume.value + " - " + loc.value,
     Body: msg.value,
