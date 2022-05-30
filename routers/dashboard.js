@@ -91,9 +91,12 @@ router.post("/", upload.single("photo"), (req, res) => {
     }
     if (req.file === undefined) {
         var idToDelete = req.body.toDelete;
-          console.log(idToDelete);
         if(req.body.toDelete != '-1'){
           var cerere = await Cerere.find({_id:idToDelete});
+            if(req.body.toDelete != '-1'){
+              var idToDelete = req.body.toDelete;
+              await Cerere.findByIdAndDelete(idToDelete);
+            }
           (async () => {
             idUni = await idGenerate.generateID(University);
             const universitate = new University({
@@ -165,15 +168,10 @@ router.post("/", upload.single("photo"), (req, res) => {
       })();
     }
     } else {
-        console.log(3);
-      (async () => {
-        if(req.body.toDelete != '-1'){
-          var idToDelete = req.body.toDelete;
-          var cerere = await Cerere.find({_id:idToDelete});
-          console.log(cerere);
-        }
-      });
-
+      if(req.body.toDelete != '-1'){
+        var idToDelete = req.body.toDelete;
+        await Cerere.findByIdAndDelete(idToDelete);
+      }
       (async () => {
         idUni = await idGenerate.generateID(University);
         const universitate = new University({
@@ -241,13 +239,12 @@ else if(req.body.toAdd === '0'){
           link: req.body.link,
           specializari: add.addArray(req.body.specializari),
           facultati: add.addArray(req.body.facultati),
-          viewsNo:0,
+          viewsNo:univeristateDeEditat.viewsNo,
         }
       };
     const result = await University.updateOne(univeristateDeEditat, updateDocument);
     }
     else{
-      console.log(5);
       var updateDocument  = {
         $set: {
           _id: idUni,
@@ -266,7 +263,7 @@ else if(req.body.toAdd === '0'){
           },
           specializari: add.addArray(req.body.specializari),
           facultati: add.addArray(req.body.facultati),
-          viewsNo:0,
+          viewsNo:univeristateDeEditat.viewsNo,
         }
       };
     const result = await University.updateOne(univeristateDeEditat, updateDocument);
@@ -274,13 +271,14 @@ else if(req.body.toAdd === '0'){
   })();
   
 }
-(async() =>{
+else{
+  (async()=>{
   if(req.body.toDelete != '-1'){
     var idToDelete = req.body.toDelete;
     await Cerere.findByIdAndDelete(idToDelete);
   }
 })();
-
+}
   res.redirect("/dashboard");
 });
 
