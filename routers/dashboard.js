@@ -36,18 +36,19 @@ router.get("/", isLoggedIn, (req, res) => {
   var uniArray = [];
   var uniArrayId = [];
   (async () => {
-    uniArray = await University.find();
+    uniArray = await University.find({},{_id:1});
     var lungime = uniArray.length;
     for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
-  //  console.log(uniArray[0]);
-  Cerere.find({}, (err, cerere) => {
+    var dummyUni = await University.findById(uniArrayId[0]);
+
+    Cerere.find({}, (err, cerere) => {
     if (err) {
       console.log(err);
     } else {
       res.render("dashboard", {
-        dummyUni: uniArray[0],
+        dummyUni: dummyUni,
         lungime: lungime,
         specializari: specializari,
         uniArray: uniArrayId,
@@ -61,12 +62,6 @@ router.get("/", isLoggedIn, (req, res) => {
 });
 router.post("/", upload.single("photo"), (req, res) => {
   let idUni;
-  (async() =>{
-    if(req.body.toDelete != '-1'){
-      var idToDelete = req.body.toDelete;
-      await Cerere.findByIdAndDelete(idToDelete);
-    }
-  })();
   //////////
   if(req.body.toAdd === '1'){
   var latitudine = transformations.to_number(req.body.latitude);
@@ -95,6 +90,46 @@ router.post("/", upload.single("photo"), (req, res) => {
       reviewsNoFromApi  = data_from_googleAPI.results[0].user_ratings_total;
     }
     if (req.file === undefined) {
+        var idToDelete = req.body.toDelete;
+          console.log(idToDelete);
+        if(req.body.toDelete != '-1'){
+          var cerere = await Cerere.find({_id:idToDelete});
+          (async () => {
+            idUni = await idGenerate.generateID(University);
+            const universitate = new University({
+              _id: idUni,
+              nume: req.body.nume,
+              descriere: req.body.descriere,
+              oras: req.body.oras,
+              latitudine: req.body.latitude,
+              longitudine: req.body.longitude,
+              email: req.body.email,
+              link: req.body.link,
+              img:cerere[0].universitate.img,
+              specializari: add.addArray(req.body.specializari),
+              facultati: add.addArray(req.body.facultati),
+              rating: ratingFromAPI,
+              reviewsNo: reviewsNoFromApi,
+              viewsNo:0,
+            });
+            
+    
+            if (
+              universitate._id === "" ||
+              universitate.nume === "" ||
+              universitate.descriere === "" ||
+              universitate.oras === "" ||
+              universitate.email === "" ||
+              universitate.link === "" ||
+              universitate.rating === ""
+            ) {
+              console.log("Error : No input");
+            } else {
+              universitate.save();
+            }
+          })();
+        }
+        else{
       (async () => {
         idUni = await idGenerate.generateID(University);
         const universitate = new University({
@@ -112,6 +147,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           reviewsNo: reviewsNoFromApi,
           viewsNo:0,
         });
+        
 
         if (
           universitate._id === "" ||
@@ -127,7 +163,17 @@ router.post("/", upload.single("photo"), (req, res) => {
           universitate.save();
         }
       })();
+    }
     } else {
+        console.log(3);
+      (async () => {
+        if(req.body.toDelete != '-1'){
+          var idToDelete = req.body.toDelete;
+          var cerere = await Cerere.find({_id:idToDelete});
+          console.log(cerere);
+        }
+      });
+
       (async () => {
         idUni = await idGenerate.generateID(University);
         const universitate = new University({
@@ -201,6 +247,7 @@ else if(req.body.toAdd === '0'){
     const result = await University.updateOne(univeristateDeEditat, updateDocument);
     }
     else{
+      console.log(5);
       var updateDocument  = {
         $set: {
           _id: idUni,
@@ -227,6 +274,13 @@ else if(req.body.toAdd === '0'){
   })();
   
 }
+(async() =>{
+  if(req.body.toDelete != '-1'){
+    var idToDelete = req.body.toDelete;
+    await Cerere.findByIdAndDelete(idToDelete);
+  }
+})();
+
   res.redirect("/dashboard");
 });
 
