@@ -80,6 +80,7 @@
       <form action="/admin/logout" method="post">
         <button type="submit" class="logout">LOGOUT</button>
       </form>
+
       <!-- Displays the form that allows admins to add unis to the database -->
       <button type="button" onclick="add_university_form()">
         Adauga Universitate
@@ -92,6 +93,7 @@
       <button type="button" onclick="req_to_add_university_menu()">
         Cereri de adaugare
       </button>
+
       <!-- Link to Mongo Db Atlas database cluster -->
       <a
         href="https://cloud.mongodb.com/v2/61dc2a2c368f412d11523ecd#clusters"
@@ -102,6 +104,7 @@
       <form action="/dashboard/update" method="post">
         <button type="submit">Actualizeaza</button>
       </form>
+      <button type="button" onclick="stats()">Statistici</button>
     </div>
 
     <!-- Dynamically rendered pages with custom utilities  -->
@@ -110,6 +113,7 @@
         <%- include('partials/add-university'); %>
         <%-include('partials/edit-university',{dummyUni:dummyUni,uniArray:uniArray,lungime:lungime});
         %> <%-include('partials/req-to-add-university'); %>
+        <%-include('partials/stats'); %>
       </div>
     </div>
 
