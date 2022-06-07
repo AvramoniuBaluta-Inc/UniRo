@@ -31,7 +31,7 @@ const upload = multer({
   storage: storage,
 });
 
-router.get("/", (req, res) => {
+router.get("/", isLoggedIn, (req, res) => {
   var cnt = 1;
   var uniArray = [];
   var uniArrayId = [];
