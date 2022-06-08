@@ -214,14 +214,38 @@ img{
 }
 
 .general-stats:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 0.35s;
+  background-color: #1d1d1d;
+  color: #fff;
 }
+
 
 .general-stats h2 {
   font-size: 25px;
 }
 
 #stats h1 {
-  font-size: 40px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.detail {
+  color: #f44336;
+}
+
+
+@media (max-width: 800px) {
+  .general-stats {
+    margin: 2vh 4%;  
+    padding: 6% 2%;
+    border-radius: 10px ;
+  }
+  #stats h1 {
+    font-size: 40px;
+    margin: 10vh 0 ;
+  }
+  .charts-row canvas{
+    margin-top: 8vh;
+  }
 }

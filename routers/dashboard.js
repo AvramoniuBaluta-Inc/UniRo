@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var add = require("../public/scripts/addToArray.js");
-const { University, Cerere } = require("../database_models/models.js");
+const { University, Cerere, Admin } = require("../database_models/models.js");
 var idGenerate = require("../backend_scripts/addId.js");
 const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
 const multer = require("multer");
@@ -35,12 +35,22 @@ router.get("/", isLoggedIn, (req, res) => {
   var cnt = 1;
   var uniArray = [];
   var uniArrayId = [];
+  var adminArray = [];
+  var adminCounter = 0;
+
+  var vizionari = 0;
+
   (async () => {
     uniArray = await University.find({}, { _id: 1 });
     var lungime = uniArray.length;
+
+    adminArray = await Admin.find({});
+    adminCounter = adminArray.length;
+
     for (var i = 0; i < lungime; i++) {
       uniArrayId[i] = uniArray[i]._id;
     }
+
     var dummyUni = await University.findById(uniArrayId[0]);
 
     Cerere.find({}, (err, cerere) => {
@@ -55,6 +65,8 @@ router.get("/", isLoggedIn, (req, res) => {
           facultati: facultati,
           orase: orase,
           items: cerere,
+          adminCounter: adminCounter,
+          vizionari: vizionari,
         });
       }
     });
