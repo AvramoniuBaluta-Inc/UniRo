@@ -15,6 +15,8 @@ const luni = [
   "Decembrie",
 ];
 
+const vizData = [12, 19, 3, 5, 2, 3, 5, 5, 6, 2, 10, 25, 30];
+
 const myChart = new Chart(ctx, {
   type: "line",
   data: {
@@ -22,8 +24,8 @@ const myChart = new Chart(ctx, {
     datasets: [
       {
         label: "Vizionari Pagina Universitati",
-        data: [12, 19, 3, 5, 2, 3, 5, 5, 6, 2, 10, 25, 30],
-        backgroundColor: "#f44336",
+        data: vizData,
+        backgroundColor: "#1d1d1d",
         borderColor: "#f44336",
       },
     ],
@@ -61,3 +63,7 @@ const chart2 = new Chart(ctx2, {
     },
   },
 });
+
+///////////////////// message counter //////////////////////
+
+////////////////////////////////////////////////////////////
