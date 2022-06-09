@@ -25,7 +25,7 @@ const myChart = new Chart(ctx, {
       {
         label: "Vizionari Pagina Universitati",
         data: vizData,
-        backgroundColor: "#1d1d1d",
+        backgroundColor: "#f44336",
         borderColor: "#f44336",
       },
     ],
