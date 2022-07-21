@@ -45,10 +45,74 @@ nav{
     margin-bottom: 0%;
 }
 
+/* /////////////////////////////// */
+
+#comm {
+    min-height: 50vh;
+}
+
+#comm h3 {
+    margin: 2% 0;
+}
+
+.comm-container {
+    margin-bottom: 5%;
+}
+
+.comment-box {
+    width: 100%;
+    height: 40vh;
+    border-radius: 0%;
+    border: 1px solid  #191919;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 
 
+form .form-control:focus {
+    box-shadow: none;
+}
 
-@media (max-width: 730px) {
+.ff1 {
+    width: 20%;
+}
+.ff2 {
+    width: 60%;
+}
+
+.form-floating input {
+    border-radius: 0%;
+    border-color: #191919;
+    border-top: none;
+}
+
+.commBtn {
+    border-top: none;
+    width: 20%;
+}
+
+.comment-message-box {
+    width: 40%;
+    height: auto;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 0.5%;
+}
+
+.comm-name {
+    color: #f44336;
+    font-size: 12px;
+}
+
+.comm-msg {
+    color: #191919;
+    font-size: 16px;
+}
+
+/* /////////////////////////////////// */
+
+@media (max-width: 800px) {
     .details-display {
         height: max-content;
         overflow: hidden;
@@ -70,4 +134,15 @@ nav{
         overflow: hidden;
     }
 
+    #comm {
+        margin-top: 10%;
+        margin-bottom: 20%;
+    }
+
+    .comment-message-box {
+        width: 95%;
+        margin: 2%;
+        padding: 1%;
+    }
+    
 }

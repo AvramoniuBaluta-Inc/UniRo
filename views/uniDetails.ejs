@@ -19,17 +19,16 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <script src="https://use.fontawesome.com/894924603a.js"></script>
     <%- include('partials/scriptbootstrap'); %>
-        <%- include('partials/favicon'); %>
-            <!-- css file  -->
-            <link rel="stylesheet" href="/static/css/explore.css" />
-            <link rel="stylesheet" href="/static/css/details.css" />
-            <script src="/static/scripts/displayCustomMap.js"></script>
-            <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308683022339229"
-                crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <%- include('partials/favicon'); %>
+    <!-- css file  -->
+    <link rel="stylesheet" href="/static/css/explore.css" />
+    <link rel="stylesheet" href="/static/css/details.css" />
+    <script src="/static/scripts/displayCustomMap.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3308683022339229"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-            <link rel="stylesheet" href="/static/css/darkmode.css" />
+    <link rel="stylesheet" href="/static/css/darkmode.css" />
 </head>
 
 <body>
@@ -39,16 +38,16 @@
         <nav class="navigation">
             <h3>
                 <%= nume %>
-                    </h1>
-                    <div class="nav-links" id="navLinks">
-                        <i class="fa fa-times" onclick="hideMenu()"></i>
-                        <ul>
-                            <li id="link1"><a href="/despre">DESPRE NOI</a></li>
-                            <li id="link2"><a class="permanent" href="/">ACASĂ</a></li>
-                            <li id="link3"><a href="/contact">CONTACT</a></li>
-                        </ul>
-                    </div>
-                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                </h1>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li id="link1"><a href="/despre">DESPRE NOI</a></li>
+                        <li id="link2"><a class="permanent" href="/">ACASĂ</a></li>
+                        <li id="link3"><a href="/contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
     </section>
 
@@ -77,7 +76,7 @@
                         <a href="http://<%= link %>" target="_blank" class="hero-btn" id="visit">Viziteaza website
                             universitate</a>
 
-                    
+
                     </div>
                     <div class="second-part">
                         <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
@@ -102,24 +101,46 @@
 
                         <tbody>
                             <% for(var j=0 ; j < facultati.length ; j++){ %>
-                                <tr>
-                                    <th scope="row">
-                                        <%= j+1 %>
-                                    </th>
-                                    <td class="tb-input">
-                                        <%= facultati[j] %>
-                                    </td>
+                            <tr>
+                                <th scope="row">
+                                    <%= j+1 %>
+                                </th>
+                                <td class="tb-input">
+                                    <%= facultati[j] %>
+                                </td>
 
 
-                                </tr>
+                            </tr>
 
-                                <% } %>
+                            <% } %>
 
                         </tbody>
                     </table>
                 </div>
 
 
+            </div>
+            <div id="comm" class="row">
+                <div class="col-lg-12 comm-container">
+                    <h3>Comentarii Universitate</h3>
+                    <div class="comment-box" id="scroll-to-bottom">
+                        <% for(var i = 1 ; i<20 ; i++) { %>
+                        <%- include('partials/comment'); %>
+                        <% }%>
+                    </div>
+                    <form class="input-group form-group">
+                        <div class="form-floating ff1">
+                            <input id="commName" type="text" aria-label="First name" class="form-control">
+                            <label for="commName">Nume si Prenume</label>
+                        </div>
+                        
+                        <div class="form-floating ff2">
+                            <input id="commMsg" type="text" aria-label="Last name" class="form-control">
+                            <label for="commMsg">Comentariu</label>
+                        </div>
+                        <button type="submit" class="hero-btn commBtn">Post</button>
+                    </form>
+                </div>
             </div>
 
 
@@ -138,14 +159,15 @@
 
     <script src="../scripts/darkMode.js"></script>
     <script>
+        let scroll_to_bottom = document.getElementById('scroll-to-bottom');
+		scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
         function darkBtn() {
             detailsDark();
             changeIcon();
         }
         if (!(localStorage.getItem("isDarkMode") === "false")) {
             darkBtn();
-        }
-        else {
+        } else {
             document.getElementsByTagName("body")[0].style.backgroundColor = "#fff";
             document.getElementsByTagName("nav")[0].style.backgroundColor = " #fff";
         }
