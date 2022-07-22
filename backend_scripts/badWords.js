@@ -11,6 +11,7 @@ var badWords=[
     "morti",
     "mori",
     "tampit",
-    
+    "fut",
+    "ma-ta",
 ];
 module.exports = badWords;
