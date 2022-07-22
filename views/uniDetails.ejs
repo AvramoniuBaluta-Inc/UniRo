@@ -124,20 +124,24 @@
                 <div class="col-lg-12 comm-container">
                     <h3>Comentarii Universitate</h3>
                     <div class="comment-box" id="scroll-to-bottom">
-                        <% for(var i = 1 ; i<20 ; i++) { %>
-                        <%- include('partials/comment'); %>
+                        <% for(var i = 0 ; i<comments.length ; i++) { %>
+                        <%- include('partials/comment', {comment: comments[i]}); %>
                         <% }%>
                     </div>
-                    <form class="input-group form-group">
+                    
+                    <form class="input-group form-group" action="/universitati/<%= nume %>" method="POST" >
                         <div class="form-floating ff1">
-                            <input id="commName" type="text" aria-label="First name" class="form-control">
+                            <input id="commName" name="commName" type="text" aria-label="First name" class="form-control">
                             <label for="commName">Nume si Prenume</label>
                         </div>
                         
-                        <div class="form-floating ff2">
-                            <input id="commMsg" type="text" aria-label="Last name" class="form-control">
+                        <div class="form-floating ff2" >
+                            <input id="commMsg"  name="commMsg" type="text" aria-label="Last name" class="form-control">
                             <label for="commMsg">Comentariu</label>
                         </div>
+                        <input type="hidden" name="uniId" value="<%= uniId %>" />
+                        <input type="hidden" name="uniName" value="<%= uniId %>" />
+
                         <button type="submit" class="hero-btn commBtn">Post</button>
                     </form>
                 </div>
