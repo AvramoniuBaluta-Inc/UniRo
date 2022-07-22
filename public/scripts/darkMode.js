@@ -1,16 +1,17 @@
 async function darkStyles() {
-  if(localStorage.getItem("isDarkMode") === null){
-    localStorage.setItem("isDarkMode","false");
-    document.getElementsByTagName("body")[0].style.backgroundColor  = " #fff";
+  if (localStorage.getItem("isDarkMode") === null) {
+    localStorage.setItem("isDarkMode", "false");
+    document.getElementsByTagName("body")[0].style.backgroundColor = " #fff";
     return;
-  }
-  else if(localStorage.getItem("isDarkMode")==="true" && document.getElementById("darkTheme").innerText==="1"){
-    localStorage.setItem("isDarkMode","false");
-    document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
-  }
-  else{
-    document.getElementsByTagName("body")[0].style.backgroundColor  = "#191919";
-    localStorage.setItem("isDarkMode","true");
+  } else if (
+    localStorage.getItem("isDarkMode") === "true" &&
+    document.getElementById("darkTheme").innerText === "1"
+  ) {
+    localStorage.setItem("isDarkMode", "false");
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#fff";
+  } else {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#191919";
+    localStorage.setItem("isDarkMode", "true");
   }
   var isDarkTheme = document.getElementById("darkTheme");
   if (isDarkTheme.innerHTML === "0") {
@@ -32,8 +33,8 @@ async function darkStyles() {
   }
 
   var navbarIcon = document.getElementsByClassName("fa");
-  for(var i=0;i<navbarIcon.length;i++)
-  navbarIcon[i].classList.toggle("dark-navbarIcon");
+  for (var i = 0; i < navbarIcon.length; i++)
+    navbarIcon[i].classList.toggle("dark-navbarIcon");
 
   var navbar = document.getElementsByTagName("body")[0];
   navbar.classList.toggle("dark-bg");
@@ -92,36 +93,34 @@ function changeIcon() {
   }
 }
 
-
-// am facut functii diferite pt fiecare pagina ca sa putem sa le modificam usor daca mai vrem sa adaugam cv 
+// am facut functii diferite pt fiecare pagina ca sa putem sa le modificam usor daca mai vrem sa adaugam cv
 function detailsDark() {
-
-  if(localStorage.getItem("isDarkMode") === null){
-    localStorage.setItem("isDarkMode","false");
-    document.getElementsByTagName("body")[0].style.backgroundColor  = " #fff";
-    document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
+  if (localStorage.getItem("isDarkMode") === null) {
+    localStorage.setItem("isDarkMode", "false");
+    document.getElementsByTagName("body")[0].style.backgroundColor = " #fff";
+    document.getElementsByTagName("nav")[0].style.backgroundColor = " #fff";
 
     return;
-  }
-  else if(localStorage.getItem("isDarkMode")==="true" && document.getElementById("darkTheme").innerText==="1"){
-    localStorage.setItem("isDarkMode","false");
-    document.getElementsByTagName("body")[0].style.backgroundColor  = "#fff";
-    document.getElementsByTagName("nav")[0].style.backgroundColor  = " #fff";
-
-  }
-  else{
-    document.getElementsByTagName("body")[0].style.backgroundColor  = " #191919";
-    document.getElementsByTagName("nav")[0].style.backgroundColor  = "#191919";
-    localStorage.setItem("isDarkMode","true");
+  } else if (
+    localStorage.getItem("isDarkMode") === "true" &&
+    document.getElementById("darkTheme").innerText === "1"
+  ) {
+    localStorage.setItem("isDarkMode", "false");
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#fff";
+    document.getElementsByTagName("nav")[0].style.backgroundColor = " #fff";
+  } else {
+    document.getElementsByTagName("body")[0].style.backgroundColor = " #191919";
+    document.getElementsByTagName("nav")[0].style.backgroundColor = "#191919";
+    localStorage.setItem("isDarkMode", "true");
   }
 
   var navbarIcon = document.getElementsByClassName("fa");
-  for(var i=0;i<navbarIcon.length;i++)
-  navbarIcon[i].classList.toggle("dark-navbarIcon");
-  
+  for (var i = 0; i < navbarIcon.length; i++)
+    navbarIcon[i].classList.toggle("dark-navbarIcon");
+
   var nav = document.getElementsByClassName("navigation")[0];
   nav.classList.toggle("dark-bg");
-  
+
   var visitBtn = document.getElementById("visit");
   visitBtn.classList.toggle("dark-btn");
 
@@ -129,13 +128,18 @@ function detailsDark() {
   mainBody.classList.toggle("dark-bg");
 
   var tableElements = document.getElementsByTagName("tr");
-  for(var i = 0 ; i<tableElements.length; i++) {
+  for (var i = 0; i < tableElements.length; i++) {
     tableElements[i].classList.toggle("dark-text");
   }
-var table = document.getElementsByTagName("table")[0];
-console.log(table);
-table.classList.toggle("table-dark");
+  var table = document.getElementsByTagName("table")[0];
+  console.log(table);
+  table.classList.toggle("table-dark");
 
+  var commBox = document.getElementById("scroll-to-bottom");
+  commBox.classList.toggle("materii-dark");
+
+  var commBtn = document.getElementById("comment-btn");
+  commBtn.classList.toggle("dark-btn");
 
   var isDarkTheme = document.getElementById("darkTheme");
   if (isDarkTheme.innerHTML === "0") {
@@ -146,6 +150,18 @@ table.classList.toggle("table-dark");
     link1.children[0].style.color = "white";
     link2.children[0].style.color = "white";
     link3.children[0].style.color = "white";
+
+    var inp = document.getElementsByTagName("input");
+    for (var i = 0; i < inp.length; i++) {
+      inp[i].classList.add("transparent");
+      inp[i].style.borderColor = "#EEEEEE";
+    }
+
+    var comments = document.getElementsByClassName("comment-message-box");
+    for (var i = 0; i < comments.length; i++) {
+      comments[i].style.backgroundColor = "#212529";
+      comments[i].children[1].style.color = "#EEEEEE";
+    }
   } else {
     isDarkTheme.innerHTML = "0";
     var link1 = document.getElementById("link1");
@@ -154,7 +170,17 @@ table.classList.toggle("table-dark");
     link1.children[0].style.color = "black";
     link2.children[0].style.color = "black";
     link3.children[0].style.color = "black";
-  }
 
-  
+    var inp = document.getElementsByTagName("input");
+    for (var i = 0; i < inp.length; i++) {
+      inp[i].classList.remove("transparent");
+      inp[i].style.borderColor = "#191919";
+    }
+
+    var comments = document.getElementsByClassName("comment-message-box");
+    for (var i = 0; i < comments.length; i++) {
+      comments[i].style.backgroundColor = "#e0e0e0";
+      comments[i].children[1].style.color = "#191919";
+    }
+  }
 }

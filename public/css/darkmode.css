@@ -54,6 +54,11 @@
     color: #EEEEEE;
 }
 
+.transparent2:focus {
+    background-color: transparent;
+    color: #EEEEEE;
+}
+
 nav .dark-navbarIcon{
     color: #fff;
     margin: 10px;

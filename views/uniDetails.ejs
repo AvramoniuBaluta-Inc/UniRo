@@ -78,20 +78,8 @@
 
 
                     </div>
-                    <div class="second-part">
-                        <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
-                        <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
-                        <div id="map"></div>
-
-                        <!-- <img src="../static/images/test.png" alt=""> -->
-
-                    </div>
-
-
-
-                </div>
-                <div class="col-md-6 details-display">
-                    <table class="table table-bordered">
+                
+                        <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -116,6 +104,16 @@
 
                         </tbody>
                     </table>
+
+                </div>
+
+
+
+                
+                <div class="col-md-6 details-display map-display">
+                    <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
+                        <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
+                        <div id="map"></div>
                 </div>
 
 
@@ -142,7 +140,7 @@
                         <input type="hidden" name="uniId" value="<%= uniId %>" />
                         <input type="hidden" name="uniName" value="<%= uniId %>" />
 
-                        <button type="submit" class="hero-btn commBtn">Post</button>
+                        <button type="submit" id="comment-btn" class="hero-btn commBtn">Post</button>
                     </form>
                 </div>
             </div>
