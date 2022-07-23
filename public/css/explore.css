@@ -88,7 +88,6 @@ nav ul {
   background: #f44336;
   display: block;
   margin: auto;
-  transition: 0.4s;
 }
 
 
@@ -113,14 +112,14 @@ nav ul {
   }
   .nav-links {
     position: absolute;
-    background: #f44336;
+    background: #727272;
     height: 100vh;
     width: 200px;
     top: 0;
     right: -200px;
     text-align: left;
     z-index: 2;
-    transition: 0.7s;
+    transition: 0.3s;
 
   }
   nav .fa {
