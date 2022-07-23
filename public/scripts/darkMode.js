@@ -155,6 +155,7 @@ function detailsDark() {
     for (var i = 0; i < inp.length; i++) {
       inp[i].classList.add("transparent");
       inp[i].style.borderColor = "#EEEEEE";
+      inp[i].classList.add("dark-text");
     }
 
     var comments = document.getElementsByClassName("comment-message-box");
@@ -175,6 +176,7 @@ function detailsDark() {
     for (var i = 0; i < inp.length; i++) {
       inp[i].classList.remove("transparent");
       inp[i].style.borderColor = "#191919";
+      inp[i].classList.remove("dark-text");
     }
 
     var comments = document.getElementsByClassName("comment-message-box");

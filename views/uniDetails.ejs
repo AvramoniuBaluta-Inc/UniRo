@@ -78,8 +78,8 @@
 
 
                     </div>
-                
-                        <table class="table table-bordered">
+
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -109,11 +109,11 @@
 
 
 
-                
+
                 <div class="col-md-6 details-display map-display">
                     <input id="latitude" type="hidden" name="latitude" value="<%= lat %>" />
-                        <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
-                        <div id="map"></div>
+                    <input id="longitude" type="hidden" name="longitude" value="<%= long %>" />
+                    <div id="map"></div>
                 </div>
 
 
@@ -126,21 +126,22 @@
                         <%- include('partials/comment', {comment: comments[i]}); %>
                         <% }%>
                     </div>
-                    
-                    <form class="input-group form-group" action="/universitati/<%= nume %>" method="POST" >
+
+                    <form class="input-group form-group" action="/universitati/<%= nume %>" method="POST">
                         <div class="form-floating ff1">
-                            <input id="commName" name="commName" type="text" aria-label="First name" class="form-control">
-                            <label for="commName">Nume si Prenume</label>
+                            <input id="commName" name="commName" type="text" aria-label="First name"
+                                class="form-control">
+                            <label for="commName">Nume</label>
                         </div>
-                        
-                        <div class="form-floating ff2" >
-                            <input id="commMsg"  name="commMsg" type="text" aria-label="Last name" class="form-control">
+
+                        <div class="form-floating ff2">
+                            <input id="commMsg" name="commMsg" type="text" aria-label="Last name" class="form-control">
                             <label for="commMsg">Comentariu</label>
                         </div>
                         <input type="hidden" name="uniId" value="<%= uniId %>" />
                         <input type="hidden" name="uniName" value="<%= uniId %>" />
 
-                        <button type="submit" id="comment-btn" class="hero-btn commBtn">Post</button>
+                        <button type="submit" id="comment-btn" class="hero-btn commBtn">Scrie</button>
                     </form>
                 </div>
             </div>
@@ -162,7 +163,7 @@
     <script src="../scripts/darkMode.js"></script>
     <script>
         let scroll_to_bottom = document.getElementById('scroll-to-bottom');
-		scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
+        scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
         function darkBtn() {
             detailsDark();
             changeIcon();
