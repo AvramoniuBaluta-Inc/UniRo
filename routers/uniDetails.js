@@ -21,10 +21,8 @@ router.get("/:uni", function (req, res) {
     var idArray = [];
     for(var i=0;i<commentArray.length;i++){
       idArray[i] = commentArray[i]._id.toString();
-      console.log(idArray[i]);
     }
     var isAuth;
-    console.log();
     if(req.isAuthenticated())
       isAuth = "true";
     else
@@ -52,7 +50,6 @@ router.get("/:uni", function (req, res) {
 
 router.post("/:uni", (req, res) => {
   var content = req.body.commMsg;
-  console.log(badLanguageCheckOk.badLanguageCheckOk(content));
   if(badLanguageCheckOk.badLanguageCheckOk(content)){
     const comment = new Comment({
       uniId : req.body.uniId ,
