@@ -52,7 +52,7 @@ router.post("/:uni", (req, res) => {
     if(!(comment.content === ""))
       comment.save();
   }
-  res.redirect("/universitati/"+ req.body.uniName+"|"+req.body.uniId);
+  res.redirect("/universitati/"+ req.body.uniName+"|"+req.body.uniId + "#scroll-to-bottom");
 });
 
 

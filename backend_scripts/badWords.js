@@ -13,5 +13,7 @@ var badWords=[
     "tampit",
     "fut",
     "ma-ta",
+    "nigger",
+    "nigga"
 ];
 module.exports = badWords;
