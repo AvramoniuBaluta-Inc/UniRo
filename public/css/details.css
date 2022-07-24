@@ -100,14 +100,17 @@ form .form-control:focus {
 
 .deleteCommentButton {
     text-decoration: none;
-    color: #e0e0e0;
+    color: #ff2516;
     padding: 1% 1%;
-    background-color: #ff2516;
+    background-color: transparent;
+    border: 1px solid #ff2516;
     border-radius: 5px;
+    font-size: 12px;
 }
 
 .deleteCommentButton:hover {
     color: #e0e0e0;
+    background-color: #ff2516;
 }
 
 
