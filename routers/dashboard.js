@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var add = require("../public/scripts/addToArray.js");
-const { University, Cerere, Admin } = require("../database_models/models.js");
+const { University, Cerere, Admin, Comment  } = require("../database_models/models.js");
 var idGenerate = require("../backend_scripts/addId.js");
 const isLoggedIn = require("../backend_scripts/isLoggedIn.js");
 const multer = require("multer");
@@ -306,4 +306,15 @@ router.get("/delete/:id", function (req, res) {
     res.redirect("/dashboard");
   })();
 });
+
+router.get("/deletecomment/:id", function (req, res) {
+  (async () => {
+    if (req.params.id != undefined)
+      var comm = await Comment.findOne({"_id": req.params.id});
+      var result = await Comment.findOneAndDelete({"_id": req.params.id});
+      var uni = await University.findOne({"_id":comm.uniId})
+    res.redirect("/universitati/" + uni.nume + '|' + comm.uniId+"#scroll-to-bottom");
+  })();
+});
+
 module.exports = router;

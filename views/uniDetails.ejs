@@ -123,7 +123,7 @@
                     <h3>Comentarii Universitate</h3>
                     <div class="comment-box" id="scroll-to-bottom">
                         <% for(var i = 0 ; i<comments.length ; i++) { %>
-                        <%- include('partials/comment', {comment: comments[i]}); %>
+                        <%- include('partials/comment', {comment: comments[i],id:idArray[i]}); %>
                         <% }%>
                     </div>
 
@@ -139,7 +139,7 @@
                             <label for="commMsg">Comentariu</label>
                         </div>
                         <input type="hidden" name="uniId" value="<%= uniId %>" />
-                        <input type="hidden" name="uniName" value="<%= uniId %>" />
+                        <input type="hidden" name="uniName" value="<%= nume %>" />
 
                         <button type="submit" id="comment-btn" class="hero-btn commBtn">Scrie</button>
                     </form>
@@ -154,14 +154,18 @@
         </div>
     </section>
 
+    <p id="isAuth" style="display: none;"><%=isAuth%></p>
+
 
     <script src="../scripts/menu.js"></script>
+    <script src="../scripts/deleteButtonForComments.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHqyrCnQYVGNzr0uMOO-sP8tNDATMb7ZQ&callback=initMap&v=weekly"
         async></script>
 
     <script src="../scripts/darkMode.js"></script>
     <script>
+       
         let scroll_to_bottom = document.getElementById('scroll-to-bottom');
         scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
         function darkBtn() {

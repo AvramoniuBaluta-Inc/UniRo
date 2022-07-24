@@ -17,9 +17,18 @@ router.get("/:uni", function (req, res) {
       }
     };
     const result = await University.updateOne(uni, updateDocument);
-    var commentArray = await Comment.find({uniId: uniId},{name:1,content:1,_id:0});
-    console.log(commentArray[3]);
-    console.log("lol");
+    var commentArray = await Comment.find({uniId: uniId},{name:1,content:1,_id:1});
+    var idArray = [];
+    for(var i=0;i<commentArray.length;i++){
+      idArray[i] = commentArray[i]._id.toString();
+      console.log(idArray[i]);
+    }
+    var isAuth;
+    console.log();
+    if(req.isAuthenticated())
+      isAuth = "true";
+    else
+      isAuth = "false";
     res.render("uniDetails", {
       uniId:uni._id,
       nume: uni.nume,
@@ -32,6 +41,8 @@ router.get("/:uni", function (req, res) {
       facultati: uni.facultati,
       specializari: uni.specializari,
       comments: commentArray,
+      isAuth:isAuth,
+      idArray:idArray,
     });
   })();
 
