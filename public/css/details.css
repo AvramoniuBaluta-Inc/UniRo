@@ -29,7 +29,6 @@ nav{
 }
 
 
-
 /* /////////////////////////////// */
 
 #comm {
@@ -97,6 +96,20 @@ form .form-control:focus {
     margin-left: 1%;
     margin-right: 1%;
 }
+
+
+.deleteCommentButton {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 1% 1%;
+    background-color: #ff2516;
+    border-radius: 5px;
+}
+
+.deleteCommentButton:hover {
+    color: #e0e0e0;
+}
+
 
 /* /////////////////////////////////// */
 
