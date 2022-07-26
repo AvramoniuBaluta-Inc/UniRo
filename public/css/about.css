@@ -89,38 +89,3 @@
 strong {
     color: #f44336;
 }
-
-.goog-te-gadget{
-    width: 12vw;
-  }
-  .goog-te-gadget-simple{
-    width: 12vw;
-  }
-  @media (max-width: 1276px) {
-    .goog-te-gadget{
-      width: 200px;
-    }
-    .goog-te-gadget-simple{
-      width: 200px;
-    }
-   
-  }
-  @media (max-width: 700px) {
-    .goog-te-gadget{
-      width: 150px;
-      position: relative;
-      left: -10px;
-    }
-    .goog-te-gadget-simple{
-      width: 150px;
-      position: relative;
-      left: -10px;
-    }
-  }
-.goog-te-banner-frame{
-    display:none !important
-}
-body{
-    top: 0px !important; 
-    position: static !important; 
-}
