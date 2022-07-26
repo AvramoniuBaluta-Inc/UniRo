@@ -96,6 +96,7 @@
           <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul class="links">
+              <li> <div id="googleTranslate"></div></li>
               <li id="link1"><a href="/despre">DESPRE NOI</a></li>
               <li id="link2"><a href="/">ACASĂ</a></li>
               <li id="link3"><a href="/contact">CONTACT</a></li>
@@ -143,6 +144,10 @@
     <script src="scripts/search.js"></script>
     <script src="scripts/renderUni.js"></script>
     <script src="scripts/darkMode.js"></script>
+<script src="scripts/translate.js"></script>
+    <script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script> 
 
     <script>
       function darkBtn() {
@@ -179,6 +184,16 @@
       $("#materii").dropdown();
       $("#specializari").dropdown();
       $("#oras").dropdown();
-    </script>
+      function deleteExtraContent(){
+        var translateDiv = document.getElementById("googleTranslate");
+      translateDiv.firstChild.firstChild.children[1].firstChild.children[1].remove();
+      translateDiv.firstChild.firstChild.children[1].firstChild.children[1].remove();
+      translateDiv.firstChild.firstChild.children[1].firstChild.children[2].remove();
+      translateDiv.firstChild.firstChild.style.borderColor = "#fff";
+      }
+     
+      setTimeout(deleteExtraContent, 500);
+
+        </script>
   </body>
 </html>

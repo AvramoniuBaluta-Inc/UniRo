@@ -39,6 +39,7 @@
           <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
+              <li> <div id="googleTranslate"></div></li>
               <li><a href="/despre">DESPRE NOI</a></li>
               <li>
                 <a id="explore-button" href="/universitati">UNIVERSITĂȚI</a>
@@ -143,6 +144,10 @@
       <div class="loading-circle"></div>
     </div>
     <script src="scripts/menu.js"></script>
+    <script src="scripts/translate.js"></script>
+    <script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script> 
     <script>
       $(window).on("load", function () {
         $(".loader").fadeOut();

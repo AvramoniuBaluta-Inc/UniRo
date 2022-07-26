@@ -449,3 +449,40 @@ svg * {
   margin: 0 1%;
 }
 
+.goog-te-gadget{
+  width: 12vw;
+}
+.goog-te-gadget-simple{
+  width: 12vw;
+}
+@media (max-width: 1276px) {
+  .goog-te-gadget{
+    width: 200px;
+  }
+  .goog-te-gadget-simple{
+    width: 200px;
+    border-color: #fff;
+  }
+ 
+}
+@media (max-width: 844px) {
+  .goog-te-gadget{
+    width: 150px;
+    position: relative;
+    left: -10px;
+  }
+  .goog-te-gadget-simple{
+    width: 150px;
+    position: relative;
+    left: -10px;
+  }
+}
+
+.goog-te-banner-frame{
+  display:none !important
+  }
+  
+  body{
+    top: 0px !important; 
+    position: static !important; 
+    }
