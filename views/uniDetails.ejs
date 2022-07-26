@@ -45,7 +45,7 @@
                         <li> <div id="googleTranslate"></div></li>
                         <li id="link1"><a href="/despre">DESPRE NOI</a></li>
                         <li id="link2"><a class="permanent" href="/">ACASĂ</a></li>
-                        <li id="link3"><a href="/contact" class="notranslate">CONTACT</a></li>
+                        <li id="link3"><a href="/contact">CONTACT</a></li>
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -122,7 +122,7 @@
             <div id="comm" class="row">
                 <div class="col-lg-12 comm-container">
                     <h3>Comentarii Universitate</h3>
-                    <div class="comment-box notranslate" id="scroll-to-bottom">
+                    <div class="comment-box" id="scroll-to-bottom">
                         <% for(var i = 0 ; i<comments.length ; i++) { %>
                         <%- include('partials/comment', {comment: comments[i],id:idArray[i]}); %>
                         <% }%>
@@ -155,7 +155,7 @@
         </div>
     </section>
 
-    <p id="isAuth" class="notranslate" style="display: none;"><%=isAuth%></p>
+    <p id="isAuth" style="display: none;"><%=isAuth%></p>
 
 
     <script src="../scripts/menu.js"></script>
