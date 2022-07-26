@@ -16,7 +16,7 @@ window.onload = function deleteExtraContent(){
     translateDiv.firstChild.firstChild.children[1].firstChild.children[1].remove();
     translateDiv.firstChild.firstChild.children[1].firstChild.children[1].remove();
     translateDiv.firstChild.firstChild.children[1].firstChild.children[2].remove();
-    translateDiv.firstChild.firstChild.style.borderColor = "#fff";
+
 }
 
 
