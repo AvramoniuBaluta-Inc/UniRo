@@ -65,7 +65,7 @@ const CONNECTION_URL =
   process.env.MONGO_ADMIN +
   ":" +
   process.env.MONGO_PASSWORD +
-  "@uniro.kv2pn.mongodb.net/mainDatabase?retryWrites=true&w=majority";
+  "@uniro.zjsklpl.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
