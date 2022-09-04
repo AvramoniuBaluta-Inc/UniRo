@@ -10,7 +10,7 @@ router.get("/:uni", function (req, res) {
   var uniName =  transformations.toName(req.params.uni);
   var uniId = transformations.toId(req.params.uni);
   University.findOne({ _id: uniId }, function (err, uni) {
-    if(uni.viewsNo!=undefined){
+    if(uni!=undefined){
     (async()=>{
       var updateDocument  = {
         $set: {
