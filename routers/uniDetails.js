@@ -10,11 +10,12 @@ router.get("/:uni", function (req, res) {
   var uniName =  transformations.toName(req.params.uni);
   var uniId = transformations.toId(req.params.uni);
   University.findOne({ _id: uniId }, function (err, uni) {
+    if(uni.viewsNo!=undefined){
     (async()=>{
-    var updateDocument  = {
-      $set: {
-        viewsNo: uni.viewsNo+1,
-      }
+      var updateDocument  = {
+        $set: {
+          viewsNo: uni.viewsNo+1,
+        }
     };
     const result = await University.updateOne(uni, updateDocument);
     var commentArray = await Comment.find({uniId: uniId},{name:1,content:1,_id:1});
@@ -43,6 +44,10 @@ router.get("/:uni", function (req, res) {
       idArray:idArray,
     });
   })();
+}
+else{
+  res.send("Pe cine cauti aici?");
+}
 
   });
 
