@@ -10,10 +10,7 @@ const uniSchema = new mongoose.Schema({
   longitudine: Number,
   email: String,
   link: String,
-  img: {
-    data: Buffer,
-    contentType: String,
-  },
+  img: String,
   rating: Number,
   facultati: [],
   specializari: [],

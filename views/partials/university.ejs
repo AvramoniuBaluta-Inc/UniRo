@@ -3,9 +3,8 @@
 <div class="card mb-3 uni click">
   <div class="row">
     <div class="col-md-4 img-size">
-      <% if(!(uni.img.data===undefined )){ %>
-      <img src=" data:uni.photo/<%=uni.img.contentType%>;base64,
-                     <%=uni.img.data.toString('base64')%>">
+      <% if(!(uni.img===undefined )){ %>
+      <img src="<%=uni.img %>">
       <% } else {%>
       <img src="/images/test.png" alt="">
       <% } %>

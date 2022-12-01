@@ -20,7 +20,7 @@ async function renderUni() {
             document.querySelectorAll('[universitate]')[i].getElementsByClassName("more")[0].innerHTML =  "<a href='http://"+ universityDetails.link +"' target='_blank' class='btn buton-link'>Viziteaza website</a><a href='/universitati/"+ universityDetails.nume +"|"+  universityDetails._id + "' class='btn buton-link detalii dash-hide '>Mai multe detalii</a>";
         }
         if(!(universityDetails.img===undefined )){ 
-            document.querySelectorAll('[universitate]')[i].getElementsByClassName("img-size")[0].innerHTML = '<img src=" data:uni.photo/' + 'data:uni.photo/image/png;base64,' + universityDetails.img + '">';
+            document.querySelectorAll('[universitate]')[i].getElementsByClassName("img-size")[0].innerHTML = '<img src=" ' + universityDetails.img + '">';
         }
         else{
             document.querySelectorAll('[universitate]')[i].getElementsByClassName("img-size")[0].innerHTML ='<img src="/images/test.png" alt="">';

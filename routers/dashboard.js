@@ -13,6 +13,8 @@ var facultati = require("../public/scripts/facultati.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
 var updateFunctions = require("../backend_scripts/updateFunctions.js");
+var imagekitFunctions = require("../backend_scripts/imagekitFunctions.js")
+
 
 var fetch = require("node-fetch");
 
@@ -182,6 +184,7 @@ router.post("/", upload.single("photo"), (req, res) => {
         }
         (async () => {
           idUni = await idGenerate.generateID(University);
+          var imgLink = await imagekitFunctions.getLink(req.file);
           const universitate = new University({
             _id: idUni,
             nume: req.body.nume,
@@ -191,12 +194,7 @@ router.post("/", upload.single("photo"), (req, res) => {
             longitudine: req.body.longitude,
             email: req.body.email,
             link: req.body.link,
-            img: {
-              data: fs.readFileSync(
-                path.join("./public/uploads/" + req.file.filename)
-              ),
-              contentType: "image/png",
-            },
+            img: imgLink,
             specializari: add.addArray(req.body.specializari),
             facultati: add.addArray(req.body.facultati),
             rating: ratingFromAPI,
@@ -233,6 +231,8 @@ router.post("/", upload.single("photo"), (req, res) => {
     (async () => {
       uniArray = await University.find({ _id: id });
       var univeristateDeEditat = uniArray[0];
+      var imgLink = await imagekitFunctions.getLink(req.file);
+
       if (req.file === undefined) {
         var updateDocument = {
           $set: {
@@ -249,6 +249,7 @@ router.post("/", upload.single("photo"), (req, res) => {
             viewsNo: univeristateDeEditat.viewsNo,
           },
         };
+        
         const result = await University.updateOne(
           univeristateDeEditat,
           updateDocument
@@ -264,17 +265,18 @@ router.post("/", upload.single("photo"), (req, res) => {
             longitudine: req.body.longitude,
             email: req.body.email,
             link: req.body.link,
-            img: {
-              data: fs.readFileSync(
-                path.join("./public/uploads/" + req.file.filename)
-              ),
-              contentType: "image/png",
-            },
+            img: imgLink,
             specializari: add.addArray(req.body.specializari),
             facultati: add.addArray(req.body.facultati),
             viewsNo: univeristateDeEditat.viewsNo,
           },
         };
+        fs.unlink("./public/uploads/" + req.file.filename, (err) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+        });
         const result = await University.updateOne(
           univeristateDeEditat,
           updateDocument

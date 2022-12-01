@@ -18,6 +18,8 @@ var facultati = require("../public/scripts/facultati.js");
 var specializari = require("../public/scripts/specializari.js");
 var transformations = require("../backend_scripts/transformations.js");
 var fetch = require("node-fetch");
+var imagekitFunctions = require("../backend_scripts/imagekitFunctions.js")
+
 
 ///storage
 const storage = multer.diskStorage({
@@ -91,7 +93,7 @@ router.post("/", upload.single("photo"), (req, res) => {
     } else {
       (async () => {
         var idOfReq = await idGenerate.generateID(Cerere);
-
+        var imgLink = await imagekitFunctions.getLink(req.file);
         const cerere = new Cerere({
           _id: idOfReq,
           nume_reprezentant:req.body.nume_reprezentant,
@@ -105,12 +107,7 @@ router.post("/", upload.single("photo"), (req, res) => {
           longitudine: req.body.longitude,
           email: req.body.email,
           link: req.body.link,
-          img: {
-            data: fs.readFileSync(
-              path.join("./public/uploads/" + req.file.filename)
-            ),
-            contentType: "image/png",
-          },
+          img: imgLink,
           specializari: add.addArray(req.body.specializari),
           facultati: add.addArray(req.body.facultati),
         },
