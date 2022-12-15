@@ -231,7 +231,6 @@ router.post("/", upload.single("photo"), (req, res) => {
     (async () => {
       uniArray = await University.find({ _id: id });
       var univeristateDeEditat = uniArray[0];
-      var imgLink = await imagekitFunctions.getLink(req.file);
 
       if (req.file === undefined) {
         var updateDocument = {
@@ -255,6 +254,8 @@ router.post("/", upload.single("photo"), (req, res) => {
           updateDocument
         );
       } else {
+        var imgLink = await imagekitFunctions.getLink(req.file);
+
         var updateDocument = {
           $set: {
             _id: idUni,
